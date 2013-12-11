@@ -1,0 +1,10 @@
+#file typhoon.obj
+#name U.S.S_TYPHOON_CLASS_SUB
+#speed 150.0 10.0
+#mass 900
+#energy 1200
+#swap 0 2 1
+#normals 1 -1 1
+#num_weapons 1
+#num_headlights 0
+#weapon	3 NUKE 0 torpedo_typhoon.obj 20.0 -10.0 -250.0 0.0 0.0 0.0 300.0 5.0 20.0 3000 -1 0.2

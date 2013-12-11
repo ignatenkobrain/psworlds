@@ -1,0 +1,7 @@
+#file antenna.obj
+#name COMMUNICATION_TOWER
+#energy 110
+#speed 0.0 0.0
+#mass 50
+#num_weapons 0
+#num_headlights 0

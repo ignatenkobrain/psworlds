@@ -1,0 +1,8 @@
+#file tank.obj
+#name FUEL_TANK
+#energy 50
+#speed 0.0 0.0
+#mass 130
+#normals 1 -1 1
+#num_weapons 0
+#num_headlights 0

@@ -1,0 +1,4 @@
+#file light.obj
+#name LIGHT
+#num_headlights 1
+#light 0.0 -1.0 0.0 90.0 0.0 0.0 30.0 190.0 0.7 2

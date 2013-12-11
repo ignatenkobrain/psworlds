@@ -1,0 +1,720 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Eike Umlauf">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (Windows NT 5.0; U) [Netscape]">
+   <title>Possible Worlds</title>
+</head>
+<body text="#CCCCCC" bgcolor="#042C57" link="#FF9900" vlink="#3366FF" alink="#FF0000">
+&nbsp;
+<center>
+<p><img SRC="controls.jpg" height=60 width=530>
+<p><font face="Arial,Helvetica"><font size=-1>Before you start the game,
+you should have a look at the <u>configuration file</u> "possible_config.txt"
+and set all values to your preferences.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>Technical Information can
+be found in the file "readme.txt", which is German only.</font></font>
+<br>&nbsp;
+<p><font face="Arial,Helvetica"><font size=-1>This page explains how to
+play the game and control your ship.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>As a convention, <font color="#33FF33">keyboard
+commands</font> for corresponding actions are printed in <font color="#33FF33">green</font>.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1><font color="#FF99FF">Hidden
+Eastereggs</font> are printed in <font color="#FF99FF">Pink</font> ;)</font></font>
+<br>&nbsp;
+<br>&nbsp;
+<p><b><u><font face="Arial,Helvetica"><font size=-1>Contents</font></font></u></b></center>
+
+<p><br>
+<ul>
+<center>
+<li>
+<font face="Arial,Helvetica"><font size=-1>Quick Overview</font></font></li></center>
+
+<center>
+<li>
+<font face="Arial,Helvetica"><font size=-1>How to play</font></font></li></center>
+
+<center>
+<li>
+<font face="Arial,Helvetica"><font size=-1>Your ship</font></font></li></center>
+
+<center>
+<li>
+<font face="Arial,Helvetica"><font size=-1>The Cockpit</font></font></li></center>
+
+<center>
+<li>
+<font face="Arial,Helvetica"><font size=-1>The Headlight</font></font></li></center>
+
+<center>
+<li>
+<font face="Arial,Helvetica"><font size=-1>The Camera</font></font></li></center>
+
+<center>
+<li>
+<font face="Arial,Helvetica"><font size=-1>Combat</font></font></li></center>
+
+<center>
+<li>
+<font face="Arial,Helvetica"><font size=-1>Hints</font></font></li></center>
+
+<center>
+<li>
+<font face="Arial,Helvetica"><font size=-1>Cheatcodes</font></font></li></center>
+</ul>
+
+<br>&nbsp;
+<center>
+<p><b><u><font face="Arial,Helvetica"><font color="#FFFFFF"><font size=+1>Quick
+Overview</font></font></font></u></b></center>
+
+<p><br>
+<center><table COLS=2 WIDTH="500" >
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Accelerate</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>a</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Decelerate</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>y</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Pitch
+down</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Cursor
+key up</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Pitch
+up</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Cursor
+key down</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Turn
+left</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Cursor
+key left</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Turn
+right</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Cursor
+key right</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Roll
+left</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>s</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Roll
+right</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>d</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Camera:
+Still</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>1</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Camera:
+Flyby</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>2</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Camera:
+Cockpit</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>3</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Camera:
+Behindview</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>4</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Camera:
+Freecam</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>5</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Camera:
+Freecam: Rotate</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>o
+/ p</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Camera:
+Freecam: Zoom</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>9
+/ 0</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Camera:
+Topcam</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>6</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Camera:
+Bottomcam</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>7</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Camera:
+View Target / Back to Player</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>8</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Toggle
+Left / Middle / Right display</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>q
+/ w / e</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Zoom
+Map</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>o
+/ p</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Zoom
+Radar</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>k
+/ l</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Adjust
+Display Transparency</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>9
+/ 0</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Target
+next object</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>x</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Untarget</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>c</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Fire</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Space</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Cycle
+Weapons</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Tab</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Toggle
+Headlight</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Keypad
+0</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Adjust
+Headlight angle</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Hold
+down Keypad 1 + use Cursor keys</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Next
+Waypoint</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Backspace</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Call
+Menu / Exit Menu</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Esc</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Enable
+/ Disable Wireframe mode</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>F1</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Enable
+/ Disable FPS-o-meter</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>F4</font></font></font></td>
+</tr>
+</table></center>
+
+<br>&nbsp;
+<br>&nbsp;
+<center>
+<p><b><u><font face="Arial,Helvetica"><font color="#FFFFFF">How to play</font></font></u></b>
+<p><font face="Arial,Helvetica"><font size=-1>After the Splashscreen and
+the intro sequence, you'll be prompted with a demo mission running automatically
+and the Main menu.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>Generally, to <font color="#33FF33">hide
+/ unhide / exit a menu</font>, press <font color="#33FF33">Esc</font>.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>You might start a new game
+or load one of your previously saved game here, or just watch the Credits
+sequence.</font></font>
+<p><font face="Arial,Helvetica"><font size=-1>Loading a game or starting
+a new game takes you to the Game menu that enables you to select your next
+mission or save your current progress.</font></font>
+<p><font face="Arial,Helvetica"><font size=-1>Before you start into your
+selected mission, you should read the mission briefing carefully as it
+will explain your mission goals and the current state of your campaign.</font></font>
+<br>&nbsp;
+<p><font face="Arial,Helvetica"><font size=-1>Basically, to complete a
+mission you must do the following:</font></font></center>
+
+<ul>
+<center>
+<li>
+<font face="Arial,Helvetica"><font size=-1>Visit all your designated waypoints</font></font></li></center>
+
+<center>
+<li>
+<font face="Arial,Helvetica"><font size=-1>Complete all mission goals</font></font></li></center>
+
+<center>
+<li>
+<font face="Arial,Helvetica"><font size=-1>Survive</font></font></li></center>
+</ul>
+
+<center><font face="Arial,Helvetica"><font size=-1>A mission goal, for
+example might be to attack an enemy transporter - as soon as the transporter
+is destroyed, this goal counts as achieved as you will notice on your middle
+display (secondary mode).</font></font>
+<br>&nbsp;
+<p><u><font face="Arial,Helvetica"><font size=-1>Orientation:</font></font></u>
+<p><font face="Arial,Helvetica"><font size=-1>To complete a mission, it
+is advised that you stay close to your designated route. Align your ship
+so that the heading of your next waypoint and your craft coincide, then
+accelerate and head for the waypoint.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>If you are close enough,
+you should notice a white cross on your radar that represents your currently
+selected waypoint. Watch the depth of the waypoint on your middle display,
+you cannot determine the height difference by looking at the radar! Once
+you are in the vicinty of the waypoint (about 100 meters), it is counted
+as checked and your ship's computer will automatically select the next
+waypoint. You can also <font color="#33FF33">cycle</font> them manually
+by pressing <font color="#33FF33">backspace</font>.</font></font>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<p><b><u><font face="Arial,Helvetica"><font color="#FFFFFF"><font size=+1>Your
+ship</font></font></font></u></b>
+<p><font face="Arial,Helvetica"><font size=-1>Controlling your ship is
+a bit sophisticated and you probably need some practice do do the maneouvers
+you intend to do quickly and elegantly. The vessel can be rotated about
+all three axis and travel forward or backward. Strafing movements are not
+available.</font></font></center>
+
+<p><br>
+<center><table COLS=2 WIDTH="400" >
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Accelerate</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>a</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Decelerate</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>y</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Pitch
+down</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Cursor
+key up</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Pitch
+up</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Cursor
+key down</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Turn
+left</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Cursor
+key left</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Turn
+right</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Cursor
+key right</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Roll
+left</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>s</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Roll
+right</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>d</font></font></font></td>
+</tr>
+</table></center>
+
+<br>&nbsp;
+<br>&nbsp;
+<center>
+<p><b><u><font face="Arial,Helvetica"><font color="#FFFFFF"><font size=+1>The
+cockpit</font></font></font></u></b>
+<br>&nbsp;
+<p><font face="Arial,Helvetica"><font size=-1>Your ship is equipped with
+an efficiently designed dashboard that provides you with all the information
+you require, whilst not obscuring the pilot&acute;s vision on his surroundings.
+Information is represented by 3 T-TFT displays and an artificial horizon
+gauge.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>All displays are laid out
+with double functionality. You can <font color="#33FF33">switch</font>
+display capabilities with <font color="#33FF33">q / w / e</font> for left,
+middle and right display, respectively.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>For convenience, you can
+also <font color="#33FF33">adjust</font> the display <font color="#33FF33">translucency</font>
+with <font color="#33FF33">9 / 0</font>.</font></font>
+<br>&nbsp;
+<p><b><font face="Arial,Helvetica">Left display:</font></b>
+<br><font face="Arial,Helvetica"><font size=-1><font color="#33FF33">Toggle
+caps</font> with <font color="#33FF33">q</font></font></font>
+<p><img SRC="displ-left.JPG" height=207 width=233>
+<p><u><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Primary
+functionality: Map screen</font></font></font></u>
+<br><font face="Arial,Helvetica"><font size=-1><font color="#CCCCCC">An
+approximate map of the surrounding seafloor territory, based on GPS and
+sonar data, is displayed. The bright triangle in the middle of the screen
+represents your ship. You can </font><font color="#33FF33">zoom</font><font color="#CCCCCC">
+the map in or out with </font><font color="#33FF33">o / p</font><font color="#CCCCCC">.</font></font></font>
+<p><u><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Secondary
+functionality: Target information</font></font></font></u>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>If
+your targeting system is currently locked on a target object, the following
+information about your target is displayed:</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Name</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Hull
+Strength</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Velocity</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Heading,
+relative to your position</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Distance</font></font></font>
+<br>&nbsp;
+<p><b><font face="Arial,Helvetica"><font color="#CCCCCC">Middle display:</font></font></b>
+<br><font face="Arial,Helvetica"><font size=-1><font color="#33FF33">Toggle
+caps</font><font color="#CCCCCC"> with </font><font color="#33FF33">w</font></font></font>
+<p><img SRC="displ-mid.JPG" height=219 width=252>
+<p><u><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Primary
+functionality: Ship info</font></font></font></u>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Provides
+information about your ship:</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Heading</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Velocity</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Depth</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Atmospheric
+Pressure</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Distance
+to ground (sonar)</font></font></font>
+<p><font face="Arial,Helvetica"><font size=-1>Also provides information
+about the recommended route that is stored in your ship&acute;s computer.
+It is represented by waypoints that are laid out across the map. If you
+reach a Waypoint, the computer automatically selects the next one. If you
+want to <font color="#33FF33">cycle</font> the <font color="#33FF33">waypoints</font>
+manually, press <font color="#33FF33">Backspace</font> repeatedly.</font></font>
+<p><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Next
+Waypoint</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Distance
+to next waypoint</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Depth
+of next waypoint</font></font></font>
+<br>&nbsp;
+<p><u><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Secondary
+functionality</font></font></font></u>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Display
+Mission Objectives</font></font></font>
+<br>&nbsp;
+<p><b><font face="Arial,Helvetica"><font color="#CCCCCC">Right display:</font></font></b>
+<br><font face="Arial,Helvetica"><font size=-1><font color="#33FF33">Toggle
+caps</font><font color="#CCCCCC"> with </font><font color="#33FF33">e</font></font></font>
+<p><img SRC="displ-rite.JPG" height=206 width=227>
+<p><u><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Primary
+functionality</font></font></font></u>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Radar.
+Displays objects in your vicinty as colored strips. The color dpeends on
+the mass of the object, so you can distinguish classes of ships by their
+radar color.</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>An
+upwards strip marks the object is below you, a downward strip represents
+an object above you.</font></font></font>
+<br><font face="Arial,Helvetica"><font size=-1><font color="#CCCCCC">You
+can </font><font color="#33FF33">zoom</font><font color="#CCCCCC"> the
+radar extents with </font><font color="#33FF33">k / l</font><font color="#CCCCCC">.</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Your
+currently selected target will be marked by a light blue bounding box.</font></font></font>
+<p><u><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Secondary
+functionality</font></font></font></u>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Onboard
+systems information. Lists</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Hull
+Strength</font></font></font>
+<br><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Weapon
+status for all hardpoints</font></font></font>
+<p><u><font face="Arial,Helvetica"><font color="#FF99FF"><font size=-1>Easteregg</font></font></font></u>
+<br><font face="Arial,Helvetica"><font size=-1>You can also play PONG against
+your ship's computer if you're bored with underwater cruising ;)</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>To start pong, enter primary
+display mode and press Esc, then select <font color="#33FF33">PONG !</font></font></font>
+<br>&nbsp;
+<p><b><font face="Arial,Helvetica"><font color="#CCCCCC">Artificial horizon:</font></font></b>
+<p><img SRC="compass.JPG" height=60 width=59>
+<p><font face="Arial,Helvetica"><font color="#CCCCCC"><font size=-1>Eases
+instrumental navigation if no floor or sealevel is visible. If the gauge
+turns completely blue, it means you are diving straight down. You&acute;ll
+quickly get the hang of it.</font></font></font>
+<br>&nbsp;
+<br>&nbsp;
+<p><b><u><font face="Arial,Helvetica"><font color="#FFFFFF"><font size=+1>The
+Headlight</font></font></font></u></b>
+<p><font face="Arial,Helvetica"><font size=-1>Your ship is equipped with
+a bankable headlight beam. This might come handy at large depths to brighten
+up your surroundings a bit.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>To <font color="#33FF33">switch</font>
+your headlight <font color="#33FF33">on / off</font>, press <font color="#33FF33">0</font>
+on the <font color="#33FF33">keypad</font>.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>To <font color="#33FF33">alter</font>
+the beam <font color="#33FF33">angle</font>, <font color="#33FF33">hold
+down Keypad 1</font> and use the <font color="#33FF33">cursor keys</font>.</font></font>
+<p><u><font face="Arial,Helvetica"><font color="#FF99FF"><font size=-1>Easteregg:</font></font></font></u>
+<br><font face="Arial,Helvetica"><font size=-1>For additional fun, you
+can alter your headlight's color by holding down <font color="#33FF33">Keypad
+0</font> and pressing</font></font>
+<br><font face="Arial,Helvetica"><font size=-1><font color="#33FF33">7</font>
+/ <font color="#33FF33">4</font> (red factor)</font></font>
+<br><font face="Arial,Helvetica"><font size=-1><font color="#33FF33">8</font>
+/<font color="#33FF33"> 5</font> (green factor)</font></font>
+<br><font face="Arial,Helvetica"><font size=-1><font color="#33FF33">6</font>
+/ <font color="#33FF33">9</font> (blue factor)</font></font>
+<br>&nbsp;
+<p><b><u><font face="Arial,Helvetica"><font color="#FFFFFF"><font size=+1>The
+camera</font></font></font></u></b>
+<p><font face="Arial,Helvetica"><font size=-1>You can watch the action
+from many different perspectives. The default Camera position is right
+in the cockpit of your craft, which is the only perspective that offers
+the dashboard with its gauges. If playing seriously, you&acute;ll spend
+most of your time here.</font></font>
+<p><font face="Arial,Helvetica"><font size=-1>You can switch to other perspectives
+with keys 1-7 on the main keyboard cluster as follows</font></font></center>
+
+<p><br>
+<center><table COLS=2 WIDTH="500" >
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Stillcam
+(fix Cam at its current position)</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>1</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Flyby-cam</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>2</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Cockpit-cam</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>3
+(default)</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Behind-cam</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>4</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Freecam
+(adjustable)</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>5</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Freecam:
+zoom in/out</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>9
+/ 0</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Freecam:
+rotate view</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>o
+/ p</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Top-cam</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>6</font></font></font></td>
+</tr>
+
+<tr>
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>Bottom-cam</font></font></font></td>
+
+<td><font face="Arial,Helvetica"><font color="#33FF33"><font size=-1>7</font></font></font></td>
+</tr>
+</table></center>
+
+<center>
+<p><font face="Arial,Helvetica"><font size=-1>Additionally, you can also
+view the currently selected target craft (see Combat) from any of the above
+perspectives except the Cockpit view. To <font color="#33FF33">switch</font>
+the <font color="#33FF33">Camera position</font> to your current <font color="#33FF33">target</font>,
+press
+<font color="#33FF33">8</font>, then select any Camera mode you wish.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>To get <font color="#33FF33">back
+to your own ship</font>, press<font color="#33FF33"> 8</font> again. Note
+that this is never done automatically, even if your selected target is
+destroyed.</font></font>
+<br>&nbsp;
+<br>&nbsp;
+<p><b><u><font face="Arial,Helvetica"><font color="#FFFFFF"><font size=+1>Combat</font></font></font></u></b>
+<p><font face="Arial,Helvetica"><font size=-1>All ships are equipped with
+a number of weapon hardpoints that can be fitted with different armory.</font></font>
+<p><font face="Arial,Helvetica"><font size=-1>To <font color="#33FF33">fire</font>
+a weapon, press <font color="#33FF33">Space</font></font></font>
+<p><font face="Arial,Helvetica"><font size=-1>To <font color="#33FF33">cycle</font>
+through your available <font color="#33FF33">weapons</font>, press <font color="#33FF33">Tab</font></font></font>
+<br>&nbsp;
+<p><font face="Arial,Helvetica"><font size=-1>You are encouraged to use
+your targeting system to gather information about your enemies.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>Press <font color="#33FF33">x</font>
+repeatedly to <font color="#33FF33">target</font> all possible objects
+you might want to shoot. Note your left display will switch to Target info
+mode automatically.</font></font>
+<br><font face="Arial,Helvetica"><font size=-1>Press <font color="#33FF33">c</font>
+to <font color="#33FF33">untarget</font> your current target. This will
+also put your left display into map mode.</font></font>
+<p><font face="Arial,Helvetica"><font size=-1>Your current target will
+be surrounded by a red box.</font></font>
+<br>&nbsp;
+<br>&nbsp;
+<p><b><u><font face="Arial,Helvetica"><font color="#FFFFFF"><font size=+1>Hints</font></font></font></u></b>
+<p><font face="Arial,Helvetica"><font size=-1>Head-to-head encounters with
+enemies are a very bad combating technique as you will most likely take
+a lot of hits. A good technique would be to approach an enemy from the
+side, the stick close to his rear when he tries to get away.</font></font>
+<p><font face="Arial,Helvetica"><font size=-1>Targeting selects the closest
+object first, then continues to cycle through the objects at increasing
+distance. If you have a nasty enemy right in your face and seem to be unable
+to target it quickly, hit c to untarget, then x, which will begin with
+the closest target again.</font></font>
+<p><font face="Arial,Helvetica"><font size=-1>Make use of your missiles
+- that's what they are for</font></font>
+<br>&nbsp;
+<br>&nbsp;
+<p><b><u><font face="Arial,Helvetica"><font color="#FFFFFF"><font size=+1>Cheatcodes</font></font></font></u></b>
+<p><font face="Arial,Helvetica"><font size=-1>There are a number of cheatcodes
+in Possible Worlds to make life for the developers easier. The codes are
+still in the game, but using such a code once in a mission means you cannot
+successfully complete this mission.</font></font>
+<p><font face="Arial,Helvetica"><font size=-1>To activate / deactivate
+the codes hold down the following keys while playing:</font></font>
+<p><font face="Arial,Helvetica"><font size=-1><font color="#33FF33">G</font>
++ <font color="#33FF33">O</font> + <font color="#33FF33">D</font>: God
+mode</font></font>
+<br><font face="Arial,Helvetica"><font size=-1><font color="#33FF33">N</font>
++ <font color="#33FF33">R</font> + <font color="#33FF33">G</font>: full
+energy</font></font>
+<br><font face="Arial,Helvetica"><font size=-1><font color="#33FF33">F</font>
++ <font color="#33FF33">I</font> + <font color="#33FF33">N</font>: completes
+the mission</font></font>
+<br><font face="Arial,Helvetica"><font size=-1><font color="#33FF33">t</font>
++ <font color="#33FF33">r </font>+ <font color="#33FF33">g</font>: allows
+you to target ALL objects of the current mission, not only nearby ones</font></font></center>
+
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

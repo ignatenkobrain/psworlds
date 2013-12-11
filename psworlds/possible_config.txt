@@ -1,0 +1,36 @@
+# 		config file for
+#
+#      P O S S I B L E   W O R L D S
+#      =============================
+#
+#       by Gerwin Sturm & Eike Umlauf
+#
+#
+# Set your desired Screen Resolution and Color Depth here!
+# Recommended modes are:
+#                           640x480, 16bit
+#                           640x480, 24bit
+#                           800x600, 16bit
+#                           800x600, 24bit
+#                          1024x768, 16bit
+#                          1024x768, 24bit
+#
+# change this to your desired width
+800
+#
+# here is the height
+600
+#
+# color depth
+24
+#
+# decide if you want fullscreen. 0 is windowed, any other value fullscreen
+1
+#
+# number of available missions.
+4
+#
+# enable y/z keyboard hack. if you seem to be unable to decelerate the ship, set this
+# to 1, else to 0.
+0
+#

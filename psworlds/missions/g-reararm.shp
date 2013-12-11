@@ -1,0 +1,5 @@
+#file g-reararm.obj
+#name REARARM
+#swap 2 1 0
+#normals 1 1 -1
+

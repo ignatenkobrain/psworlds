@@ -1,0 +1,12 @@
+#file dropship.obj
+#name KDX_125_BROADLINER
+#speed 90.0 15.0
+#mass 140
+#energy 300
+#swap 2 1 0
+#normals 1 -1 1
+#num_headlights 3
+#light 6.0 -6.7 -45.0 -15.0 0.0 0.0 80.0 250.0 0.6 2
+#light 0.0 8.2 -16.3 -90.0 0.0 0.0 15.0 50.0 0.35 2
+#light 0.0 8.2 6.8 -90.0 0.0 0.0 15.0 50.0 0.35 2
+

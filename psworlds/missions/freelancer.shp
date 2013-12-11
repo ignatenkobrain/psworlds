@@ -1,0 +1,11 @@
+#file ship2.obj
+#name X-23_FREELANCER
+#speed 140.0 50.0
+#mass 10
+#energy 250
+#normals -1 1 -1
+#num_weapons 1
+#num_headlights 2
+#weapon 4 MACHINEGUN 1 w1.obj -40.0 0.0 0.0 40.0 0.0 0.0 300.0 0.0 5.0 10 -1 2.0
+#light -8.0 1.0 -3.0 0.0 0.0 0.0 70.0 200.0 0.7 2
+#light 8.0 1.0 -3.0 -15.0 -25.0 0.0 60.0 400.0 0.7 2

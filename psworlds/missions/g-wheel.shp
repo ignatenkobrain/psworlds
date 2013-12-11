@@ -1,0 +1,6 @@
+#file g-wheel.obj
+#name GARZWEILER_SHOVEL
+#mass 300
+#energy 700
+#swap 1 0 2
+#normals 1 1 -1

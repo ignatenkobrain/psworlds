@@ -1,0 +1,549 @@
+							
+				POSSIBLE WORLDS  technical docs
+				===============================
+				 by Gerwin Sturm & Eike Umlauf
+
+
+				 http://possibleworlds.cjb.net
+
+
+
+Dieses File enthält Tech Info und sonstige Spezifikationen und Anmerkungen zum
+Projekt Possible Worlds.
+Neuerungen seit der 2ten Abgabe sind mit **NEU** markiert
+
+
+						Inhalt
+						------
+								
+						* Install
+						* Config
+						* Game Info
+						* Was ihr probieren solltet **NEU**
+						* Hardware
+						* Software
+						* Verwendete Libraries
+						* Portability
+						* Tech Info
+						* Sonstiges
+						* Vorschau
+						* Known Bugs
+
+
+
+
+						Install:
+						========
+
+Einfach das Zip-File in einem beliebigen Verzeichnis entpacken, der Verzeichnisbaum wird
+vom Zip-File selbständig gebildet.
+Vor dem ersten Start sollte das Config-File (siehe unten) angepasst werden.
+Zum Starten "psworlds.exe" ausführen, bzw. unter linux "./psworlds-linux" in der shell.
+
+Zum Spielen unter Linux wird weiters benötigt:
+
+* Die SDL Runtime Library (www.libsdl.org)
+* **NEU** Die fmod Runtime Library (www.fmod.org)
+
+
+						Config:
+						=======
+
+Konfigurationseinstellungen werden vom File "possible_config.txt" gelesen. Designed
+wurde für 800x600x24.
+Die Anzahl der maximal verfügbaren Missionen kann erweitert werden, falls der Spieler
+eigene Missionen hinzufügen möchte.
+**NEU** Genaue Spezifikationen zur Erstellung von Missions werden sich demnächst auf der offiziellen
+Projekthomepage finden.
+
+					
+						Game info:
+						==========
+
+Steuerung und anderes ist nachzulesen in den HTML-docs (index.html)
+
+**NEU** Die Entwicklungszeit betrug in etwa 4 Monate (3. März - 22.Juni), bei einer nicht zu knappen
+Anzahl an Arbeitsstunden ;)
+
+
+					Was Ihr probieren solltet:
+					==========================
+
+**NEU**
+							
+Für Assistenten, Übungsleiter & Tester:
+								
+Um auch wirklich alle maßgebenden Features im Spiel gesehen zu haben empfiehlt es sich, folgendes
+auszuprobieren / anzusehen:
+
+* HTML-Doku sichten (Machinery, Controls)
+* Config anpassen
+* Sound aufdrehen!!!!
+* Splashscreen reinziehen
+* Introsequenz anschaun
+* Spielstand 1-4 laden (entspricht fertig durchgespieltem Game, alle Missionen und Outro anwählbar)
+* Die Kameraperspektiven durchprobieren, Camera-Target binding testen.
+* Mit dem eigenen Headlight herumspielen und Objekte anleuchten 
+	(siehe auch Easteregg in der HTML-Doku -> Controls)
+* Wireframe-Modus testen (F1)
+* FPS-o-meter einschalten (F4)
+* Alle 3D-Objekte begutachten:
+	(spart Zeit: mit dem Cheatcode t+r+g lassen sich ALLE objekte einer mission targeten, egal 
+	wie weit sie entfernt sind. mit "8" kann man dann die Kamera dorthin und wieder zurück binden)
+	
+	Enfin Revetir (alle Missions, Player-Ship)
+	Cobra (alle Missions, Verbündeter)
+	Akira (alle Missions, Mutterschiff)
+	Protector One (alle Missions, Feind)
+	Freelancer (alle Missions, Feind)
+	Turret (Missions 1-3, Feind)
+	Broadliner (Mission 1,3,4, Feind)
+	Introspective (Mission 2,3,4, Feind)
+	Pareil (Mission 2,4, Feind)
+	Garzweiler Schaufelradbagger (Mission 1 (Waypoint 4), 3 (Waypoint 3), Feind)
+	Basis-Equipment (Mission 1,2,3) 
+	!! Alien-Relikt (Mission 3, Waypoint 3) !!
+	Atom-Uboot (Mission 4, Waypoint 1)
+	
+* Die Missionen zumindest mal im God-Mode spielen (siehe HTML-Doku, Controls)
+* Die große Unterwasserschlacht in Mission 4 spielen: 7 Verbündete VS 25 Gegner. ACTION!! (Waypoint 3)
+* Gegner-AI ein bisschen beobachten (Formationsflug in Mission 4)
+* Wellengang beobachten (Untiefen in Mission 4)
+* zweite Lichtquelle ansehen (Alien-Relikt, Mission 3, Waypoint 3)
+* PONG! spielen :) (Easteregg, siehe HTML-Doku -> Controls)
+* im Falle eines Falles helfen die Cheatcodes (siehe HTML-Doku -> Controls)
+* Outro ansehen (Spielstand 1-4 laden)
+* Credits sichten
+* begeistert sein ;)
+
+
+					Hardware:
+					=========
+
+Wir entwickeln auf 
+
+* P2 350Mhz, 128MB RAM, Voodoo2 12MB, Win98 SE / RedHat Linux 7.1
+* P2 500Mhz, 376MB RAM, GeForce2 MX, Win98 SE
+
+getestet auf
+
+* siehe oben
+* P3 866Mhz, 128MB RAM, ATI Rage, Win98 SE
+* Celeron 500MHz, 128MB RAM, Riva TNT2Ultra, Win2k / Red Hat Linux 7.1
+
+
+selbst auf der lahmeren Hardware ist die Framerate zufriedenstellend, im Schnitt etwa 18 FPS..
+Bei dem finalen Gemetzel in Mission 4 geht der 350er aber schon mal auf 8 oder 9 runter ;)
+
+
+					Software:
+					=========
+
+* Microsoft Visual C++ 6.0
+* Adobe Photoshop 5
+* 3D Studio Max R3
+* Goldwave
+* ULead iPhoto Express
+* ModPlug Win32 MusicTracker
+* Blade mp3 Encoder
+
+plus Sony DSC-S50 DigiCam
+
+
+
+					Verwendete Libraries:
+					=====================
+
+* OpenGL - no na
+* GLU - nur für Mipmap generation
+* GLut - für gar nichts, aber ohne beschwert sich der compiler..
+* SDL - Simple Direct Media Layer, Cross-plattform kompatible Library für Video, Audio
+		und Control Devices. Wir verwenden SDL statt GLUT, um den Framebuffer zu initialisieren,
+		da die GameMode() funktion der GLUT nicht mit Voodoo-Karten richtig funktioniert.
+		Sehr nützlich ist die Timing-Funktionalität, die Plattformunabhängig die Microticks
+		liefert.
+		Weiters erlaubt SDL mit seiner Keyboard-Polling Funktionalität eine elegantere
+		Form der Keyboardabfrage als die GLUT. 
+		Ursrpünglich wollten wir SDL auch für Audio einsetzen, was jedoch zugunsten von SEAL,
+		die ja auch modules abspielen kann, verworfen wurde. SEAL funktionierte aber leider
+		unter Linux nicht besonders gut, weshalb jetzt FMOD verwendet wird.
+* fmod - Die wohl beste freie Soundlibrary momentan: Extrem schnell und mächtig, setzt unter
+		Win32 auf DirectSound auf, unter Linux auf OSS o.ä. Spielt nicht nur Waves und jedes
+		erdenkliche Modulformat, sondern auch mp3s!
+		Die gesamte Soundausgabe wurde deshalb noch kurz vor der endgültgen Release von SEAL
+		auf FMOD geportet.
+		
+
+					Portability:
+					============
+
+Possible Worlds kompiliert und läuft OHNE JEGLICHE CODEÄNDERUNG auch unter Linux!! Das Makefile
+befindet sich im Verzeichnis mit den Sourcen, ein fertiges Linux-binary im bin-Verzeichnis.
+
+
+
+					Tech Info:
+					==========
+										
+
+* Framework
+-----------
+Possible Worlds ist zu 85% objektorientiert, mit effizienter Objekthierarchie und ausgeklügeltem
+Lebensdauer- und State-System, das einfaches aussortieren von "toten" Objekten und reibungslosen
+Ablauf ermöglicht.
+
+* Lineare Listen
+----------------
+für grafische Objekte aller Art verwenden wir 4 lineare Listen, für Models, für Partikel,
+sowie für Weapon Trails und Bitmap Objekte.
+
+* Kamera
+--------
+Wir haben ein Kameramodell entworfen, das nicht nur beliebige Positionierung und Perspektiven
+erlaubt, sondern auch an jedes beliebige Objekt gebunden werden kann - das heißt man kann problemlos
+auch Gegnern über die Schulter sehen, etc. (momentan ist aber immer der Player gebunden)
+
+**NEU** Target-binding wurde nun eingebaut, die Kamera kann an jedes beliebige Objekt gebunden
+werden und dort jede Kameraposition verwendet werden. Wird das Zielobjekt zerstört, sucht sich
+die Kamera einen netten Platz in der Nähe, um die Action von dort zu beobachten und bleibt dort,
+bis sie wieder ans Player-Schiff zurückgeholt oder die Mission beendet wird.
+
+
+* Matrizen
+----------
+Da das freie Rotieren aller Objekte um alle Achsen nur unter zuhilfenahme der openGL-Funktionen
+etwas kompliziert ist, haben wir eigene Matrix-Operationen implementiert. Das war sowieso
+erforderlich, da wir bestimmte Punkte an den Objekten extra rotieren müssen (weapon hardpoints),
+punkte für Bounding Box Collision.
+
+* Meeresboden
+-------------
+Der Meeresboden wird aus einem 8bit-PCX Image generiert, das beliebig groß sein darf und als
+Heightmap interpretiert wird, d.h. jedes Pixel entspricht einem Vertex, je 4 vertices definieren
+zwei Triangles. Für jeden Vertex wird weiters der interpolierte Normalvektor der angrenzenden
+Triangles berechnet, sodaß der Meeresboden smooth geshaded werden kann.
+
+Derart gemappte Vertex / Normal - Daten sind natürlich ideal für Vertex Array drawing, man
+stößt dabei aber auf Probleme mit dem Texturing: da jeder inner Vertex für 6 Triangles gilt,
+müßte man jeden Vertex 6 mal abspeichern, um auf einen grünen Zweig zu kommen.
+Deshalb ist Array drawing als Default deaktiviert, man kann (nichttexturiertes) Array drawing
+mit F3 aktivieren. (Crasht angeblich auf ATI karten) (DEPRECTAED) Interessanterweise ergibt sich 
+dadurch trotz fehlendem Texturing absolut kein Geschwindigkeitsunterschied.
+
+**NEU** Geplant waren auch Kaustiken (Riffeleffekte auf allen Objekten knapp unter der
+Wasseroberfläche. Windows wird aber mit OpenGL 1.1 ausgeliefert, das kein Multitexturing
+unterstützt, und für meine Voodoo2 war kein aktuellerer Treiber mehr zu bekommen. Deshalb
+leider nicht implementiert.
+
+* Modelle
+---------
+Sämtliche Modelle wurden in 3D Studio erstellt und mit Materialien versehen. Um die exportierten
+ASE-files in ein eleganteres (und kleineres) Format zu bekommen, haben wir einen Converter
+programmiert, der die benötigten Werte in ein Binärfile (.obj) schreibt.
+Modelle werden im Spiel in jeweils einer Displaylist gespeichert.
+
+**NEU** um bei transparenten Texturen richtige Darstellung zu erzielen, wird der Alpha-Test
+mit GL_GREATER, 0.5 eingeschaltet.
+
+
+* Sound
+-------
+
+**NEU** 
+Für den Soundoutput verwenden wir FMOD. Für Soundeffekte sind 32 Software-kanäle reserviert,
+die Soundeffekt erhalten jeweils eine Priorität sodaß ein Sample "gekickt" werden kann, wenn
+kein freier Kanal erhältlich ist, aber ein hochpriorer Effekt gespielt werden soll.
+Die Ingame-Musik besteht aus MOD-Modulen bzw. aus mp3s.
+Die Walgesänge werden im Schnitt alle 2 Minuten in Clustern zufälliger Länge abgespielt und sind
+schlichtweg für mehr Atmosphäre - es befinden sich KEINE Wal-Modelle im Spiel, stundenlanges
+Suchen lohnt also nicht ;)
+
+Die Lautstärke ist abhängig von der Distanz zum Kameraobjekt.
+
+Die Samples haben wir großteils per Minidisc-Recorder aus dem The Abyss-Trailer oder per Gamefile-
+herumhacken mit Goldwave gerippt. Die Walgesänge sind von einigen Seiten aus dem Internet gesaugt,
+und auch ein paar alte Samples von alten Amiga-Spielen haben wir zusammengetragen. Alle Samples
+wurden dann nochmal in Goldwave überarbeitet und resampled.
+
+* Cockpit
+---------
+Schöne Cockpits schaffen Convenience :) Das in Possible Worlds verwendete braucht als Photoshop-
+File 50 Layers (das ist die maximalanzahl) und kommt am schönsten in 24-bit Farbtiefe rüber.
+Die 3 Displays und der künstliche Horizont geben genug Info, um komplett nach Instrumenten
+fahren zu können.
+Da OpenGL-textures immer 2^n x 2^n groß sein müssen, ist das Cockpit auf 3 256x256 und einen 
+32x256 part gesplittet worden. Bei Auflösungen außer 800x600 (das ist die Größe, für die das
+Cockpit designed wurde) sieht man daher auf manchen Grafikkarten kleine Fugen im Cockpit, stört
+aber nicht weiter. Das Cockpit besteht also einfach aus Quads, auf die die jeweilige Textur
+gemappt werden.
+
+Die Minimap im linken Display ist eine 256x256 textur, die vom Programm aus der PCX-heightmap
+erzeugt wird. Das einzige Problem ist, daß die Minimap umso ungenauer wird, je größer die 
+Ausdehnung der Landschaft ist. Bis zu Größen von 512x512 ist das aber komplett vernachlässigbar.
+
+Der Radar bedient sich des alten Elite-Prinzips (siehe Spec) und verwendet glScissor!
+
+Die Displays selbst sind ebenfalls texturierte Quads, deren Alpha-value per Keyboard geändert
+werden kann. (siehe Docs)
+
+**NEU** Das Environment-Mapping auf den Cockpitstreben ist FAKE! Da das Cockpit als Overlay
+gezeichnet wird, also wenn der MatrixStack wieder leer ist, ist echtes Spheremapping nicht machbar
+ohne daß man die Kameratransformationen wiederholen würde. Deshalb wird anhand der Kamerawinkel
+mathematisch höchst unkorrektes Mapping erzeugt ;)
+
+**NEU** im pause-modus kann man am rechten display den klassiker PONG spielen. mehr dazu in der
+HTML-Doku.
+
+**NEU** das jeweils ausgesuchte target wird in wireframe-ansicht im linken display angezeigt
+
+
+* Fonts
+-------
+Es gibt 3 Schriftarten. Alle erlauben nur Großbuchstaben und die gebräuchlichen
+Sonderzeichen. Die Buchstaben wurden per Photoshop in einer bestimmten Reihenfolge einfach in ein
+TGA-file geschrieben (Reihung nach ASCII-Code, aber von unten nach oben). Das TGA wird dann
+eingelesen; eine Parse-routine sucht dann die Beginn und End-Koordinaten jeder textzeile. Innerhalb
+der Textzeilen wird dann noch vertikal "durchgestochen", um die schließlich für jeden Character
+die bounding x,y Koordinaten zu finden. Jeder Buchstabe kann dann ganz einfach auf ein Quad,
+das so groß ist wie der Buchstabe selbst, gemappt werden. 
+Im Gegensatz zu Routinen, bei denen die Buchstaben an vorgeschriebenen Positionen im File stehen
+(wie etwa bei NeHe.gamedev.net´s tutorial) hat dies den Vorteil daß die Font variable Breite 
+aufweist, was ein schöneres Schriftbild erzeugt. Das war die Wutanfälle beim Programmieren wert ;)
+
+Um Text auszugeben, existiert weiters eine wrapper-funktion, die den gewünschten Text samt
+Koordinaten in eine Lineare Liste stopft, die als allerletztes Element der Rendering-Pipeline
+abgearbeitet wird.
+So kann an jeder beliebigen Stelle im Code eine debugging-message ausgegeben werden!
+
+* Bitmaps
+---------
+Bitmaps werden für Explosionen und Staubwolken herangezogen und funktionieren wie die altgedienten
+3D-Sprites: Auf ein Quad wird eine beliebige Textur gemappt. das Quad wird immer so gedreht, daß es 
+genau senkrecht auf die Blickrichtung steht (Billboarding!)
+
+**NEU** Um zu vermeiden, diese semi-transparenten Polygone jedesmal nach ihrer Entfernung 
+sortieren zu müssen, folgender Workaround: Für Bitmaps wird einfach der Z-buffer auf read-only 
+geschaltet.
+
+
+* Weapon Trails
+---------------
+Simpler Trick, cooler Effekt: Jeder Schuss zieht ein Toblerone-geshaptes Quadgerüst hinter sich her,
+das von 1.0 auf 0.0 geblendet wird. Technisch gesehen bekommt jeder Schuß ein Trail-Objekt zugewiesen,
+das "released" (divorce()) wird wenn der Schuß zerstört wird und lebt dann noch eine Sekunde weiter 
+(und fadet komplett aus). Geringfügig anders verhält sich der Trail bei Missiles, dort ist der 
+Startpunkt des Trails nicht fix, sondern immer einige Units hinter dem Endpunkt.
+
+**NEU** auch hier wird der z-buffer auf read-only geschaltet, um Grafikfehler zu vermeiden.
+
+* Meeresoberfläche
+------------------
+**NEU** Ursprünglich war die Meeresoberfläche ein riesiges texturiertes Quad, das über der gesamten
+World lag. Aufgrund der Nebeleffekte führte das aber dazu, daß beim clipping die Eckpunkte den
+Alphawert 0 erhielten und keine Oberfläche mehr sichtbar war. glHINT(GL_FOG_NICEST) hätte das
+Problem lösen sollen, funktionierte aber nur auf Voodoo2-Karten. Deshalb folgender Trick:
+statt einem großen Quad nun vier kleine, die immer mit der Kamera mitbewegt werden. Der Nebel hat
+seltsamerweise auf ATI Karten nun überhaupt keinen Einfluß mehr auf diese Quads...
+
+
+**NEU** Lens Flares & Headlights
+--------------------------------
+Jedes Schiff kann per Mission Scripting mit bis zu 10 Headlights ausgerüstet werden, Licht 1 ist
+am Spieler-schiff sogar schwenkbar.
+Technisch ist das ganze ein wüster Kunstgriff:
+Während die Objekte gezeichnet werden, wird die aktuelle Modelview-Matrix gegrabbt und der
+Ursprungspunkt für jede Lichtquelle somit in Projektionskoordinaten gerechnet. Mithilfe von
+gluProject() wird nun festgestellt, wo dieser Ursprungspunkt, würde er denn gezeichnet werden,
+auf dem Bildschirm nun erscheine würde und das Ergebnis und die Projektionskoordinaten in eine
+lineare Liste eingetragen. Gleichzeitig wird ein hellblauer, halbtransparenter Lichtkegel
+(ein Polygon-konus) an der gewünschten Position gezeichnet.
+Sind die Welt und alle Objekte (inkl. Bitmaps und Trails) fertig gezeichnet, wird diese lineare
+Liste durchgegangen und an jedem Ursprungspunkt ein grellgelber Punkt gezeichnet. Grellgelb deshalb,
+da diese Farbe im ganzen Spiel (aufgrund der blauen Beleuchtung) nie vorkommen kann. Normalerweise
+wäre die Farbe egal und man würde einen Wert in den Stencilbuffer schreiben, aber die Voodoo2 hat
+leider keinen.
+Dann wird noch das Cockpit gezeichnet. Zuguter letzt wird obige lineare Liste noch einmal
+durchgegangen. Aufgrund der mit gluProject() berechneten Bildschirmkoordinaten kann man nun eine
+sehr präzise Aussage machen, wo der jeweilige gelbe Punkt sein sollte und macht je einen 9-pixel
+readaccess in den Framebuffer. Findet sich ein grellgelbes Pixel, liegt der Lichtquellen-ursprung
+sichtbar und man kann nun einen blendeffekt darüberzeichnen (ein texturiertes Quad) dessen Größe 
+abhängig von der zuvor berechneten Distanz zur Kamera ist. Andernfalls ist die Lichtquelle offenbar
+von einem anderen Objekt verdeckt (zbuffer sei dank!) und es wird kein Blendeffekt gezeichnet.
+Sichtbar wird der Gelbpixel-Hack z.b. wenn man eine Lichtquelle mit einem Cokcpit display verdeckt,
+dann kann man den gelben Punkt beobachten.
+
+
+* Fog & Light
+-------------
+Es gibt normalerweise genau eine direktionale Lichtquelle, die mit variabler Farbe strahlt.
+Die Fog & Clear - Color, sowie die Lichtcolors werden je nach Tauchtiefe angepasst. In 4000m Tiefe
+sieht man nicht mehr besonders viel, knapp unter der Meeresoberfläche ists dafür angenehm hell.
+
+**NEU** Jedem Objekt kann außerdem noch eine punktförmige Lichtquelle angebunden werden. Dies macht
+nur in seltenen Fällen Sinn, wie z.b. das giftgrün der Alien-Station in Mission3, sieht dann
+aber umso besser aus.
+
+**NEU** Das Spielerschiff verfügt nicht nur über ein Headlight sondern über ein echtes openGL
+Spotlight. Das macht das navigieren in großen Tiefen erheblich einfacher, jedoch sieht die
+Beleuchtung aufgrund der relativ groben Tesselierung des Meeresbodens nicht immer perfekt aus.
+Damit sollte man aber leben können :)
+
+* Partikel
+----------
+Die kleinen blauen herumschwirrenden Punkte sind Schwebepartikel. Diese werden einfach in eine
+lineare Liste eingetragen und dann als glPoints transformiert und gezeichnet. Um die Anzahl der
+benötigten Partikel zu reduzieren, werden neu generierte immer entlang der negativen x-Achse,
+also direkt vor der "echten" Kamera positioniert, und dann mit unseren selbstprogrammierten 
+Matrixoperationen so rotiert, daß die Startkoordinaten direkt vor dem Kameramodell liegen. So ist
+selbst bei wilden Schwenks oder Perspektivenwechsel der Bildschirm immer gut bevölkert.
+
+* Collision Detection
+---------------------
+Für die Kollisionsabfrage mit dem Meeresboden wird einfach die Höhe des Objekts über dem Meeresboden
+berechnet und wenn das Objekt zu niedrig ist wird es unter Energieverlust vom Boden zurückgestossen.
+Für die Kollisionsabfrage zwischen Objekten wird zunächst ein einfacher schneller Boundingsphere-Test
+durchgeführt und danach wenn nötig ein Boundingbox-Test für höhere Genauigkeit.
+Bei Kollisionen wird man entsprechend momentaner Geschwindigkeit und Richtung zurückgestossen und die
+beteiligten Objekte werden für kurz Zeit gut durchgeschüttelt.
+Die Kollisionsabfragen sind so implementiert, dass jede mögliche Paarung von Objekten nur einmal
+überprüft wird, wodurch ein erheblicher Rechenaufwand verhindert wird.
+
+**NEU** Die Reaktion auf Kollisionen wurde soweit verbessert, dass es jetzt fast nicht möglich ist
+irgendwo hängenzubleiben. Bei einer Kollision werden die beiden Objekte abhängig von ihrer Masse
+und Größe auf eine gewissen Mindestdistanz (abhängig von bounding sphere) voneinander gesetzt.
+
+* AI
+----
+Die AI funktioniert nach dem folgenden einfachen Prinzip:
+	- suche ein gegnerisches Ziel
+	- lenke in Richtung des Ziels
+	- feuere wenn das Ziel in Schussweite ist
+	- weiche Hindernissen so gut wie möglich aus
+Des weiteren gibt es für Objekte auch vorgegebene Pfade (durch Waypoints festgelegt), denen sie
+mangels eines Gegners folgen.
+
+**NEU** Das Angriffsverhalten der AI wurde bedeutend verbessert. Anstatt stur dem Gegner
+nachzufliegen erfolgt der Angriff jetzt in zwei Phasen.
+1. Phase: Angriff und feuern bis man ausweichen muss.
+2. Phase: Ausweichen, etwas zurückziehen und wieder auf den Feind Kurs nehmen.
+Dadurch wurde das Spiel sehr stark verbessert, da man jetzt nicht mehr rückwärts fliegen muss,
+um Feinde erwischen zu können. Das Gameplay erlaubt nun richtig gute Fights ähnlich Wing Commander 1.
+
+**NEU** Menüs
+-------------
+Die Menüs basieren auf einer Vater-Kind Struktur, jedes Menü kann weiter Submenus spawnen, die
+dann den Fokus erhalten. Besonders hübsch sind sie nicht geworden, wirklich technisch elegant
+wurde die Umsetzung dann auch nicht ganz, aber es funktioniert zumindest einwandfrei ;)
+
+**NEU** Splashscreen, Intro, Outro, Credits
+-------------------------------------------
+Pure Spielerei.
+Alle 4 haben ihre eigene Grafikpipeline, die abgekapselt vom Rest des Spiels durchlaufen wird.
+Nebenbei bemerkt war es verdammt viel Arbeit, die Grafiken für Intro und Outro aus dem
+Internet zusammenzurecherchieren und -retuschieren ;)
+Der Schrift- und Hintergrund-beameffekt in den Credits wird einfach per Scale-Matrizen realisiert.
+
+
+					Sonstiges:
+					==========
+
+* 	Das Spiel legt bei jedem Start ein Logfile (log.txt) an, das den Startvorgang mitloggt. Nützlich,
+	falls das Ding aus irgendeinem Grund abreiben sollte.
+	
+*	Zwecks Optimierung verwenden wir für Distanzberechnungen eine Pythagoras-approximation:
+	sqrt(a^2+b^2) entspricht: größere var - (kleinere var/4). siehe fastdist2(), fastdist3().
+	Das reicht eigentlich für alle Fälle locker aus und gibt GAS!
+	**NEU** obiger Algrorithmus ist zwar recht nett, liefert aber für einige Konstellationen
+	völlig falsche Werte. Deshalb wurde auf die normale Pythagoras-Formel zurückgegriffen,
+	interessanterweise ohne merklichen Speedverlust.
+	
+*	Entfernung, Tiefe und Druck sind nicht frei erfunden sondern anhand von Annahmen über die 
+	Größe der Schiffe errechnet: eine openGL-Unit sind laut der PI*Daumen - Formel 0.27m.
+	Weiters sind 10m wassertiefe 1 bar, 20m 2 bar usw.
+	All das ergibt die Höchstgeschwindigkeit von über 100 Knoten (~180 km/h). Unrealistisch, 
+	aber exakt ;)
+
+
+
+					Vorschau:
+					=========
+
+**NEU**
+		
+Folgende Liste beinhaltet die bis zur dritten Abgabe angedachten Features.
+Doch nicht implementierte sind mit DEPRECATED gekennzeichnet.
+
+*	Abschluß des Mission Scriptings: Voll durchgeplante Missionen mit Mission Objectives
+	DONE
+	
+*	Streng geniale AI: momentan sind die Gegner noch nicht allzu schlau. Aber auf WingCommander-
+	Niveau werden wirs schon schaffen ;)
+	DONE
+	
+*	Mehr Objekte: Garzweiler-Bagger, Unterwasserbasis, Atom-U-Boot, etc.
+	DONE
+	
+*	Textures auf den Objekten: Piece of cake
+	Zwar doch kein Piece of Cake, aber DONE ;)
+	
+*	Menüs: Mission select, Craft select, Hauptmenü...
+	Craft select DEPRECATED, sonst DONE.
+
+*	Intro
+	Oh ja...Und wir packen noch einen Splashscreen, ein Outro und Credits obendrauf. DONE!!!!!!
+
+*	Visual FX: Lens Flares, ev. Partikel Systeme. Cool wären Kaustiken, das HowTo verwirrt mich
+	aber noch ein wenig
+	Lens Flares DONE!!!
+	Kaustiken technisch Null Problem, aber leider keine Zeit mehr.. Außerdem wird Windows doch
+	tatsächlich noch mit OpenGL 1.1 ausgeliefert, das kein Multitexturing erlaubt!!! also DEPRECATED
+	
+	Weiters: Camera-capsule: Blick nach oben hin ist heller, nach unten hin dunkler.
+	DONE. Nicht 100%ig der gewünschte Effekt, aber leichter zu orientieren. Sieht auf Voodoo-Karten
+	nicht besonders gut aus aufgrund des schlechten Ditherings.
+	
+	Suchscheinwerfer an den Schiffen
+	DONE. Der Schscheinwerfer vom Player ist sogar eine echte Lichtquelle (Spotlight).
+	
+	evtl. einzelne Lichtstrahlen im seichten Wasser
+	DEPRECATED. hätte wohl eher strange ausgesehen
+	
+	vereinzelte punkt-Lichtquellen
+	DONE, aber nur sehr spärlich eingesetzt (z.b. beim Alien-Relikt in Mission 3)
+	
+*	Meeresboden verschönern, vielleicht ein paar Pflanzen und abwechslungsreichere Texturen
+	DEPRECATED. Ab 800m Tiefe wachsen keine Pflanzen mehr, hätte wohl auch ein bisschen
+	uninspiriert ausgesehen.
+	Abwechslungsreichere texturen wären schön, aber leider drängt die Zeit schon...
+	
+*	Feintuning
+	Sollte alles passen DONE
+	
+*	Debugging :)
+	Gröbere Bugs fallen mir keine mehr ein DONE
+	
+
+
+					Known Bugs:
+					===========
+
+* 	man sollte nicht versuchen, in seichtem Wasser "an Land zu gehen", indem man das Ufer
+	hinauffährt. Man bleibt zwar nur kurz hängen, aber der Effekt ist unerwünscht und wird noch
+	behoben
+	
+*	In sehr seltenen Fällen erscheint beim Starten des Spiels nur ein schwarzer Bildschirm.
+	Dies ist ein Bug der SDL-Lib. Ein Reboot läßt sich meistens folgendermaßen vermeiden:
+	1) Windows-Taste drücken
+	2) Aus dem Startmenü den Visual Studio Prozessviewer starten.
+	3) psworlds.exe abschießen!
+	4) nochmal starten. Eine eventuell verstellte Bildschirmauflösung wird nach Beendung
+	   des Programms automatisch korrigiert
+
+*	SDL scheint unter manchen Windows-Versionen in seltenen Fällen beim Beenden des Spiels
+	einen Systemhänger hervorzurufen (nur bei Fullscreen). Unter Win2k haben wir das jedoch
+	noch nicht erlebt
+
+
+
+(C) Eike Umlauf & Gerwin Sturm
+	Last changes 22-06-2001

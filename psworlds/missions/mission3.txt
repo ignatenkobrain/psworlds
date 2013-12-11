@@ -1,0 +1,596 @@
+DISCOVERY
+
+#pausemenu 1
+
+#map map5.pcx 45.0 15000.0 400.0 12200.0 5.0 90.0
+
+
+// player
+
+#model 1 7
+	#file enfin_revertir.shp
+	#position 10500.0 11800.0 1600.0
+	//#position 8920.0 200.0 13200.0
+	#orientation 0.0 115.0 0.0
+	#enemystatus 1
+#end_model
+
+#alienlight
+	#object 1
+	#bind_to_headlight
+	#ambient 0.0 0.0 0.0 0.0
+	#diffuse 0.5 0.7 1.0 1.0
+	#specular 0.5 0.7 1.0 1.0
+	#attenuation 0.00003
+#end_alienlight
+
+// akira
+
+#model 2 8
+	#file baseship.shp
+	#position 10200.0 12000.0 1600.0
+	#orientation 0.0 160.0 0.0
+	#enemystatus 1
+#end_model
+
+// 2 cobras
+
+#model 3 8
+	#file cobra.shp
+	#position 10400.0 11850.0 1580.0
+	#orientation 0.0 -160.0 0.0
+	#enemystatus 1
+#end_model
+
+#model 4 8
+	#file cobra.shp
+	#position 10450.0 11800.0 1620.0
+	#orientation 0.0 -164.0 0.0
+	#enemystatus 1
+#end_model
+
+
+
+// ---------- enemy base ------------
+
+// 5 turrets first
+
+// turret 1
+#model 10 5
+	#file turret.shp
+	#position 5200.0 10935.0 6100.0
+	#orientation 0.0 10.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 11 6
+	#file turret_head.shp
+	#position 5200.0 10965.0 6100.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+#end_model
+
+// turret 2
+#model 12 5
+	#file turret.shp
+	#position 5600.0 10935.0 6040.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 13 6
+	#file turret_head.shp
+	#position 5600.0 10965.0 6040.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+#end_model
+
+// turret 3
+#model 14 5
+	#file turret.shp
+	#position 5580.0 10935.0 5570.0
+	#orientation 0.0 250.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 15 6
+	#file turret_head.shp
+	#position 5580.0 10965.0 5570.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+#end_model
+
+// turret 4
+#model 16 5
+	#file turret.shp
+	#position 5260.0 10935.0 5620.0
+	#orientation 0.0 150.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 17 6
+	#file turret_head.shp
+	#position 5260.0 10965.0 5620.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+#end_model
+
+// turret 5
+#model 18 5
+	#file turret.shp
+	#position 5460.0 10935.0 5820.0
+	#orientation 0.0 50.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 19 6
+	#file turret_head.shp
+	#position 5460.0 10965.0 5820.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+#end_model
+
+// defending protector and freelancer
+
+#model 20 8
+	#file protector.shp
+	#position 5650.0 11200.0 5920.0
+	#orientation 0.0 170.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 21 8
+	#file freelancer.shp
+	#position 5600.0 11200.0 5840.0
+	#orientation 0.0 170.0 0.0
+	#enemystatus 2
+#end_model
+
+
+// communication antennae
+
+#model 22 5
+	#file antenna.shp
+	#position 5300.0 10935.0 5900.0
+	#orientation 0.0 -30.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 23 5
+	#file antenna.shp
+	#position 5500.0 10935.0 5660.0
+	#orientation 0.0 140.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 24 5
+	#file antenna.shp
+	#position 5600.0 10935.0 5920.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+
+// divers
+
+#model 25 5
+	#file diver.shp
+	#position 5570.0 10935.0 5920.0
+	#orientation 0.0 80.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 26 5
+	#file diver.shp
+	#position 5570.0 10935.0 5910.0
+	#orientation 0.0 -90.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 27 5
+	#file diver.shp
+	#position 5310.0 10935.0 5870.0
+	#orientation 0.0 -60.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 28 5
+	#file diver.shp
+	#position 5450.0 10935.0 6070.0
+	#orientation 0.0 -176.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 29 5
+	#file diver.shp
+	#position 5420.0 10935.0 6074.0
+	#orientation 0.0 173.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 30 5
+	#file diver.shp
+	#position 5400.0 10935.0 6080.0
+	#orientation 0.0 -6.0 0.0
+	#enemystatus 0
+#end_model
+
+// 6 lights
+
+#model 81 5
+	#file light.shp
+	#position 5230.0 10935.0 6120.0
+	#orientation -290.0 0.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 82 5
+	#file light.shp
+	#position 5238.0 10935.0 6120.0
+	#orientation -230.0 0.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 83 5
+	#file light.shp
+	#position 5305.0 10935.0 6120.0
+	#orientation -290.0 0.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 84 5
+	#file light.shp
+	#position 5313.0 10935.0 6120.0
+	#orientation -230.0 0.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 85 5
+	#file light.shp
+	#position 5380.0 10935.0 6120.0
+	#orientation -290.0 0.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 86 5
+	#file light.shp
+	#position 5388.0 10935.0 6120.0
+	#orientation -230.0 0.0 0.0
+	#enemystatus 0
+#end_model
+
+
+
+
+// ----- base buildings
+
+#model 70 5
+	#file hangar.shp
+	#position 5370.0 10935.0 5900.0
+	#orientation 0.0 180.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 71 5
+	#file hangar.shp
+	#position 5440.0 10935.0 5900.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 72 5
+	#file hangar.shp
+	#position 5510.0 10935.0 5900.0
+	#orientation 0.0 180.0 0.0
+	#enemystatus 2
+#end_model
+
+// base fuel tanks
+
+#model 73 5
+	#file tank.shp
+	#position 5380.0 10935.0 5700.0
+	#orientation 0.0 180.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 74 5
+	#file tank.shp
+	#position 5440.0 10935.0 5700.0
+	#orientation 0.0 180.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 75 5
+	#file tank.shp
+	#position 5500.0 10935.0 5700.0
+	#orientation 0.0 180.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 76 5
+	#file tank.shp
+	#position 5560.0 10935.0 5700.0
+	#orientation 0.0 180.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 77 5
+	#file tank.shp
+	#position 5390.0 10935.0 5730.0
+	#orientation 0.0 180.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 78 5
+	#file tank.shp
+	#position 5450.0 10935.0 5730.0
+	#orientation 0.0 180.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 79 5
+	#file tank.shp
+	#position 5510.0 10935.0 5730.0
+	#orientation 0.0 180.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 80 5
+	#file tank.shp
+	#position 5570.0 10935.0 5730.0
+	#orientation 0.0 180.0 0.0
+	#enemystatus 2
+#end_model
+
+
+// ------ incoming transport
+
+#model 35 8
+	#file broadliner.shp
+	#position 2800.0 11400.0 14650.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+#end_model
+
+// plus escort
+
+#model 31 8
+	#file introspective.shp
+	#position 2740.0 11400.0 14600.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+	#speed 90.0 45.0
+#end_model
+
+#model 32 8
+	#file introspective.shp
+	#position 2690.0 11500.0 14600.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+	#speed 90.0 45.0
+#end_model
+
+#model 33 8
+	#file introspective.shp
+	#position 2910.0 11400.0 14600.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+	#speed 90.0 45.0
+#end_model
+
+#model 34 8
+	#file introspective.shp
+	#position 2960.0 11500.0 14600.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+	#speed 90.0 45.0
+#end_model
+
+
+// convoy waypoint
+
+#model 200 9
+	#name w7
+	#position 5500.0 11000.0 5800.0
+	#end_point
+#end_model
+
+
+
+// -------- ESS site ------------
+
+// ESS
+
+#model 50 5
+	#file ess.shp
+	#position 8920.0 0.0 13200.0
+	#orientation 0.0 10.0 0.0
+	#enemystatus 1
+#end_model
+
+#alienlight
+	#object 50
+	#position 0.0 50.0 0.0
+	#ambient 0.0 0.0 0.0 0.0
+	#diffuse 0.1 0.9 0.0 1.0
+	#specular 0.14 0.8 0.3 1.0
+	#attenuation 0.00001
+#end_alienlight
+
+// huge garzweiler
+
+#model 56 5
+	#file g-wheel.shp
+	#position 8900.0 0.0 12700.0
+	#orientation 0.0 -170.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 57 5
+	#file g-frontarm.shp
+	#position 8900.0 0.0 12700.0
+	#orientation 0.0 -170.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 58 5
+	#file g-main.shp
+	#position 8900.0 0.0 12700.0
+	#orientation 0.0 -170.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 59 5
+	#file g-tower1.shp
+	#position 8900.0 0.0 12700.0
+	#orientation 0.0 -170.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 60 5
+	#file g-tower2.shp
+	#position 8900.0 0.0 12700.0
+	#orientation 0.0 -170.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 61 5
+	#file g-reararm.shp
+	#position 8900.0 0.0 12700.0
+	#orientation 0.0 -170.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 62 5
+	#file g-sidearm.shp
+	#position 8900.0 0.0 12700.0
+	#orientation 0.0 -170.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 63 5
+	#file g-second.shp
+	#position 8900.0 0.0 12700.0
+	#orientation 0.0 -170.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 64 5
+	#file g-tower3.shp
+	#position 8900.0 0.0 12700.0
+	#orientation 0.0 -170.0 0.0
+	#enemystatus 2
+#end_model
+
+
+// ------ final wing of freelancers -----
+
+#model 87 8
+	#file freelancer.shp
+	#position 12080.0 3600.0 8600.0
+	#orientation 0.0 90.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 88 8
+	#file freelancer.shp
+	#position 12080.0 3550.0 8620.0
+	#orientation 0.0 85.0 0.0
+	#enemystatus 2
+#end_model
+
+
+
+// ---- player waypoints -------
+
+#model 100 9
+	#name w1
+	#position 5400.0 11100.0 5500.0
+#end_model
+
+#model 101 9
+	#name w2
+	#position 5360.0 1800.0 9520.0
+#end_model
+
+#model 102 9
+	#name w3
+	#position 9200.0 400.0 12800.0
+#end_model
+
+#model 103 9
+	#name w4
+	#position 12800.0 900.0 10400.0
+#end_model
+
+#model 104 9
+	#name w5
+	#position 10500.0 12000.0 1700.0
+	#end_point
+#end_model
+
+
+
+
+// -------- paths ----------
+
+// player
+#pathlist 1 5 104 103 102 101 100
+// 2 cobras
+#pathlist 3 1 100
+#pathlist 4 1 100
+// convoy
+#pathlist 35 1 200
+#pathlist 31 1 200
+#pathlist 32 1 200
+#pathlist 33 1 200
+#pathlist 34 1 200
+//
+// -------- targets ---------
+// cobras
+#targetlist 3 11 22 23 24 31 32 33 34 10 19 11 13 15 17 20 21
+#targetlist 4 11 22 23 24 31 32 33 34 10 19 15 11 13 17 21 20
+//
+// base turrets
+#targetlist 11 3 1 3 4
+#targetlist 13 3 3 4 1
+#targetlist 15 3 3 4 1
+#targetlist 17 3 4 1 3
+#targetlist 19 3 4 3 1
+// base ships
+#targetlist 20 3 4 3 1
+#targetlist 21 3 3 4 1
+// convoy ships
+#targetlist 31 3 4 3 1
+#targetlist 32 3 3 4 1
+#targetlist 33 3 4 1 3
+#targetlist 34 3 3 4 1
+// freelancer wing
+#targetlist 87 1 1
+#targetlist 88 1 1
+
+// mission objectives
+
+#num_goals 5
+#goal
+	#shorttext DESTROY COMMS SYSTEMS
+	#destroy 3 22 23 24
+#end_goal
+#goal
+	#shorttext DESTROY TRANSPORTER CONVOY
+	#destroy 1 35
+#end_goal
+#goal
+	#shorttext SABOTAGE ENEMY EXCAVATIONS
+	#destroy 1 56
+#end_goal
+#goal
+	#shorttext SEARCH FOR E.S.S.
+	#reach 1 1 102
+	#save 1 50
+#end_goal
+#goal
+	#save 1 2
+	#shorttext PROTECT AKIRA FROM ENEMIES
+#end_goal

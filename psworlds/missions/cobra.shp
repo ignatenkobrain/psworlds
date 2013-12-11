@@ -1,0 +1,9 @@
+#file cobra.obj
+#name AX-10_COBRA
+#speed 200.0 50.0
+#mass 10
+#energy 500
+#normals 1 -1 1
+#num_weapons 1
+#num_headlights 0
+#weapon 4 MACHINEGUN 1 w1.obj -40.0 0.0 0.0 40.0 0.0 0.0 300.0 0.0 5.0 10 -1 2.0

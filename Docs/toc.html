@@ -1,0 +1,75 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Eike Umlauf">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en]C-CCK-MCD snapN45b1  (Win98; I) [Netscape]">
+   <title>Possible Worlds</title>
+<script LANGAUGE="JavaScript">
+
+        
+                function act(imgName) 
+                {
+                        document[imgName].src = eval(imgName + "down.src");
+                }       
+                
+                function inact(imgName) 
+                {
+                        document[imgName].src = eval(imgName + "up.src");
+                }
+                
+                function push(imgName) 
+                {
+                        document[imgName].src = eval(imgName + "push.src");
+                }
+                
+                
+                var homeup = new Image();
+                var homedown = new Image();
+                homeup.src = "homeup.jpg";
+                homedown.src = "homedn.jpg";   
+        
+        		var aboutup = new Image();
+                var aboutdown = new Image();
+                aboutup.src = "aboutup.jpg";
+                aboutdown.src = "aboutdn.jpg";   
+        
+        		var storyup = new Image();
+                var storydown = new Image();
+                storyup.src = "storyup.jpg";
+               	storydown.src = "storydn.jpg";   
+                
+                var shipsup = new Image();
+                var shipsdown = new Image();
+                shipsup.src = "machineryup.jpg";
+                shipsdown.src = "machinerydn.jpg";   
+        
+        		var contup = new Image();
+                var contdown = new Image();
+                contup.src = "controlsup.jpg";
+                contdown.src = "controlsdn.jpg";  
+               
+                var lup = new Image();
+                var ldown = new Image();
+                lup.src = "linksup.jpg";
+                ldown.src = "linksdn.jpg"; 
+               
+
+	</script>
+</head>
+<body text="#CCCCCC" bgcolor="#042C57" link="#FF9900" vlink="#663366" alink="#FF0000">
+
+<center><img SRC="pwsmall.jpg" height=55 width=200>
+
+<br>&nbsp;
+<p><a href="psworlds.html" target="main" onMouseon="push('home'); return true" onMouseOver="act('home'); return true" onMouseOut="inact('home'); return true"><img SRC="homeup.jpg" NAME="home" BORDER=0 ></a>
+<a href="about.html" target="main" onMouseon="push('about'); return true" onMouseOver="act('about'); return true" onMouseOut="inact('about'); return true"><img SRC="aboutup.jpg" NAME="about" BORDER=0 ></a>
+<a href="story.html" target="main" onMouseon="push('story'); return true" onMouseOver="act('story'); return true" onMouseOut="inact('story'); return true"><img SRC="storyup.jpg" NAME="story" BORDER=0 height=40 width=200></a>
+<a href="controls.html" target="main" onMouseon="push('cont'); return true" onMouseOver="act('cont'); return true" onMouseOut="inact('cont'); return true"><img SRC="controlsup.jpg" NAME="cont" BORDER=0 height=40 width=200></a>
+<a href="ships.html" target="main" onMouseon="push('ships'); return true" onMouseOver="act('ships'); return true" onMouseOut="inact('ships'); return true"><img SRC="machineryup.jpg" NAME = "ships" BORDER=0 height=40 width=200></a>
+<a href="links.html" target="main" onMouseon="push('l'); return true" onMouseOver="act('l'); return true" onMouseOut="inact('l'); return true"><img SRC="linksup.jpg" NAME="l" BORDER=0 ></a>
+<br>&nbsp;
+
+
+</body>
+</html>

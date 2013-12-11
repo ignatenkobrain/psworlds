@@ -1,0 +1,10 @@
+#file introspective.obj
+#name S-14_INTROSPECTIVE
+#speed 170.0 45.0
+#mass 12
+#energy 300
+#swap 2 1 0
+#num_weapons 1
+#num_headlights 1
+#weapon 4 MACHINEGUN 1 w1.obj -90.0 -10.0 0.0 90.0 -10.0 0.0 300.0 0.0 5.0 10 -1 2.0
+#light 0.0 -2.5 -3.2 -15.0 0.0 0.0 55.0 170.0 0.5 2

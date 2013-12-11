@@ -1,0 +1,11 @@
+#file pareil.obj
+#name BOEING_B-5_PAREIL
+#speed 230.0 33.0
+#mass 15
+#energy 250
+#normals 0 2 1
+#normals 1 -1 1
+#num_weapons 1
+#num_headlights 1
+#weapon	13 TORPEDO 0 torpedo_pareil.obj 70.0 -30.0 -220.0 0.0 0.0 0.0 300.0 5.0 20.0 120 -1 0.2
+#light -10.0 -3.0 -19.0 -10.0 0.0 0.0 15.0 125.0 0.43 2

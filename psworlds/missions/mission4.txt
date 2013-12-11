@@ -1,0 +1,522 @@
+THE ESCAPE
+
+#pausemenu 1
+
+#map map6.pcx 20.0 5000.0 500.0 5000.0 5.0 90.0
+
+
+// player
+
+#model 1 7
+	#file enfin_revertir_strong.shp
+	#position 15000.0 4600.0 12930.0
+	#orientation 0.0 -72.0 0.0
+	#enemystatus 1
+#end_model
+
+#alienlight
+	#object 1
+	#bind_to_headlight
+	#ambient 0.0 0.0 0.0 0.0
+	#diffuse 0.5 0.7 1.0 1.0
+	#specular 0.5 0.7 1.0 1.0
+	#attenuation 0.00003
+#end_alienlight
+
+// akira
+
+#model 2 8
+	#file baseship.shp
+	#position 15500.0 4440.0 13000.0
+	#orientation 0.0 25.0 0.0
+	#enemystatus 1
+#end_model
+
+// --- UES strike force ---
+
+#model 3 8
+	#file cobra.shp
+	#position 15380.0 4500.0 12720.0
+	#orientation 0.0 90.0 0.0
+	#enemystatus 1
+	#energy 380
+#end_model
+
+#model 4 8
+	#file cobra.shp
+	#position 15400.0 4560.0 12800.0
+	#orientation 0.0 90.0 0.0
+	#enemystatus 1
+	#energy 380
+#end_model
+
+#model 5 8
+	#file cobra.shp
+	#position 15435.0 4500.0 12880.0
+	#orientation 0.0 90.0 0.0
+	#enemystatus 1
+	#energy 380
+#end_model
+
+#model 6 8
+	#file enfin_revertir.shp
+	#position 15390.0 4530.0 12680.0
+	#orientation 0.0 90.0 0.0
+	#enemystatus 1
+	#energy 340
+#end_model
+
+#model 7 8
+	#file enfin_revertir.shp
+	#position 15300.0 4490.0 12800.0
+	#orientation 0.0 90.0 0.0
+	#enemystatus 1
+	#energy 340
+#end_model
+
+#model 8 8
+	#file enfin_revertir.shp
+	#position 15390.0 4560.0 12920.0
+	#orientation 0.0 90.0 0.0
+	#enemystatus 1
+	#energy 340
+#end_model
+
+
+
+// ---------- typhoon wing -------
+
+#model 20 8
+	#file typhoon.shp
+	#position 10400.0 4800.0 6200.0
+	#orientation 0.0 -70.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 21 8
+	#file introspective.shp
+	#position 10600.0 4800.0 6050.0
+	#orientation 0.0 -70.0 0.0
+	#speed 150.0 40.0
+	#enemystatus 2
+#end_model
+
+#model 22 8
+	#file protector.shp
+	#position 10600.0 4800.0 6350.0
+	#orientation 0.0 -70.0 0.0
+	#speed 150.0 45.0
+	#enemystatus 2
+#end_model
+
+#model 23 8
+	#file protector.shp
+	#position 10800.0 4800.0 6200.0
+	#orientation 0.0 -70.0 0.0
+	#speed 150.0 45.0
+	#enemystatus 2
+#end_model
+
+
+// typhoon waypoints
+
+#model 200 9
+	#name w1
+	#position 12850.0 4650.0 6800.0
+#end_model
+
+#model 201 9
+	#name w2
+	#position 15600.0 4600.0 13000.0
+	#end_point
+#end_model
+
+
+// ----- first convoy --------
+
+// 2 transports
+
+#model 30 8
+	#file broadliner.shp
+	#position 5000.0 2500.0 1000.0
+	#orientation 0.0 -170.0 0.0
+	#speed 140.0 15.0
+	#enemystatus 2
+#end_model
+
+#model 31 8
+	#file broadliner.shp
+	#position 5000.0 2500.0 1170.0
+	#orientation 0.0 -170.0 0.0
+	#speed 140.0 15.0
+	#enemystatus 2
+#end_model
+
+#model 32 8
+	#file protector.shp
+	#position 4900.0 2560.0 1210.0
+	#orientation 0.0 -170.0 0.0
+	#speed 140.0 50.0
+	#enemystatus 2
+#end_model
+
+#model 33 8
+	#file protector.shp
+	#position 5100.0 2560.0 1210.0
+	#orientation 0.0 -170.0 0.0
+	#speed 140.0 50.0
+	#enemystatus 2
+#end_model
+
+#model 34 8
+	#file protector.shp
+	#position 4950.0 2480.0 1210.0
+	#orientation 0.0 -170.0 0.0
+	#speed 140.0 50.0
+	#enemystatus 2
+#end_model
+
+#model 35 8
+	#file protector.shp
+	#position 5050.0 2480.0 1270.0
+	#orientation 0.0 -170.0 0.0
+	#speed 140.0 50.0
+	#enemystatus 2
+#end_model
+
+#model 36 8
+	#file pareil2.shp
+	#position 4840.0 2530.0 1100.0
+	#orientation 0.0 -170.0 0.0
+	#speed 140.0 33.0
+	#enemystatus 2
+#end_model
+
+#model 37 8
+	#file pareil2.shp
+	#position 4840.0 2470.0 1050.0
+	#orientation 0.0 -170.0 0.0
+	#speed 140.0 33.0
+	#enemystatus 2
+#end_model
+
+#model 38 8
+	#file pareil2.shp
+	#position 5160.0 2530.0 1100.0
+	#orientation 0.0 -170.0 0.0
+	#speed 140.0 33.0
+	#enemystatus 2
+#end_model
+
+#model 39 8
+	#file pareil2.shp
+	#position 5160.0 2470.0 1050.0
+	#orientation 0.0 -170.0 0.0
+	#speed 140.0 33.0
+	#enemystatus 2
+#end_model
+
+
+// second convoy
+
+#model 40 8
+	#file broadliner.shp
+	#position 2150.0 2500.0 1000.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 15.0
+	#enemystatus 2
+#end_model
+
+#model 41 8
+	#file broadliner.shp
+	#position 2000.0 2500.0 1000.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 15.0
+	#enemystatus 2
+#end_model
+
+#model 42 8
+	#file broadliner.shp
+	#position 1810.0 2500.0 1000.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 15.0
+	#enemystatus 2
+#end_model
+
+// freelancer escort
+
+#model 43 8
+	#file freelancer.shp
+	#position 2300.0 2420.0 950.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 50.0
+	#enemystatus 2
+#end_model
+
+#model 44 8
+	#file freelancer.shp
+	#position 2330.0 2460.0 1000.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 50.0
+	#enemystatus 2
+#end_model
+
+#model 45 8
+	#file freelancer.shp
+	#position 2300.0 2420.0 1050.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 50.0
+	#enemystatus 2
+#end_model
+
+#model 46 8
+	#file freelancer.shp
+	#position 2050.0 2600.0 920.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 50.0
+	#enemystatus 2
+#end_model
+
+#model 47 8
+	#file freelancer.shp
+	#position 2050.0 2600.0 1080.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 50.0
+	#enemystatus 2
+#end_model
+
+// pareil escort
+
+#model 48 8
+	#file pareil2.shp
+	#position 1930.0 2600.0 930.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 33.0
+	#enemystatus 2
+#end_model
+
+#model 49 8
+	#file pareil2.shp
+	#position 1960.0 2480.0 910.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 33.0
+	#enemystatus 2
+#end_model
+
+#model 50 8
+	#file pareil2.shp
+	#position 1960.0 2480.0 1090.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 33.0
+	#enemystatus 2
+#end_model
+
+#model 51 8
+	#file pareil2.shp
+	#position 1930.0 2600.0 1070.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 33.0
+	#enemystatus 2
+#end_model
+
+// introspective escort
+
+#model 52 8
+	#file introspective.shp
+	#position 1800.0 2600.0 950.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 45.0
+	#enemystatus 2
+#end_model
+
+#model 53 8
+	#file introspective.shp
+	#position 1760.0 2400.0 950.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 45.0
+	#enemystatus 2
+#end_model
+
+#model 54 8
+	#file introspective.shp
+	#position 1760.0 2400.0 1050.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 45.0
+	#enemystatus 2
+#end_model
+
+#model 55 8
+	#file introspective.shp
+	#position 1800.0 2600.0 1050.0
+	#orientation 0.0 -90.0 0.0
+	#speed 140.0 45.0
+	#enemystatus 2
+#end_model
+
+
+// ---- player waypoints -------
+
+#model 100 9
+	#name w1
+	#position 14000.0 4200.0 8400.0
+#end_model
+
+#model 101 9
+	#name w2
+	#position 4800.0 2400.0 15200.0
+#end_model
+
+#model 102 9
+	#name w3
+	#position 4400.0 1380.0 14000.0
+#end_model
+
+#model 103 9
+	#name w4
+	#position 15000.0 4600.0 12930.0
+	#end_point
+#end_model
+
+// escort waypoints
+
+#model 105 9
+	#name w1
+	#position 11800.0 3800.0 12400.0
+#end_model
+
+#model 106 9
+	#name w2
+	#position 12000.0 3550.0 18600.0
+#end_model
+
+#model 107 9
+	#name w3
+	#position 4800.0 2500.0 16200.0
+#end_model
+
+#model 108 9
+	#name w4
+	#position 4000.0 1500.0 13500.0
+	#end_point
+#end_model
+
+// strike force waypoints
+
+#model 109 9
+	#name w5
+	#position 10000.0 4000.0 2000.0
+#end_model
+
+#model 110 9
+	#name w6
+	#position 5200.0 3000.0 4600.0
+#end_model
+
+#model 111 9
+	#name w6
+	#position 4100.0 1550.0 13100.0
+	#end_point
+#end_model
+
+
+
+// -------- paths ----------
+
+// player
+#pathlist 1 4 103 102 101 100
+// typhoon wing
+#pathlist 20 2 201 200
+#pathlist 21 2 201 200
+#pathlist 22 2 201 200
+#pathlist 23 2 201 200
+// UES strike
+#pathlist 3 4 108 107 106 105
+#pathlist 4 4 108 107 106 105
+#pathlist 5 4 108 107 106 105
+#pathlist 6 4 108 107 106 105
+#pathlist 7 4 108 107 106 105
+#pathlist 8 4 108 107 106 105
+// escort 1
+#pathlist 30 3 111 110 109
+#pathlist 31 3 111 110 109
+#pathlist 32 3 108 110 109
+#pathlist 33 3 108 110 109
+#pathlist 34 3 108 110 109
+#pathlist 35 3 108 110 109
+#pathlist 36 3 108 110 109
+#pathlist 37 3 108 110 109
+#pathlist 38 3 108 110 109
+#pathlist 39 3 108 110 109
+#pathlist 40 3 111 110 109
+#pathlist 41 3 111 110 109
+#pathlist 42 3 111 110 109
+#pathlist 43 3 108 110 109
+#pathlist 44 3 108 110 109
+#pathlist 45 3 108 110 109
+#pathlist 46 3 108 110 109
+#pathlist 47 3 108 110 109
+#pathlist 48 3 108 110 109
+#pathlist 49 3 108 110 109
+#pathlist 50 3 108 110 109
+#pathlist 51 3 108 110 109
+#pathlist 52 3 108 110 109
+#pathlist 53 3 108 110 109
+#pathlist 54 3 108 110 109
+#pathlist 55 3 108 110 109
+//
+//
+// -------- targets ---------
+// typhoon
+#targetlist 20 1 2
+#targetlist 21 2 2 1
+#targetlist 22 2 2 1
+#targetlist 23 2 2 1
+// escort 1
+#targetlist 32 7 8 7 6 5 4 3 1
+#targetlist 33 7 5 3 6 7 1 8 3
+#targetlist 34 7 3 6 4 5 7 8 1
+#targetlist 35 7 3 8 7 6 5 4 1
+#targetlist 36 7 5 7 6 1 4 3 8
+#targetlist 37 7 5 6 4 1 3 7 8
+#targetlist 38 7 7 1 6 5 4 3 3
+#targetlist 39 7 8 7 4 5 6 3 1
+// escort 2
+#targetlist 55 7 8 7 6 5 4 3 1
+#targetlist 43 7 5 3 6 7 1 8 3
+#targetlist 44 7 3 6 4 5 7 8 1
+#targetlist 45 7 3 8 7 6 5 4 1
+#targetlist 46 7 5 7 6 1 4 3 8
+#targetlist 47 7 5 8 4 1 3 7 6
+#targetlist 48 7 7 1 6 5 4 3 3
+#targetlist 49 7 8 7 4 5 1 3 6
+#targetlist 50 7 8 7 1 5 4 3 6
+#targetlist 51 7 5 3 6 7 1 8 3
+#targetlist 52 7 3 6 4 5 7 8 1
+#targetlist 53 7 3 8 7 6 5 4 1
+#targetlist 54 7 5 7 6 1 4 3 8
+#targetlist 55 7 8 7 6 5 4 3 1
+// ues strike
+#targetlist 3 24 55 42 43 44 45 46 47 48 49 50 51 52 53 54 30 31 32 33 34 35 36 37 38 39
+#targetlist 4 24 55 54 53 52 50 51 42 44 46 48 43 45 47 49 35 36 37 38 39 34 33 32 31 30
+#targetlist 5 24 55 45 50 54 51 52 53 42 44 43 47 46 48 49 37 36 38 35 39 30 34 31 33 32
+#targetlist 6 24 55 42 43 44 45 46 47 48 49 50 51 52 53 54 33 39 34 38 30 31 32 35 37 38
+#targetlist 7 24 55 45 50 54 51 52 53 42 44 43 47 46 48 49 32 36 37 38 39 34 33 35 31 30
+#targetlist 8 24 55 34 45 50 54 51 52 53 42 44 43 47 46 48 49 31 32 33 30 35 36 37 38 39
+//
+
+
+// mission objectives
+
+#num_goals 3
+#goal
+	#shorttext DESTROY TYPHOON ATTACK SUB
+	#destroy 1 20
+#end_goal
+#goal
+	#shorttext PROTECT AKIRA
+	#save 1 2
+#end_goal
+#goal
+	#shorttext DESTROY TRANSPORTER CONVOY
+	#destroy 5 30 31 40 41 42
+#end_goal

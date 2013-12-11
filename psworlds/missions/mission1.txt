@@ -1,0 +1,468 @@
+ENTER THE ABYSS
+
+#pausemenu 1
+
+#map map3.pcx 10.0 2500.0 600.0 2500.0 3.0 70.0
+
+// player
+
+#model 1 7
+	#file enfin_revertir.shp
+	#position 3120.0 1250.0 12400.0
+	#orientation 0.0 80.0 0.0
+	#enemystatus 1
+	#energy 600
+#end_model
+
+#alienlight
+	#object 1
+	#bind_to_headlight
+	#ambient 0.0 0.0 0.0 0.0
+	#diffuse 0.5 0.7 1.0 1.0
+	#specular 0.5 0.7 1.0 1.0
+	#attenuation 0.00003
+#end_alienlight
+
+// player waypoints
+
+#model 2 9
+	#name w1
+	#position 5600.0 1600.0 7800.0
+#end_model
+
+#model 3 9
+	#name w2
+	#position 11500.0 500.0 10400.0
+#end_model
+
+#model 4 9
+	#name w3
+	#position 11200.0 1600.0 4800.0
+#end_model
+
+#model 5 9
+	#name w4
+	#position 5600.0 1700.0 2400.0
+#end_model
+
+#model 40 9
+	#name w5
+	#position 3120.0 1250.0 12400.0
+	#end_point
+#end_model
+
+
+
+// base defense craft
+
+#model 15 8
+	#file cobra.shp
+	#position 2710.0 1310.0 12500.0
+	#orientation 0.0 -40.0 0.0
+	#enemystatus 1
+#end_model
+
+#model 16 8
+	#file cobra.shp
+	#position 2783.0 1330.0 12590.0
+	#orientation 0.0 -15.0 0.0
+	#enemystatus 1
+#end_model
+
+#model 17 8
+	#file enfin_revertir.shp
+	#position 3800.0 1500.0 11200.0
+	#orientation 0.0 80.0 0.0
+	#enemystatus 1
+#end_model
+
+// base defense craft waypoints
+
+#model 18 9
+	#name w1
+	#position 2400.0 1800.0 10600.0
+#end_model
+
+#model 19 9
+	#name w1
+	#position 1200.0 1200.0 12800.0
+#end_model
+
+#model 20 9
+	#name w1
+	#position 4400.0 1200.0 13200.0
+#end_model
+
+
+// base lights
+
+#model 21 5
+	#file light.shp
+	#position 2800.0 1230.0 12320.0
+	#orientation -40.0 45.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 22 5
+	#file light.shp
+	#position 2950.0 1230.0 12320.0
+	#orientation -40.0 -45.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 23 5
+	#file light.shp
+	#position 2950.0 1220.0 12500.0
+	#orientation 40.0 -45.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 24 5
+	#file light.shp
+	#position 2800.0 1220.0 12500.0
+	#orientation 40.0 45.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 45 5
+	#file light3.shp
+	#position 2600.0 1520.0 11800.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 0
+#end_model
+
+
+// base divers
+
+#model 25 5
+	#file diver.shp
+	#position 2830.0 1220.0 12450
+	#orientation 0.0 -80.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 26 5
+	#file diver.shp
+	#position 2900.0 1230.0 12310
+	#orientation 0.0 150.0 0.0
+	#enemystatus 0
+#end_model
+
+// baseship
+
+#model 45 5
+	#file baseship.shp
+	#position 2910.0 1400.0 12300.0
+	#orientation 0.0 60.0 0.0
+	#enemystatus 1
+#end_model
+
+// first wing of enemies, at waypoint 1
+
+#model 27 8
+	#file protector.shp
+	#position 5400.0 1400.0 7200.0
+	#orientation 0.0 142.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 28 8
+	#file protector.shp
+	#position 5500.0 1460.0 7100.0
+	#orientation 0.0 -2.0 0.0
+	#enemystatus 2
+#end_model
+
+// enemy at second waypoint, travelling thru the abyss
+
+#model 29 8
+	#file freelancer.shp
+	#position 9800.0 750.0 7060.0
+	#orientation 0.0 -90.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 30 9
+	#name w1
+	#position 9820.0 700.0 7050.0
+#end_model
+
+
+// enemy base at waypoint 3
+// 2 turrets
+
+#model 31 5
+	#file turret.shp
+	#position 11400.0 1450.0 5400.0
+	#orientation 0.0 50.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 32 6
+	#file turret_head.shp
+	#position 11400.0 1480.0 5400.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+	#energy 80
+#end_model
+
+#model 33 5
+	#file turret.shp
+	#position 10800.0 1480.0 5000.0
+	#orientation 0.0 -120.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 34 6
+	#file turret_head.shp
+	#position 10800.0 1510.0 5000.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+	#energy 80
+#end_model
+
+// 3 protectors
+
+#model 35 8
+	#file protector.shp
+	#position 11000.0 1500.0 5100.0
+	#orientation 0.0 70.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 36 8
+	#file protector.shp
+	#position 11070.0 1505.0 5080.0
+	#orientation 0.0 73.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 37 8
+	#file protector.shp
+	#position 10070.0 1530.0 5130.0
+	#orientation 0.0 65.0 0.0
+	#enemystatus 2
+#end_model
+
+// 2 divers
+
+#model 38 5
+	#file diver.shp
+	#position 11010.0 1480.0 5090
+	#orientation 0.0 -80.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 39 5
+	#file diver.shp
+	#position 11020.0 1480.0 5105
+	#orientation 0.0 30.0 0.0
+	#enemystatus 0
+#end_model
+
+// 1 light beamer
+
+#model 44 5
+	#file light2.shp
+	#position 11000.0 1480.0 5050.0
+	#orientation 60.0 45.0 0.0
+	#enemystatus 0
+#end_model
+
+// comms tower
+
+#model 46 5
+	#file antenna.shp
+	#position 10900.0 1480.0 5150.0
+	#orientation 0.0 20.0 0.0
+	#enemystatus 2
+#end_model
+
+// 2 fuel tanks
+
+#model 47 5
+	#file tank.shp
+	#position 10950.0 1480.0 5210.0
+	#orientation 0.0 -30.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 48 5
+	#file tank.shp
+	#position 10970.0 1480.0 5185.0
+	#orientation 0.0 -30.0 0.0
+	#enemystatus 2
+#end_model
+
+// base building
+
+#model 49 5
+	#file hangar.shp
+	#position 11025.0 1480.0 5235.0
+	#orientation 0.0 -23.0 0.0
+	#enemystatus 2
+#end_model
+
+// dropship
+
+#model 50 5
+	#file broadliner.shp
+	#position 11200.0 1550.0 5060.0
+	#orientation 0.0 155.0 0.0
+	#enemytstaus 2
+#end_model
+
+
+// garzweiler at waypoint 4
+
+// huge garzweiler
+
+#model 6 5
+	#file g-wheel.shp
+	#position 6420.0 1410.0 2140.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 7 5
+	#file g-frontarm.shp
+	#position 6420.0 1410.0 2140.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 8 5
+	#file g-main.shp
+	#position 6420.0 1410.0 2140.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 9 5
+	#file g-tower1.shp
+	#position 6420.0 1410.0 2140.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 10 5
+	#file g-tower2.shp
+	#position 6420.0 1410.0 2140.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 11 5
+	#file g-reararm.shp
+	#position 6420.0 1410.0 2140.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 12 5
+	#file g-sidearm.shp
+	#position 6420.0 1410.0 2140.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 13 5
+	#file g-second.shp
+	#position 6420.0 1410.0 2140.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 14 5
+	#file g-tower3.shp
+	#position 6420.0 1410.0 2140.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+// defending turret
+
+#model 41 5
+	#file turret.shp
+	#position 6400.0 1665.0 2800.0
+	#orientation 0.0 -220.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 42 6
+	#file turret_head.shp
+	#position 6400.0 1695.0 2800.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+	#energy 80
+#end_model
+ 
+
+// freelancer waiting on our way back home
+
+#model 43 8
+	#file freelancer.shp
+	#position 2950.0 1750.0 4600.0
+	#orientation 0.0 -90.0 0.0
+	#enemystatus 2
+#end_model
+
+
+
+
+// ------- targetlists --------
+
+// the two protectors at wp1
+#targetlist 27 4 15 16 17 1
+#targetlist 28 4 15 16 17 1
+
+// freelancer at wp2
+#targetlist 29 1 1
+
+// turrets at enemy base
+#targetlist 32 1 1
+#targetlist 34 1 1
+
+// solo protector at base
+#targetlist 37 1 1
+
+// turret near garzweiler
+#targetlist 42 1 1
+
+// final freelancer
+#targetlist 43 1 1
+
+
+// ------- waypoint-lists -------
+
+// player
+#pathlist 1 5 40 5 4 3 2
+
+// defence revetir
+#pathlist 17 3 20 19 18
+
+// freelancer at wp2
+#pathlist 29 2 30 3
+
+// protector at enemy base grabs player´s waypoint
+#pathlist 37 1 4
+
+// ------- mission goals -------
+
+#num_goals 4
+#goal
+	#destroy 2 27 28
+	#shorttext DESTROY ALL ENEMIES AT WP 1
+#end_goal
+#goal
+	#destroy 6 32 34 46 47 48 49
+	#shorttext DESTROY ENEMY BASE AT WP 3
+#end_goal
+#goal
+	#shorttext ANALYZE ENEMY ACTIVITY AT WP4
+	#reach 1 1 5
+#end_goal
+#goal
+	#save 1 45
+	#shorttext PROTECT AKIRA FROM ENEMIES
+#end_goal

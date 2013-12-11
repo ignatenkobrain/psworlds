@@ -1,0 +1,13 @@
+#file double.obj
+#name L3_ENFIN_REVETIR
+#speed 200.0 50.0
+#mass 11
+#energy 500
+#normals 1 1 -1
+#num_weapons 4
+#num_headlights 1
+#weapon 4 MACHINEGUN 1 w1.obj -40.0 0.0 0.0 40.0 0.0 0.0 300.0 0.0 5.0 10 -1 2.0
+#weapon	13 TORPEDO 0 torpedo_revetir.obj 120.0 -10.0 -70.0 0.0 0.0 0.0 300.0 5.0 20.0 70 15 1.0
+#weapon 3 HOMING_MISSILE 0 torpedo_revetir_homing.obj 0.0 -20.0 0.0 100.0 0.0 0.0 300.0 50.0 20.0 50 10 0.5
+#weapon 3 GUIDED_TORPEDO 0 torpedo_revetir_guided.obj 0.0 -20.0 0.0 100.0 0.0 0.0 300.0 50.0 20.0 70 10 0.5
+#light 14.5 -1.0 -6.0 -10.0 0.0 0.0 70.0 240.0 0.7 2

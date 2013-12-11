@@ -1,0 +1,114 @@
+			Compiling/Installing Possible Worlds
+
+
+General note:
+
+Possible Worlds is designed for SDL Version 1.2.0 and FMOD Version 3.33
+Since FMOD 3.33 isn't available at www.fmod.org anymore, all Version 3.33 files needed
+to compile and run are included in this distribution.
+www.libsdl.org keeps an archive of all older versions, so you shouldn't have any
+problems with getting version 1.2.0
+
+
+
+
+Windows 95/98/Me/NT/2k/XP
+=======================================================================
+
+you can either compile the game for yourself or just play the precompiled version.
+
+
+Playing the precompiled version
+-------------------------------
+
+1) download "psworlds-exe-win.zip" from the Possible Worlds download site and unzip.
+2) locate the file "/psworlds/psworlds.exe" and double-click it.
+
+
+
+Compiling Possible Worlds for Windows
+-------------------------------------
+
+1) download the SDL library from www.libsdl.org
+2) download GLUT from http://www.xmission.com/~nate/glut.html
+
+
+3) copy header files
+--------------------
+
+place the files
+
+fmod/inc/fmod.h
+fmod/inc/wincompat.h
+glut/glut.h
+
+in your compiler's include-dir, for Visual C++ 6.0 this is Devstudio/VC98/include
+
+create a sub-dir Devstudio/VC98/include/SDL and place all the files from SDL/include there
+
+
+4) copy libs
+------------
+
+place the files
+
+fmod/lib/fmodvc.lib
+SDL/lib/SDL.lib
+SDL/lib/SDLmain.lib
+glut/glut32.lib
+
+in your compiler's lib-dir, for Visual C++ 6.0 this is Devstudio/VC98/lib
+
+
+5) copy DLLs
+------------
+
+place the files
+
+fmod/fmod.dll
+SDL/lib/SDL.dll
+glut/glut32.dll
+
+in you windows system folder
+under win9x this should be C:\windows\System, under winNT/2k/XP C:\WINNT\System32
+
+
+6) compile
+----------
+
+open the project workspace psworlds.dsw and compile.
+the executable "psworlds.exe" will be placed in the parent directory (/psworlds)
+
+
+
+
+
+
+Linux / Unixish systems
+=========================================================================
+
+1) If you don't have it already, download the SDL library from www.libsdl.org 
+   (SDL development library package AND the Runtime libraries)
+   as far as i know, SDL installs its headers in a subdir named usr/include/SDL, if it
+   doesn't, please create the directory yourself and copy the headers there.
+2) download and install the MESA3D library (www.mesa3d.org), which is the linux openGL 
+   equivalent (mesa3d is included in most linux distributions and most likely already 
+   installed on your system)
+
+
+
+3) compile & run
+----------------
+
+enter directory psworlds/source and type "make", ignoring all warnings. 
+the binary "psworlds-linux" will be located in the parent directory (/psworlds)
+start the game there by launching the shell script ./psworlds-run.sh 
+(thx to Mika Boström)
+
+
+
+
+Eike Umlauf
+possibleworlds@eik.at
+http://possibleworlds.cjb.net
+07-03-2002

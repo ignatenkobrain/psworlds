@@ -1,0 +1,9 @@
+#file ship1.obj
+#name DF1_PROTECTOR_ONE
+#speed 150.0 50.0
+#mass 10
+#energy 150
+#num_weapons 1
+#num_headlights 1
+#weapon 4 MACHINEGUN 1 w1.obj -40.0 0.0 0.0 40.0 0.0 0.0 300.0 0.0 5.0 10 -1 2.0
+#light 7.0 1.6 1.7 -15.0 0.0 0.0 9.0 25.0 0.64 1

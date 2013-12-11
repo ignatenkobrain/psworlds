@@ -1,0 +1,8 @@
+#file turrethead1.obj
+#name DEFENCE_TURRET
+#energy 140
+#mass 10
+#speed 0.0 20.0
+#num_weapons 1
+#num_headlights 0
+#weapon 4 MACHINEGUN 0 w1.obj 0.0 0.0 0.0 0.0 0.0 0.0 300.0 0.0 5.0 20 -1 1.0

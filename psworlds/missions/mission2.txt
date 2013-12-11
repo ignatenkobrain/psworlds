@@ -1,0 +1,312 @@
+CRUISE CONTROL
+
+#pausemenu 1
+
+#map map4.pcx 10.0 3000.0 100.0 3000.0 3.0 70.0
+
+
+// player
+
+#model 1 7
+	#file enfin_revertir.shp
+	#position 1600.0 1630.0 1200.0
+	#orientation 0.0 -115.0 0.0
+	#enemystatus 1
+#end_model
+
+#alienlight
+	#object 1
+	#bind_to_headlight
+	#ambient 0.0 0.0 0.0 0.0
+	#diffuse 0.5 0.7 1.0 1.0
+	#specular 0.5 0.7 1.0 1.0
+	#attenuation 0.00003
+#end_alienlight
+
+// akira
+
+#model 2 8
+	#file baseship.shp
+	#position 1640.0 1450.0 1180.0
+	#orientation 0.0 160.0 0.0
+	#enemystatus 1
+#end_model
+
+// static escort
+
+#model 3 8
+#file enfin_revertir.shp
+	#position 1790.0 1590.0 1500.0
+	#orientation -20.0 -30.0 0.0
+	#enemystatus 1
+#end_model
+
+
+// ---- player waypoints -------
+
+#model 100 9
+	#name w1
+	#position 5400.0 960.0 4200.0
+#end_model
+
+#model 101 9
+	#name w2
+	#position 7000.0 800.0 8200.0
+#end_model
+
+#model 102 9
+	#name w3
+	#position 10000.0 670.0 9200.0
+#end_model
+
+#model 103 9
+	#name w4
+	#position 11000.0 250.0 11600.0
+#end_model
+
+#model 104 9
+	#name w5
+	#position 14600.0 630.0 13800.0
+	#end_point
+#end_model
+
+
+// --------- first wing of enemies ----------
+
+#model 10 8
+	#file introspective.shp
+	#position 5300.0 1020.0 3480.0
+	#orientation 0.0 90.0 0.0
+	#enemystatus 2
+	#energy 220
+#end_model
+
+#model 11 8
+	#file introspective.shp
+	#position 5300.0 1030.0 3530.0
+	#orientation 0.0 120.0 0.0
+	#enemystatus 2
+	#energy 220
+#end_model
+
+#model 12 8
+	#file protector.shp
+	#position 5850.0 1070.0 4000.0
+	#orientation 0.0 20.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 13 8
+	#file protector.shp
+	#position 5750.0 1090.0 4000.0
+	#orientation 0.0 20.0 0.0
+	#enemystatus 2
+#end_model
+
+
+
+// -------- fuel depot ---------
+
+
+// tanks
+
+#model 30 5
+	#file tank.shp
+	#position 7400.0 650.0 10000.0
+	#orientation 0.0 -30.0 0.0
+	#enemystatus 2
+#end_model
+
+
+#model 31 5
+	#file tank.shp
+	#position 7400.0 650.0 10040.0
+	#orientation 0.0 -30.0 0.0
+	#enemystatus 2
+#end_model
+
+
+#model 32 5
+	#file tank.shp
+	#position 7400.0 650.0 10080.0
+	#orientation 0.0 -30.0 0.0
+	#enemystatus 2
+#end_model
+
+
+#model 33 5
+	#file tank.shp
+	#position 7460.0 650.0 10000.0
+	#orientation 0.0 -30.0 0.0
+	#enemystatus 2
+#end_model
+
+
+#model 34 5
+	#file tank.shp
+	#position 7460.0 650.0 10040.0
+	#orientation 0.0 -30.0 0.0
+	#enemystatus 2
+#end_model
+
+
+#model 35 5
+	#file tank.shp
+	#position 7460.0 650.0 10080.0
+	#orientation 0.0 -30.0 0.0
+	#enemystatus 2
+#end_model
+
+// base building
+
+#model 36 5
+	#file hangar.shp
+	#position 7430.0 650.0 10120.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+#end_model
+
+
+// turret
+
+#model 38 5
+	#file turret.shp
+	#position 7230.0 650.0 9920.0
+	#orientation 0.0 190.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 39 6
+	#file turret_head.shp
+	#position 7230.0 680.0 9920.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+#end_model
+
+// turret2
+
+#model 40 5
+	#file turret.shp
+	#position 7570.0 650.0 10050.0
+	#orientation 0.0 190.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 41 6
+	#file turret_head.shp
+	#position 7570.0 680.0 10050.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 70 5
+	#file light.shp
+	#position 7082.0 710.0 9960.0
+	#orientation -120.0 -95.0 0.0
+	#enemystatus 0
+#end_model
+
+
+// ------ final wing of enemies -------
+
+#model 20 8
+	#file pareil.shp
+	#position 9800.0 270.0 11700.0
+	#orientation 0.0 -20.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 21 8
+	#file pareil.shp
+	#position 9860.0 280.0 11500.0
+	#orientation 0.0 -20.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 22 8
+	#file freelancer.shp
+	#position 10000.0 300.0 10800.0
+	#orientation 0.0 50.0 0.0
+	#enemystatus 2
+#end_model
+
+// waypoints for final wing
+
+#model 200 9
+	#name w1
+	#position 11200.0 260.0 10600.0
+#end_model
+#model 201 9
+	#name w2
+	#position 11000.0 260.0 11400.0
+#end_model
+#model 202 9
+	#name w3
+	#position 10100.0 260.0 11300.0
+#end_model
+
+
+// ----- 2 cobras at rendezvous point ----------
+
+#model 50 8
+	#file cobra.shp
+	#position 14600.0 650.0 13500.0
+	#orientation 0.0 120.0 0.0
+	#enemystatus 1
+#end_model
+
+#model 51 8
+	#file cobra.shp
+	#position 14550.0 640.0 13500.0
+	#orientation 0.0 120.0 0.0
+	#enemystatus 1
+#end_model
+
+
+
+	
+// ------- targets -------
+
+// fuel depot turrets
+#targetlist 39 1 1
+#targetlist 41 1 1
+
+// first enemy wing
+#targetlist 10 2 2 1
+#targetlist 11 2 1 2
+#targetlist 12 2 1 2
+#targetlist 13 2 2 1
+
+// final wing
+#targetlist 20 2 1 2
+#targetlist 21 2 1 2
+#targetlist 22 2 2 1
+
+// rendezvous cobras
+#targetlist 50 3 20 21 22
+#targetlist 51 3 20 21 22
+
+
+// -------- paths ----------
+
+// player
+#pathlist 1 5 104 103 102 101 100
+// akira
+#pathlist 2 5 104 103 102 101 100
+// final wing
+#pathlist 20 3 200 201 202
+#pathlist 21 3 200 201 202
+#pathlist 22 3 200 202 201
+
+// mission objectives
+
+#num_goals 2
+#goal
+	#destroy 7 30 31 32 33 34 35 36
+	#shorttext DESTROY FUEL DEPOT NEAR WP3
+#end_goal
+#goal
+	#save 1 2
+	#reach 2 1 104
+	#shorttext PROTECT & ESCORT MOTHERSHIP
+#end_goal

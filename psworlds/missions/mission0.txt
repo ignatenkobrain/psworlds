@@ -1,0 +1,260 @@
+DEMO
+
+#pausemenu 0
+#demo
+
+#map map3.pcx 10.0 2000.0 600.0 2000.0 3.0 70.0
+
+#model 15 8
+	#file protector.shp
+	#position 2710.0 1300.0 12500.0
+	#orientation 0.0 -40.0 0.0
+	#enemystatus 2
+	#energy 0
+#end_model
+
+#model 16 8
+	#file introspective.shp
+	#position 3383.0 1700.0 11690.0
+	#orientation 0.0 -15.0 0.0
+	#enemystatus 2
+	#energy 0
+#end_model
+
+#model 17 8
+	#file enfin_revertir.shp
+	#position 3120.0 1800.0 11200.0
+	#orientation 0.0 80.0 0.0
+	#enemystatus 1
+	#energy 0
+#end_model
+
+#model 1 8
+	#file cobra.shp
+	#position 2820.0 1400.0 12000.0
+	#orientation 0.0 80.0 0.0
+	#enemystatus 1
+	#energy 0
+#end_model
+
+#model 45 5
+	#file baseship.shp
+	#position 2910.0 1400.0 12300.0
+	#orientation 0.0 60.0 0.0
+	#enemystatus 1
+	#energy 0
+#end_model
+
+#model 55 8
+	#file pareil.shp
+	#position 4000.0 1900.0 9000.0
+	#orientation 0.0 160.0 0.0
+	#enemystatus 2
+	#energy 0
+#end_model
+
+#model 56 8
+	#file pareil.shp
+	#position 4070.0 1925.0 9020.0
+	#orientation 0.0 160.0 0.0
+	#enemystatus 2
+	#energy 0
+#end_model
+
+#model 57 8
+	#file cobra.shp
+	#position 1920.0 1900.0 10120.0
+	#orientation 0.0 -80.0 0.0
+	#enemystatus 1
+	#energy 0
+#end_model
+
+#model 58 8
+	#file cobra.shp
+	#position 1920.0 1900.0 9950.0
+	#orientation 0.0 -80.0 0.0
+	#enemystatus 1
+	#energy 0
+#end_model
+
+
+// base lights
+
+#model 21 5
+	#file light.shp
+	#position 2800.0 1230.0 12320.0
+	#orientation -40.0 45.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 22 5
+	#file light.shp
+	#position 2950.0 1230.0 12320.0
+	#orientation -40.0 -45.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 23 5
+	#file light.shp
+	#position 2950.0 1220.0 12500.0
+	#orientation 40.0 -45.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 24 5
+	#file light.shp
+	#position 2800.0 1220.0 12500.0
+	#orientation 40.0 45.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 145 5
+	#file light3.shp
+	#position 2600.0 1520.0 11800.0
+	#orientation 0.0 0.0 0.0
+	#enemystatus 0
+#end_model
+
+// excavator
+
+#model 6 5
+	#file g-wheel.shp
+	#position 3200.0 1220.0 12440.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 7 5
+	#file g-frontarm.shp
+	#position 3200.0 1220.0 12440.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 8 5
+	#file g-main.shp
+	#position 3200.0 1220.0 12440.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 9 5
+	#file g-tower1.shp
+	#position 3200.0 1220.0 12440.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 10 5
+	#file g-tower2.shp
+	#position 3200.0 1220.0 12440.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 11 5
+	#file g-reararm.shp
+	#position 3200.0 1220.0 12440.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 12 5
+	#file g-sidearm.shp
+	#position 3200.0 1220.0 12440.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#model 13 5
+	#file g-second.shp
+	#position 3200.0 1220.0 12440.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+#alienlight
+	#object 13
+	#position 0.0 200.0 0.0
+	#ambient 0.0 0.0 0.0 0.0
+	#diffuse 0.1 0.9 0.6 1.0
+	#specular 0.14 0.8 0.6 1.0
+	#attenuation 0.00002
+#end_alienlight
+
+#model 14 5
+	#file g-tower3.shp
+	#position 3200.0 1220.0 12440.0
+	#orientation 0.0 -130.0 0.0
+	#enemystatus 2
+#end_model
+
+
+// waypoints
+
+#model 60 9
+	#name w1
+	#position 3110.0 1300.0 11800.0
+#end_model
+
+#model 61 9
+	#name w2
+	#position 6450.0 1650.0 2000.0
+#end_model
+
+#model 62 9
+	#name w3
+	#position 10400.0 700.0 8000.0
+#end_model
+
+#model 63 9
+	#name w4
+	#position 2600.0 1400.0 10400.0
+#end_model
+
+#model 100 9
+	#name w5
+	#position 3150.0 1340.0 12250.0
+#end_model
+
+// base divers
+
+#model 25 5
+	#file diver.shp
+	#position 2830.0 1220.0 12450
+	#orientation 0.0 -80.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 26 5
+	#file diver.shp
+	#position 2900.0 1230.0 12310
+	#orientation 0.0 150.0 0.0
+	#enemystatus 0
+#end_model
+
+#model 64 8
+	#file freelancer.shp
+	#position 2850.0 1350.0 12700.0
+	#orientation 0.0 -80.0 0.0
+	#enemystatus 2
+	#energy 0
+#end_model
+
+
+#targetlist 1 3 15 16 100
+#targetlist 17 2 16 100
+#targetlist 15 3 17 1 100
+#targetlist 16 3 1 17 100
+#targetlist 57 2 55 56
+#targetlist 58 2 56 55
+//
+#pathlist 55 3 63 62 61
+#pathlist 56 3 63 62 61
+#pathlist 57 1 60
+#pathlist 58 1 60
+#pathlist 64 2 63 60
+#pathlist 15 1 100
+#pathlist 16 1 100
+#pathlist 17 1 100
+#pathlist 1 1 100
