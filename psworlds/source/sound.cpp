@@ -10,20 +10,13 @@
 
 #include "sound.h"
 #include "psworlds.h"
-
-
-#ifndef WIN32 // only necessary under non-windows system
-#include <wincompat.h>
-#endif
-
-#include <fmod.h>
-//#include <fmod_errors.h>
+#include "SDL_mixer.h"
 
 #define NUMSAMPLES 32
 
-FSOUND_SAMPLE* samples[NUMSAMPLES];
-FMUSIC_MODULE* module = NULL;
-FSOUND_STREAM* mp3 = NULL;
+Mix_Chunk* samples[NUMSAMPLES];
+Mix_Music* module = NULL;
+Mix_Music* mp3 = NULL;
 
 int enginechannel=-1;
 int engineused=0;
@@ -36,14 +29,11 @@ int initAudio(void)
 	// initialize the fmod Audio library
 	
 	write_log("Initializing Audio Device.. ");
-	
-	if(!FSOUND_Init(44100, 32, 0))
+	if(Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096))
 	{
-		write_log("Sound initalization failed!\n");
-		return -1;
+	    write_log("Sound initalization failed!\n");
+	    return -1;
 	}
-
-	
 	initnormalvoices();
 
     write_log("done!\n");
@@ -67,9 +57,8 @@ int loadmod(char *fname)
     _FBUF
 
 	xpath(fname);
-
-	FMUSIC_FreeSong(module);
-	module = FMUSIC_LoadSong(fname);
+    Mix_FreeMusic(module);
+	module = Mix_LoadMUS(fname);
 	if(module==NULL)
 		return -1;
 	
@@ -83,8 +72,8 @@ int loadmp3(char *fname)
 {
 	// load an mp3 stream
 	write_log("Loading mp3..");
-
-	mp3 = FSOUND_Stream_OpenFile(fname, FSOUND_2D, 0);
+    
+	mp3 = Mix_LoadMUS(fname);
 
 	if(mp3==NULL) return -1;
 	write_log("done!\n");
@@ -95,7 +84,7 @@ int loadmp3(char *fname)
 void playmp3(int vol)
 {
 	// start mp3 playback
-	mp3channel = FSOUND_Stream_Play(FSOUND_FREE, mp3);
+	mp3channel = Mix_PlayMusic(mp3,0);
 	setmp3vol(vol);
 }
 
@@ -103,8 +92,9 @@ void playmp3(int vol)
 void stopmp3()
 {
 	// stop and close mp3 stream
-	FSOUND_Stream_Stop(mp3);
-	FSOUND_Stream_Close(mp3);
+	Mix_HaltMusic();
+//	FSOUND_Stream_Stop(mp3);
+//	FSOUND_Stream_Close(mp3);
 	mp3channel=-1;
 }
 
@@ -112,7 +102,7 @@ void stopmp3()
 void setmp3vol(int vol)
 {
 	// adjust mp3 volume
-	FSOUND_SetVolume(mp3channel, vol);
+    Mix_VolumeMusic(vol);
 }
 
 
@@ -120,13 +110,13 @@ void setmp3vol(int vol)
 int playmod(void)
 {
 	// start playing the module
-	if(FMUSIC_IsPlaying(module))
+	if(Mix_PlayingMusic())
 		return 0;
 
 	write_log("Starting mod\n");
 	
 	setmodvol(255);
-	FMUSIC_PlaySong(module);
+	Mix_PlayMusic(module,0);
 
 	return 0;
 }
@@ -134,13 +124,13 @@ int playmod(void)
 
 void setmodvol(int vl)
 {
-	FMUSIC_SetMasterVolume(module, vl);
+    Mix_VolumeMusic(vl);
 }
 
 
 void fademusic(float fsp)
 {
-	float vl=FMUSIC_GetMasterVolume(module);
+	float vl=Mix_VolumeMusic(-1);
 	float faderate = vl/fsp;
 	float dur;
 	double ticks;
@@ -167,7 +157,8 @@ void stopmod()
 {
 	// stop playing
 	write_log("Stopping mod\n");
-	FMUSIC_StopSong(module);
+	Mix_HaltMusic();
+//	FMUSIC_StopSong(module);
 }
 
 
@@ -177,7 +168,7 @@ void stopAudio(int mode)
 	if(mode==0)
 		stopmod();	
 		
-	FSOUND_StopSound(FSOUND_ALL);
+//	FSOUND_StopSound(FSOUND_ALL);
 	floodchannel=-1;
 }
 
@@ -189,8 +180,8 @@ void killAudio(void)
 
     stopAudio(0);
 
-	FMUSIC_FreeSong(module);
-	FSOUND_Close();
+//	FMUSIC_FreeSong(module);
+//	FSOUND_Close();
 
     write_log("done!\n");
 }
@@ -204,13 +195,10 @@ void destroyvoices()
 
 void playsam(int samnum, int freq, int volume, int priority)
 {
-	int chann = FSOUND_PlaySound(FSOUND_FREE, samples[samnum]);
+	int chann = Mix_PlayChannel(-1, samples[samnum], 0);
 	if(chann>=0)
 	{
-		FSOUND_SetVolume(chann, volume);
-		FSOUND_SetFrequency(chann, freq);
-		FSOUND_SetPriority(chann, priority);
-
+	    Mix_Volume(chann, volume);
 		if(samnum==19) // if flood
 		{
 			floodchannel = chann;
@@ -226,13 +214,11 @@ void playengine(int samnum, int freq, int volume)
 	
 	if(enginechannel<0)
 	{
-		enginechannel = FSOUND_PlaySound(FSOUND_FREE, samples[samnum]);
+		enginechannel = Mix_PlayChannel(-1, samples[samnum], -1);
 	}
 	engineused=1;
 
-	FSOUND_SetFrequency(enginechannel, freq);
-	FSOUND_SetVolume(enginechannel, volume);
-
+    Mix_Volume(enginechannel, volume);
 }
 
 
@@ -244,7 +230,7 @@ void updateAudio(void)
 	{
 		if(enginechannel>-1) // but is still playing,
 		{
-			FSOUND_StopSound(enginechannel); // stop it
+		    Mix_HaltChannel(enginechannel);
 			enginechannel=-1;	// signal it´s not playing anymore
 		}
 	}
@@ -255,7 +241,7 @@ void updateAudio(void)
 
 void loadsam(char* buf, int n)
 {
-	samples[n] = FSOUND_Sample_Load(n, buf, FSOUND_NORMAL, 0);
+	samples[n] = Mix_LoadWAV(buf);
 }
 
 
@@ -267,8 +253,8 @@ void loadsampleset(void)
 
 	sprintf(buf,"sfx/engine1.wav"); xpath(buf); //ALoadWaveFile(buf, &sample[0], 0);
 	loadsam(buf,0);
-	FSOUND_Sample_SetLoopMode(samples[0], FSOUND_LOOP_NORMAL);
-	FSOUND_Sample_SetLoopPoints(samples[0], 0, FSOUND_Sample_GetLength(samples[0]));
+//	FSOUND_Sample_SetLoopMode(samples[0], FSOUND_LOOP_NORMAL);
+//	FSOUND_Sample_SetLoopPoints(samples[0], 0, FSOUND_Sample_GetLength(samples[0]));
 	sprintf(buf,"sfx/shipcrash16k.wav"); xpath(buf); //ALoadWaveFile(buf, &sample[1], 0);
 	loadsam(buf,1);
 	sprintf(buf,"sfx/floorcrash116k.wav"); xpath(buf); //ALoadWaveFile(buf, &sample[2], 0);
@@ -307,8 +293,8 @@ void loadsampleset(void)
 	loadsam(buf,18);
 	sprintf(buf,"sfx/crackandwater16k.wav"); xpath(buf); //ALoadWaveFile(buf, &sample[19], 0);
 	loadsam(buf,19);
-	FSOUND_Sample_SetLoopMode(samples[19], FSOUND_LOOP_NORMAL);
-	FSOUND_Sample_SetLoopPoints(samples[19], 10562, 21981);
+//	FSOUND_Sample_SetLoopMode(samples[19], FSOUND_LOOP_NORMAL);
+//	FSOUND_Sample_SetLoopPoints(samples[19], 10562, 21981);
 	sprintf(buf,"sfx/shred.wav"); xpath(buf); //ALoadWaveFile(buf, &sample[20], 0);
 	loadsam(buf,20);
 	sprintf(buf,"sfx/swoosh1.wav"); xpath(buf); //ALoadWaveFile(buf, &sample[21], 0);
@@ -332,8 +318,7 @@ void loadsampleset(void)
 void stoplooping()
 {
 	// stop looping sound, e.g. engine and flood
-
-	FSOUND_StopSound(enginechannel);
-	if(floodchannel>0) {FSOUND_StopSound(floodchannel); floodchannel=-1; }
+    Mix_HaltChannel(enginechannel);
+	if(floodchannel>0) {Mix_HaltChannel(floodchannel); floodchannel=-1; }
 }
 

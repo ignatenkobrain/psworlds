@@ -104,8 +104,8 @@ protected:
 
 	void freemem();							// releases all memory
 	void readbin(char* filename);			// read data from the binary file
-	void read_int(FILE* f,int *value);		// read a binary int
-	void read_sizet(FILE* f,size_t *value);	// read a binary unsigned int
+	void read_int(FILE* f,int32_t *value);		// read a binary int
+	void read_uint(FILE* f,uint32_t *value);	// read a binary unsigned int
 	void read_float(FILE* f,float *value);	// read a binary float
 	void read_char(FILE* f,char *value);	// read a binary char
 
