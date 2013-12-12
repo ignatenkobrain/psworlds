@@ -117,16 +117,16 @@ void model::create_matrices()
 
 
 // read a binary int
-void model::read_int(FILE* f,int *value)
+void model::read_int(FILE* f,int32_t *value)
 {
-	fread(value,sizeof(int),1,f);
+	fread(value,sizeof(int32_t),1,f);
 }
 
 
 // read a binary unsigned int
-void model::read_sizet(FILE* f,size_t *value)
+void model::read_uint(FILE* f,uint32_t *value)
 {
-	fread(value,sizeof(size_t),1,f);
+	fread(value,sizeof(uint32_t),1,f);
 }
 
 
@@ -148,8 +148,8 @@ void model::read_char(FILE* f,char *value)
 void model::readbin(char* filename)
 {
 	int i;
-	size_t len;
-	size_t j;
+	uint32_t len;
+	uint32_t j;
 	FILE *o;
 	
 	xpath(filename);
@@ -180,7 +180,7 @@ void model::readbin(char* filename)
 			read_float(o,&texture[i].vOffset);
 			read_int(o,&texture[i].env);
 			read_int(o,&texture[i].texmap);
-			read_sizet(o,&len);
+			read_uint(o,&len);
 			for(j=0;j<len;j++)
 			{
 				read_char(o,&texture[i].texName[j]);
