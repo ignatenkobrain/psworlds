@@ -11,7 +11,7 @@ CFLAGS := -DPLATFORM_LINUX  -c -o
 
 
 all: alienlight.o camera.o cockpit.o compass.o bitmap.o briefing.o building.o computer.o direct.o displaylistlist.o fighter.o fonts.o headlight.o homing.o intro.o matrices.o menu.o missile.o mission.o model.o object.o objectlist.o other.o outro.o particle.o player.o psworlds.o startscreen.o sound.o texturelist.o tgaloader.o torpedo.o trail.o turret.o utility.o waypoint.o world.o
-	gcc -o ../psworlds-linux alienlight.o camera.o cockpit.o compass.o bitmap.o briefing.o building.o computer.o direct.o displaylistlist.o fighter.o fonts.o intro.o headlight.o homing.o matrices.o menu.o mission.o missile.o model.o outro.o object.o objectlist.o other.o particle.o player.o psworlds.o startscreen.o sound.o texturelist.o tgaloader.o torpedo.o trail.o turret.o waypoint.o utility.o world.o $(FMOD_FLAGS) -lfmod -L/usr/X11R6/lib -lX11 -lXext -lglut -lGL -lGLU -lfmod-3.33 `sdl-config --cflags --libs`
+	gcc -o ../psworlds-linux alienlight.o camera.o cockpit.o compass.o bitmap.o briefing.o building.o computer.o direct.o displaylistlist.o fighter.o fonts.o intro.o headlight.o homing.o matrices.o menu.o mission.o missile.o model.o outro.o object.o objectlist.o other.o particle.o player.o psworlds.o startscreen.o sound.o texturelist.o tgaloader.o torpedo.o trail.o turret.o waypoint.o utility.o world.o $(FMOD_FLAGS) -lfmod -lm -lstdc++ -lglut -lGL -lGLU -lfmod-3.33 `sdl-config --cflags --libs`
 
 
 alienlight.o: alienlight.cpp
