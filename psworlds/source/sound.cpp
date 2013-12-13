@@ -152,7 +152,7 @@ void stopAudio (int mode)
   if (mode == 0)
     stopmod ();
 
-//  FSOUND_StopSound (FSOUND_ALL);
+  Mix_HaltChannel (-1);
   floodchannel =- 1;
 }
 
