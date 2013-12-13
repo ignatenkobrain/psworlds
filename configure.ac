@@ -10,6 +10,5 @@ PKG_CHECK_MODULES(SDL_MIXER, SDL_mixer)
 AX_CHECK_GL
 AX_CHECK_GLU
 AX_CHECK_GLUT
-AC_CONFIG_HEADERS([src/version.h])
-AC_CONFIG_FILES([Makefile src/Makefile])
+AC_CONFIG_FILES([Makefile src/Makefile src/version.h])
 AC_OUTPUT

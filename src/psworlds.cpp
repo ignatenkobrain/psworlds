@@ -146,19 +146,26 @@ void readconfig ()
 
   _FBUF
 
+  // default values
+  screenx = 800;
+  screeny = 600;
+  screenbpp = 16;
+  fullscreen = 0;
+  num_missions = 4;
+  yzhack = 0;
+
   write_log ("Reading config\n");
 
   // open fire
   cf = fopen ("possible_config.txt", "r");
   if (cf == NULL) {
-    write_log ("Could not locate Config file!\n");
-    fprintf (stderr, "Could not locate Config file 'possible_config.txt'!\n");
-    exit (-1);
+    write_log ("Could not locate Config file 'possible_config.txt'..\n");
+    return;
   }
 
   // read the damn thing
   while (fgets (line, sizeof (line), cf) != NULL) {
-    if (!((strlen (line)<1) || (line[0]=='#'))) {
+    if (!((strlen (line) < 1) || (line[0] == '#'))) {
       // if no empty line and no comment
       sscanf (line, "%i", &value);
 
@@ -167,7 +174,7 @@ void readconfig ()
         case 1: screeny = value; sprintf (buf, "Setting Screen height to %d\n", value); write_log (buf); break;
         case 2: screenbpp = value; sprintf (buf, "Setting Color depth to %d bits\n", value); write_log (buf); break;
         case 3:
-          if (value! = 0) {
+          if (value != 0) {
             fullscreen = SDL_FULLSCREEN;
             write_log ("Switching to fullscreen\n");
           } else {
@@ -182,7 +189,8 @@ void readconfig ()
     }
   }
 
-    write_log ("Config file processed!\n");
+  write_log ("Config file processed!\n");
+  return;
 }
 
 
