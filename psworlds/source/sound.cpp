@@ -68,14 +68,8 @@ int loadmod (char *fname)
 
 int loadmp3(char *fname)
 {
-  // load an mp3 stream
-  write_log ("Loading mp3..");
-    
-  mp3 = Mix_LoadMUS (fname);
-
-  if (mp3 == NULL) return -1;
-  write_log ("done!\n");
-  return 0;
+  // WE DON'T SUPPORT MP3
+  return -1;
 }
 
 
@@ -93,7 +87,7 @@ void stopmp3()
 
 void setmp3vol (int vol)
 {
-  mp3channel = -1;
+  // WE DON'T SUPPORT MP3
 }
 
 
