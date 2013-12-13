@@ -66,7 +66,7 @@ int loadmod (char *fname)
 }
 
 
-int loadmp3(char *fname)
+int loadmp3 (char *fname)
 {
   // WE DON'T SUPPORT MP3
   return -1;
@@ -79,7 +79,7 @@ void playmp3 (int vol)
 }
 
 
-void stopmp3()
+void stopmp3 ()
 {
   // WE DON'T SUPPORT MP3
 }
@@ -119,7 +119,7 @@ void fademusic (float fsp)
   float dur;
   double ticks;
 
-  while (vl>0) {
+  while (vl > 0) {
     timing ();
     ticks = gettime ();
     vl -= ticks * faderate;
@@ -188,11 +188,10 @@ void playengine (int samnum, int freq, int volume)
   
   if (enginechannel < 0)
     enginechannel = Mix_PlayChannel (-1, samples[samnum], -1);
-  engineused=1;
+  engineused = 1;
 
   Mix_Volume (enginechannel, volume);
 }
-
 
 
 void updateAudio (void)
@@ -220,64 +219,64 @@ void loadsampleset (void)
   _FBUF
   write_log ("Loading Sound FX...");
 
-  sprintf (buf,"sfx/engine1.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[0], 0);
-  loadsam (buf,0);
+  sprintf (buf, "sfx/engine1.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[0], 0);
+  loadsam (buf, 0);
 //  FSOUND_Sample_SetLoopMode (samples[0], FSOUND_LOOP_NORMAL);
 //  FSOUND_Sample_SetLoopPoints (samples[0], 0, FSOUND_Sample_GetLength (samples[0]));
-  sprintf (buf,"sfx/shipcrash16k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[1], 0);
-  loadsam (buf,1);
-  sprintf (buf,"sfx/floorcrash116k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[2], 0);
-  loadsam (buf,2);
-  sprintf (buf,"sfx/Subshot.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[3], 0);
-  loadsam (buf,3);
-  sprintf (buf,"sfx/abyssexplo16k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[4], 0);
-  loadsam (buf,4);
-  sprintf (buf,"sfx/bonkplusblub216k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[5], 0);
-  loadsam (buf,5);
-  sprintf (buf,"sfx/bonkplusblub116k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[6], 0);
-  loadsam (buf,6);
-  sprintf (buf,"sfx/bonkplusblub316k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[7], 0);
-  loadsam (buf,7);
-  sprintf (buf,"sfx/bleep.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[8], 0);
-  loadsam (buf,8);
-  sprintf (buf,"sfx/whale_cry.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[9], 0);
-  loadsam (buf,9);
-  sprintf (buf,"sfx/whale_feeding.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[10], 0);
-  loadsam (buf,10);
-  sprintf (buf,"sfx/whale_howl.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[11], 0);
-  loadsam (buf,11);
-  sprintf (buf,"sfx/whale_short1.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[12], 0);
-  loadsam (buf,12);
-  sprintf (buf,"sfx/whale_short2.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[13], 0);
-  loadsam (buf,13);
-  sprintf (buf,"sfx/sonar.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[14], 0);
-  loadsam (buf,14);
-  sprintf (buf,"sfx/weapchange.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[15], 0);
-  loadsam (buf,15);
-  sprintf (buf,"sfx/malfunction.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[16], 0);
-  loadsam (buf,16);
-  sprintf (buf,"sfx/crack116k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[17], 0);
-  loadsam (buf,17);
-  sprintf (buf,"sfx/crack216k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[18], 0);
-  loadsam (buf,18);
-  sprintf (buf,"sfx/crackandwater16k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[19], 0);
-  loadsam (buf,19);
+  sprintf (buf, "sfx/shipcrash16k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[1], 0);
+  loadsam (buf, 1);
+  sprintf (buf, "sfx/floorcrash116k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[2], 0);
+  loadsam (buf, 2);
+  sprintf (buf, "sfx/Subshot.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[3], 0);
+  loadsam (buf, 3);
+  sprintf (buf, "sfx/abyssexplo16k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[4], 0);
+  loadsam (buf, 4);
+  sprintf (buf, "sfx/bonkplusblub216k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[5], 0);
+  loadsam (buf, 5);
+  sprintf (buf, "sfx/bonkplusblub116k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[6], 0);
+  loadsam (buf, 6);
+  sprintf (buf, "sfx/bonkplusblub316k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[7], 0);
+  loadsam (buf, 7);
+  sprintf (buf, "sfx/bleep.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[8], 0);
+  loadsam (buf, 8);
+  sprintf (buf, "sfx/whale_cry.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[9], 0);
+  loadsam (buf, 9);
+  sprintf (buf, "sfx/whale_feeding.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[10], 0);
+  loadsam (buf, 10);
+  sprintf (buf, "sfx/whale_howl.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[11], 0);
+  loadsam (buf, 11);
+  sprintf (buf, "sfx/whale_short1.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[12], 0);
+  loadsam (buf, 12);
+  sprintf (buf, "sfx/whale_short2.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[13], 0);
+  loadsam (buf, 13);
+  sprintf (buf, "sfx/sonar.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[14], 0);
+  loadsam (buf, 14);
+  sprintf (buf, "sfx/weapchange.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[15], 0);
+  loadsam (buf, 15);
+  sprintf (buf, "sfx/malfunction.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[16], 0);
+  loadsam (buf, 16);
+  sprintf (buf, "sfx/crack116k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[17], 0);
+  loadsam (buf, 17);
+  sprintf (buf, "sfx/crack216k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[18], 0);
+  loadsam (buf, 18);
+  sprintf (buf, "sfx/crackandwater16k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[19], 0);
+  loadsam (buf, 19);
 //  FSOUND_Sample_SetLoopMode (samples[19], FSOUND_LOOP_NORMAL);
 //  FSOUND_Sample_SetLoopPoints (samples[19], 10562, 21981);
-  sprintf (buf,"sfx/shred.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[20], 0);
-  loadsam (buf,20);
-  sprintf (buf,"sfx/swoosh1.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[21], 0);
-  loadsam (buf,21);
-  sprintf (buf,"sfx/swoosh2.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[22], 0);
-  loadsam (buf,22);
-  sprintf (buf,"sfx/swoosh3.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[23], 0);
-  loadsam (buf,23);
-  sprintf (buf,"sfx/accomplish.wav"); xpath (buf); 
-  loadsam (buf,24);
-  sprintf (buf,"sfx/missile.wav"); xpath (buf);
-  loadsam (buf,25);
-  sprintf (buf,"sfx/reloadmissile.wav"); xpath (buf); 
-  loadsam (buf,26);
+  sprintf (buf, "sfx/shred.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[20], 0);
+  loadsam (buf, 20);
+  sprintf (buf, "sfx/swoosh1.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[21], 0);
+  loadsam (buf, 21);
+  sprintf (buf, "sfx/swoosh2.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[22], 0);
+  loadsam (buf, 22);
+  sprintf (buf, "sfx/swoosh3.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[23], 0);
+  loadsam (buf, 23);
+  sprintf (buf, "sfx/accomplish.wav"); xpath (buf); 
+  loadsam (buf, 24);
+  sprintf (buf, "sfx/missile.wav"); xpath (buf);
+  loadsam (buf, 25);
+  sprintf (buf, "sfx/reloadmissile.wav"); xpath (buf); 
+  loadsam (buf, 26);
 
   write_log ("done!\n");
 }
@@ -287,6 +286,6 @@ void stoplooping ()
 {
   // stop looping sound, e.g. engine and flood
   Mix_HaltChannel (enginechannel);
-  if (floodchannel>0) {Mix_HaltChannel (floodchannel); floodchannel=-1; }
+  if (floodchannel > 0) {Mix_HaltChannel (floodchannel); floodchannel = -1; }
 }
 
