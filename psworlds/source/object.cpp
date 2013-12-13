@@ -11,159 +11,159 @@
 #include "object.h"
 #include "psworlds.h"
 
-object::object(float X,float Y,float Z,float rotX, float rotY, float rotZ)
+object::object (float X,float Y,float Z,float rotX, float rotY, float rotZ)
 {
-	x=X;
-	y=Y;
-	z=Z;
-	rotx=rotX;
-	roty=rotY;
-	rotz=rotZ;
-	dx=0;
-	dy=0;
-	dz=0;
-	destroy=0;
-	movement_state=MV_NORMAL;
+  x=X;
+  y=Y;
+  z=Z;
+  rotx=rotX;
+  roty=rotY;
+  rotz=rotZ;
+  dx=0;
+  dy=0;
+  dz=0;
+  destroy=0;
+  movement_state=MV_NORMAL;
 }
 
-object::~object()
+object::~object ()
 {
 
 }
 
 // decreases time_to_live and sets destroy if necessary
-void object::update_lifetime()
+void object::update_lifetime ()
 {
-	if(movement_state==MV_DESTROY)
-	{
-		GLfloat ticks = gettime();
-		time_to_live-=ticks;
-		if(time_to_live<=0)
-		{
-			destroy=1;
-		}
-	}
+  if (movement_state==MV_DESTROY)
+  {
+    GLfloat ticks = gettime ();
+    time_to_live-=ticks;
+    if (time_to_live<=0)
+    {
+      destroy=1;
+    }
+  }
 }
 
 // access functions to private variables
-void object::setx(float value)
+void object::setx (float value)
 {
-	x=value;
+  x=value;
 }
 
-void object::sety(float value)
+void object::sety (float value)
 {
-	y=value;
+  y=value;
 }
 
-void object::setz(float value)
+void object::setz (float value)
 {
-	z=value;
+  z=value;
 }
 
-void object::setrotx(float value)
+void object::setrotx (float value)
 {
-	while(value>=360) value-=360;
-	while(value<0) value+=360;
-	rotx=value;
+  while (value>=360) value-=360;
+  while (value<0) value+=360;
+  rotx=value;
 }
 
-void object::setroty(float value)
+void object::setroty (float value)
 {
-	while(value>=360) value-=360;
-	while(value<0) value+=360;
-	roty=value;
+  while (value>=360) value-=360;
+  while (value<0) value+=360;
+  roty=value;
 }
 
-void object::setrotz(float value)
+void object::setrotz (float value)
 {
-	while(value>=360) value-=360;
-	while(value<0) value+=360;
-	rotz=value;
+  while (value>=360) value-=360;
+  while (value<0) value+=360;
+  rotz=value;
 }
 
-GLfloat object::getx()
+GLfloat object::getx ()
 {
-	return x;
+  return x;
 }
 
-GLfloat object::gety()
+GLfloat object::gety ()
 {
-	return y;
+  return y;
 }
 
-GLfloat object::getz()
+GLfloat object::getz ()
 {
-	return z;
+  return z;
 }
 
-GLfloat object::getdx()
+GLfloat object::getdx ()
 {
-	return dx;
+  return dx;
 }
 
-GLfloat object::getdy()
+GLfloat object::getdy ()
 {
-	return dy;
+  return dy;
 }
 
-GLfloat object::getdz()
+GLfloat object::getdz ()
 {
-	return dz;
+  return dz;
 }
 
-GLfloat object::getrotx()
+GLfloat object::getrotx ()
 {
-	return rotx;
+  return rotx;
 }
 
-GLfloat object::getroty()
+GLfloat object::getroty ()
 {
-	return roty;
+  return roty;
 }
 
-GLfloat object::getrotz()
+GLfloat object::getrotz ()
 {
-	return rotz;
+  return rotz;
 }
 
-int object::getID()
+int object::getID ()
 {
-	return ID;
+  return ID;
 }
 
-void object::setID(int value)
+void object::setID (int value)
 {
-	ID=value;
+  ID=value;
 }
 
-int object::getdestroy()
+int object::getdestroy ()
 {
-	return destroy;
+  return destroy;
 }
 
-void object::set_lifetime(float value)
+void object::set_lifetime (float value)
 {
-	time_to_live=value;
+  time_to_live=value;
 }
 
-int object::getmvstate()
+int object::getmvstate ()
 {
-	return movement_state;
+  return movement_state;
 }
 
-void object::set_enemystatus(int value)
+void object::set_enemystatus (int value)
 {
 
 }
 
-void object::setName(char* value)
+void object::setName (char* value)
 {
-	name=(char*)malloc(strlen(value)+1);
-	strcpy(name,value);
+  name=(char*)malloc (strlen (value)+1);
+  strcpy (name,value);
 }
 
-char* object::getName()
+char* object::getName ()
 {
-	return name;
+  return name;
 }

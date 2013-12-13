@@ -21,27 +21,27 @@
 
 typedef struct dllist
 {
-	char* name;
-	int ID;
-	float sphere_rad;	// radius for bounding sphere
-	float minx;			// values for bounding box
-	float maxx;			// ...
-	float miny;			// ...
-	float maxy;			// ...
-	float minz;			// ...
-	float maxz;			// ...
-	dllist* next;
+  char* name;
+  int ID;
+  float sphere_rad;  // radius for bounding sphere
+  float minx;      // values for bounding box
+  float maxx;      // ...
+  float miny;      // ...
+  float maxy;      // ...
+  float minz;      // ...
+  float maxz;      // ...
+  dllist* next;
 } dllist;
 
 class displaylistlist  
 {
 private:
-	dllist* first;
+  dllist* first;
 public:
-	displaylistlist();
-	virtual ~displaylistlist();
-	dllist* inlist(char* name);		// returns displaylistitem if name in list
-	void add(char* name, int ID, float sphere_rad, float minx, float maxx, float miny, float maxy, float minz, float maxz);	// adds entry to list
+  displaylistlist ();
+  virtual ~displaylistlist ();
+  dllist* inlist (char* name);    // returns displaylistitem if name in list
+  void add (char* name, int ID, float sphere_rad, float minx, float maxx, float miny, float maxy, float minz, float maxz);  // adds entry to list
 };
 
 #endif

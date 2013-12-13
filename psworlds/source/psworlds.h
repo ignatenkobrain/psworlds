@@ -25,9 +25,9 @@
 #define LINUX 2
 
 #ifdef WIN32
-	#define SYSTEM WINDOWS
+  #define SYSTEM WINDOWS
 #else
-	#define SYSTEM LINUX
+  #define SYSTEM LINUX
 #endif
 
 
@@ -47,27 +47,27 @@
 
 
 // functions
-void		reshape(int w, int h, GLfloat zoom);
-int			getGamestate();
-double		gettime();
-char*		getkeys();
-void*		getcam();
-void		timing();
-void		kbd();
-void*		getworld();
-void*		getmission();
-void*		getdisplaylists();
-void*		gettexturelist();
-int			getxres();
-int			getyres();
-int			getMissionNum();
-void		setMission(int ms);
-void		loadmission();
-int			getMissionAdvance();
-int			getNumMission();
-void		setMissionAdvance(int ma);
-void		setCheated(int c);
-int			getCheated();
-int			getWire();
+void    reshape (int w, int h, GLfloat zoom);
+int      getGamestate ();
+double    gettime ();
+char*    getkeys ();
+void*    getcam ();
+void    timing ();
+void    kbd ();
+void*    getworld ();
+void*    getmission ();
+void*    getdisplaylists ();
+void*    gettexturelist ();
+int      getxres ();
+int      getyres ();
+int      getMissionNum ();
+void    setMission (int ms);
+void    loadmission ();
+int      getMissionAdvance ();
+int      getNumMission ();
+void    setMissionAdvance (int ma);
+void    setCheated (int c);
+int      getCheated ();
+int      getWire ();
 
 #endif

@@ -20,23 +20,23 @@
 class player : public fighter  
 {
 private:
-	int bcrack[3];
-	int targetmode;
+  int bcrack[3];
+  int targetmode;
 public:
-	player(char* filename, float X, float Y, float Z, float rotX, float rotY, float rotZ,
-		   float Rotspd, float Maxspd, int Mass, int Energy, GLfloat *norms,int *sw);
-	virtual ~player();
-	virtual int Typ();
-	virtual void draw();
-	virtual void control();
-	virtual void explode();
-	void clear_target();
-	void findnext_target();
-	void check_target();
-	weapon_t* getweapons();
-	int getweapcount();
-	int getactiveweapon();
-	void* getwaypoint();
+  player (char* filename, float X, float Y, float Z, float rotX, float rotY, float rotZ,
+       float Rotspd, float Maxspd, int Mass, int Energy, GLfloat *norms,int *sw);
+  virtual ~player ();
+  virtual int Typ ();
+  virtual void draw ();
+  virtual void control ();
+  virtual void explode ();
+  void clear_target ();
+  void findnext_target ();
+  void check_target ();
+  weapon_t* getweapons ();
+  int getweapcount ();
+  int getactiveweapon ();
+  void* getwaypoint ();
 };
 
 #endif

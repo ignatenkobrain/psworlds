@@ -22,19 +22,19 @@
 class homing : public missile  
 {
 private:
-	object* target;		// object to hit
-	float acceleration;	
+  object* target;    // object to hit
+  float acceleration;  
 public:
-	homing(char* filename, float X, float Y, float Z, float rotX, float rotY, float rotZ,
-		   float Rotspd, float Maxspd, int Mass, int Energy, GLfloat *norms,int *sw);
-	virtual ~homing();
-	virtual int Typ();
-	virtual void draw();
-	virtual void control();
-	void set_target(object* obj);
-	void setspeed(int value);
-	virtual void ground_collision();
-	virtual void move_collide();
+  homing (char* filename, float X, float Y, float Z, float rotX, float rotY, float rotZ,
+       float Rotspd, float Maxspd, int Mass, int Energy, GLfloat *norms,int *sw);
+  virtual ~homing ();
+  virtual int Typ ();
+  virtual void draw ();
+  virtual void control ();
+  void set_target (object* obj);
+  void setspeed (int value);
+  virtual void ground_collision ();
+  virtual void move_collide ();
 };
 
 #endif

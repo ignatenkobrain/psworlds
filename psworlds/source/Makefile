@@ -6,7 +6,7 @@
 
 SDL_CFLAGS := $(shell sdl-config --cflags)
 SDL_LDFLAGS := $(shell sdl-config --libs)
-CFLAGS := -DPLATFORM_LINUX  -c -o
+CFLAGS := -DPLATFORM_LINUX	-c -o
 
 
 all: alienlight.o camera.o cockpit.o compass.o bitmap.o briefing.o building.o computer.o direct.o displaylistlist.o fighter.o fonts.o headlight.o homing.o intro.o matrices.o menu.o missile.o mission.o model.o object.o objectlist.o other.o outro.o particle.o player.o psworlds.o startscreen.o sound.o texturelist.o tgaloader.o torpedo.o trail.o turret.o utility.o waypoint.o world.o

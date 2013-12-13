@@ -10,50 +10,50 @@
 
 #include "other.h"
 
-other::other(char* filename, float X, float Y, float Z, float rotX, float rotY, float rotZ,
-			 float Rotspd, float Maxspd, int Mass, int Energy, GLfloat *norms,int *sw)
-				:model(filename,X,Y,Z,rotX,rotY,rotZ,Rotspd,Maxspd,Mass,Energy,0,norms,sw)
+other::other (char* filename, float X, float Y, float Z, float rotX, float rotY, float rotZ,
+       float Rotspd, float Maxspd, int Mass, int Energy, GLfloat *norms,int *sw)
+        :model (filename,X,Y,Z,rotX,rotY,rotZ,Rotspd,Maxspd,Mass,Energy,0,norms,sw)
 {
 
 }
 
-other::~other()
+other::~other ()
 {
 
 }
 
-int other::Typ()
+int other::Typ ()
 {
-	return OTHER;
+  return OTHER;
 }
 
 // draws the object
-void other::draw()
+void other::draw ()
 {
-	model::draw();
+  model::draw ();
 }
 
 // controls the object
-void other::control()
+void other::control ()
 {
-	// we don't need any AI here anymore because we can use the computer class
-	move();
+  // we don't need any AI here anymore because we can use the computer class
+  move ();
 }
 
 // just for compatility reasons
-void other::set_weaponcount(int c)
+void other::set_weaponcount (int c)
 {
 
 }
 
 // just for compatility reasons
-void other::add_weapon(char* filename, char* name, float sx, float sy, float sz, float sx2, float sy2, float sz2,float time, int power, int amount, int type, int dbl, float mvspd, float rotspd, float rate)
+void other::add_weapon (char* filename, char* name, float sx, float sy, float sz, float sx2, float sy2, float sz2,float time, int power, int amount, int type, int dbl, float mvspd, float rotspd, float rate)
 {
 
 }
 
 // adds an object to the pathlist
-void other::add_object(int target,object* obj)
+void other::add_object (int target,object* obj)
 {
 
 }

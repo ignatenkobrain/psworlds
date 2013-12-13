@@ -19,30 +19,30 @@
 class briefing  
 {
 private:
-	char* txt[50];		// mission text
-	GLfloat xl[50], yl[50];	// text location
-	textureObj* bg;		// background image flying around
-	GLfloat txtalpha;	// text blending
-	GLfloat txtalphac;	// alpha change
-	GLfloat tc;			// texture-coordinate
-	GLfloat vol;		// music volume
-	GLfloat voladjust;
-	GLfloat xscaler;	// briefing scaler
-	GLfloat zscaler;	// layer scaler
-	GLfloat xsc, zsc;	// scale speed
+  char* txt[50];    // mission text
+  GLfloat xl[50], yl[50];  // text location
+  textureObj* bg;    // background image flying around
+  GLfloat txtalpha;  // text blending
+  GLfloat txtalphac;  // alpha change
+  GLfloat tc;      // texture-coordinate
+  GLfloat vol;    // music volume
+  GLfloat voladjust;
+  GLfloat xscaler;  // briefing scaler
+  GLfloat zscaler;  // layer scaler
+  GLfloat xsc, zsc;  // scale speed
 
-	int mnr;			// mission number
-	int killme;			// quitting flag
+  int mnr;      // mission number
+  int killme;      // quitting flag
 
-	void control();
-	void draw();
+  void control ();
+  void draw ();
 
 
 public:
-	briefing(int mnr);
-	virtual ~briefing();
+  briefing (int mnr);
+  virtual ~briefing ();
 
-	void run();
+  void run ();
 };
 
 #endif

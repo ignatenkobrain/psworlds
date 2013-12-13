@@ -22,16 +22,16 @@
 class font
 {
 private:
-	void makelists();	// create the display lists
+  void makelists ();  // create the display lists
 
 public:
-	textureObj *chars;	// the texture
-	GLuint displ;		// display lists for the characters
+  textureObj *chars;  // the texture
+  GLuint displ;    // display lists for the characters
 
-	font(char *fname);
-	virtual ~font();
-	
-	void drawstring(char *string);	// renders a string with this font
+  font (char *fname);
+  virtual ~font ();
+  
+  void drawstring (char *string);  // renders a string with this font
 };
 
 
@@ -41,29 +41,29 @@ public:
 class stringlist
 {
 private:
-	GLfloat px, py;		// position to print
-	GLfloat color[4];	// color of the string
-	char text[120];// text to be printed
-	
+  GLfloat px, py;    // position to print
+  GLfloat color[4];  // color of the string
+  char text[120];// text to be printed
+  
 
 public:
-	stringlist *next;	// pointer to next
-	GLuint fontnum;		// number of font string is to be printed in
+  stringlist *next;  // pointer to next
+  GLuint fontnum;    // number of font string is to be printed in
 
-	stringlist(GLfloat px, GLfloat py, char *txt, GLuint fontnum, GLfloat cr, GLfloat cg, GLfloat cb, GLfloat ca);
-	virtual ~stringlist();
+  stringlist (GLfloat px, GLfloat py, char *txt, GLuint fontnum, GLfloat cr, GLfloat cg, GLfloat cb, GLfloat ca);
+  virtual ~stringlist ();
 
-	void add(stringlist* next);	// add a new string as next pointer
-	void draw();
+  void add (stringlist* next);  // add a new string as next pointer
+  void draw ();
 };
 
 
 
 // prototypes
 
-void loadfontset();
-void print(GLfloat px, GLfloat py, char *txt, GLuint fontnum, GLfloat cr, GLfloat cg, GLfloat cb, GLfloat ca);
-void drawstrings();
+void loadfontset ();
+void print (GLfloat px, GLfloat py, char *txt, GLuint fontnum, GLfloat cr, GLfloat cg, GLfloat cb, GLfloat ca);
+void drawstrings ();
 
 
 
