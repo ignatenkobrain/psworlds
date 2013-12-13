@@ -731,7 +731,7 @@ void mission::add_particles ()
   if (cam->getCamstate ()==CAM_COCKPIT||cam->getCamstate ()==CAM_BEHIND||cam->getCamstate ()==CAM_FLYBY)
   {
     GLdouble *tmp2 = cam->getInvmat ();
-    matrmult2(trx,tmp2,tmp1);
+    matrmult2 (trx,tmp2,tmp1);
   }
   else
   {
@@ -740,9 +740,9 @@ void mission::add_particles ()
     setup_mat_yrot (mry,cam->getyrot ());
     setup_mat_zrot (mrz,cam->getzrot ());
   
-    matrmult2(mrx, mry, tmp1);
-    matrmult2(mrz, tmp1,tmp2);
-    matrmult2(trx, tmp2, tmp1);
+    matrmult2 (mrx, mry, tmp1);
+    matrmult2 (mrz, tmp1,tmp2);
+    matrmult2 (trx, tmp2, tmp1);
   }
 
   // now place the particles

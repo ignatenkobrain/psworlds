@@ -30,9 +30,9 @@ void initnormalvoices ();
 void initintrovoices ();
 void setmodvol (int vl);
 void fademusic (float fsp);
-int loadmp3(char *fname);
-void playmp3(int vol);
-void stopmp3();
+int loadmp3 (char *fname);
+void playmp3 (int vol);
+void stopmp3 ();
 void setmp3vol (int vol);
 
 #endif

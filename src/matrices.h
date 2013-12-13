@@ -20,7 +20,7 @@
 // optimized for rotation
 void matrmult (GLdouble* mat1, GLdouble* mat2, GLdouble* tmp);
 // capable of translation
-void matrmult2(GLdouble* m1, GLdouble* m2, GLdouble* tmp);
+void matrmult2 (GLdouble* m1, GLdouble* m2, GLdouble* tmp);
 
 
 

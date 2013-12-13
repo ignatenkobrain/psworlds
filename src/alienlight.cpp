@@ -134,7 +134,7 @@ void alienlight::bind (headlight *h)
 {
   hl = h;
   // calculate angle
-  GLfloat ang=atan2(hl->getCutoff (),hl->getLength ())*PI_GRAD;
+  GLfloat ang=atan2 (hl->getCutoff (),hl->getLength ())*PI_GRAD;
   glLightf (light, GL_SPOT_CUTOFF, ang);
 }
 

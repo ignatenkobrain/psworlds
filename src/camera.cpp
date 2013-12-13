@@ -84,7 +84,7 @@ void Camera::getObjectPos (object *mdl)
         c = zdiff;
 
         nxr = 180;
-        nyr = atan2(a, c)*PI_GRAD;
+        nyr = atan2 (a, c)*PI_GRAD;
         nzr= 180;
         set_identity (mat);
         set_identity (invmat);

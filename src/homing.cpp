@@ -68,7 +68,7 @@ void homing::control ()
     float rx=destx*invmat[0]+desty*invmat[4]+destz*invmat[8];
     float ry=destx*invmat[1]+desty*invmat[5]+destz*invmat[9];
     float rz=destx*invmat[2]+desty*invmat[6]+destz*invmat[10];
-    float d=fastdist3(rx,ry,rz);
+    float d=fastdist3 (rx,ry,rz);
     rx/=d;
     ry/=d;
     rz/=d;

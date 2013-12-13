@@ -272,7 +272,7 @@ void objectlist::draw (float x, float y, float z)
       float oy=tmp->obj->gety ();
       float oz=tmp->obj->getz ();
 
-      if (fastdist3(x-ox,y-oy,z-oz)<1000)
+      if (fastdist3 (x-ox,y-oy,z-oz)<1000)
       {
         tmp->obj->draw ();
       }

@@ -20,25 +20,25 @@
 #define GRAD_PI 0.017453292
 #define PI_GRAD 57.29577951
 
-GLfloat fastdist2(GLfloat x, GLfloat y);
-GLfloat fastdist3(GLfloat x, GLfloat y, GLfloat z);
-GLfloat distance(object* obj1, object* obj2);
-int	distantvolume(GLfloat vx, GLfloat vy, GLfloat vz, GLfloat sx, GLfloat sy, GLfloat sz);
-void normcrossprod(GLfloat *v1, GLfloat *v2, GLfloat *out);
-GLfloat calcdepth(GLfloat z);
-GLfloat heading(GLfloat xd, GLfloat zd);
+GLfloat fastdist2 (GLfloat x, GLfloat y);
+GLfloat fastdist3 (GLfloat x, GLfloat y, GLfloat z);
+GLfloat distance (object* obj1, object* obj2);
+int  distantvolume (GLfloat vx, GLfloat vy, GLfloat vz, GLfloat sx, GLfloat sy, GLfloat sz);
+void normcrossprod (GLfloat *v1, GLfloat *v2, GLfloat *out);
+GLfloat calcdepth (GLfloat z);
+GLfloat heading (GLfloat xd, GLfloat zd);
 
 // file access
-#define _FBUF char buf[100];	// for easier file handling
+#define _FBUF char buf[100];  // for easier file handling
 
-void xpath(char *fname);
-void remove_underscore(char* s);
-void write_log(char* s);
-void init_log();
+void xpath (char *fname);
+void remove_underscore (char* s);
+void write_log (char* s);
+void init_log ();
 
 // other
-void errortest();
-void makestring(char* &target, char* txt);
+void errortest ();
+void makestring (char* &target, char* txt);
 
 
 #endif

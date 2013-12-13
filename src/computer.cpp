@@ -241,7 +241,7 @@ void computer::control ()
       rx=destx*invmat[0]+desty*invmat[4]+destz*invmat[8];
       ry=destx*invmat[1]+desty*invmat[5]+destz*invmat[9];
       rz=destx*invmat[2]+desty*invmat[6]+destz*invmat[10];
-      d=fastdist3(rx,ry,rz);
+      d=fastdist3 (rx,ry,rz);
       rx/=d;
       ry/=d;
       rz/=d;

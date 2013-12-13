@@ -33,7 +33,7 @@ void matrmult (GLdouble* mat1, GLdouble* mat2, GLdouble* tmp)
 
 
 // multiplies matrixes mat1 and mat2, puts result in tmp, capable of translations
-void matrmult2(GLdouble* m1, GLdouble* m2, GLdouble* tmp)
+void matrmult2 (GLdouble* m1, GLdouble* m2, GLdouble* tmp)
 {
   tmp[0] = m1[0]*m2[0]+m1[4]*m2[1]+m1[8]*m2[2]+m1[12]*m2[3];
   tmp[1] = m1[1]*m2[0]+m1[5]*m2[1]+m1[9]*m2[2]+m1[13]*m2[3];

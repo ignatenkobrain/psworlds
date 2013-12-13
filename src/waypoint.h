@@ -21,29 +21,29 @@
 class waypoint : public object  
 {
 private:
-	int end;	 // is waypoint the end or should we go on the next ?
-	int reached; // has waypoint already been reached ?
-	int serial;	 // serial number
+  int end;   // is waypoint the end or should we go on the next ?
+  int reached; // has waypoint already been reached ?
+  int serial;   // serial number
 public:
-	waypoint(float x, float y, float z, int End, int num);
-	virtual ~waypoint();
+  waypoint (float x, float y, float z, int End, int num);
+  virtual ~waypoint ();
 
-	virtual int Typ();
-	int get_end();
-	int get_reached();
-	void set_reached();
-	void reset_reached();
-	int get_serial();
+  virtual int Typ ();
+  int get_end ();
+  int get_reached ();
+  void set_reached ();
+  void reset_reached ();
+  int get_serial ();
 
-	// just for compatility reasons
-	virtual void draw();
-	virtual void control();
-	virtual void move();
-	virtual void clear_collision_info();
+  // just for compatility reasons
+  virtual void draw ();
+  virtual void control ();
+  virtual void move ();
+  virtual void clear_collision_info ();
 
-	virtual void set_weaponcount(int c);
-	virtual void add_weapon(char* filename, char* name, float sx, float sy, float sz, float sx2, float sy2, float sz2,float time, int power, int amount, int type, int dbl, float mvspd, float rotspd, float rate);
-	virtual void add_object(int target,object* obj);
+  virtual void set_weaponcount (int c);
+  virtual void add_weapon (char* filename, char* name, float sx, float sy, float sz, float sx2, float sy2, float sz2,float time, int power, int amount, int type, int dbl, float mvspd, float rotspd, float rate);
+  virtual void add_object (int target,object* obj);
 };
 
 #endif

@@ -15,12 +15,12 @@
 class startscreen
 {
 private:
-	void initsound();	// reserve channels for LARGE mods
-	void bootpic();		// display boot picture
+  void initsound ();  // reserve channels for LARGE mods
+  void bootpic ();    // display boot picture
 public:
-	startscreen();
-	virtual ~startscreen();
-	void run();
+  startscreen ();
+  virtual ~startscreen ();
+  void run ();
 };
 
 #endif 

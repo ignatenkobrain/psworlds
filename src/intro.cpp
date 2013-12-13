@@ -251,7 +251,7 @@ intro::intro (int mode)
     beginvol = MP3VOL;
     musicfadespeed = MOD_FADESPEED;
     sprintf (buf,"sfx/chris_huelsbeck-turrican_credits.mp3");
-    loadmp3(buf);
+    loadmp3 (buf);
     musi = MP3;
     break;
   }
@@ -440,7 +440,7 @@ void intro::run ()
   }
   else
   {
-    playmp3(beginvol);
+    playmp3 (beginvol);
   }
   
   while (killme==0)
@@ -457,7 +457,7 @@ void intro::run ()
   }
   else
   {
-    stopmp3();
+    stopmp3 ();
   }
   glEnable (GL_LIGHTING);
   glEnable (GL_DEPTH_TEST);

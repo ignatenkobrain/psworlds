@@ -290,7 +290,7 @@ outro::outro ()
   ft[21] = 10.0; ft[22] = 10.0; ft[23] = 8.0; ft[24] = 8.0; ft[25] = 5.0; ft[26] = 5000.0;
   numsteps=27;
   sprintf (buf,"sfx/chris_huelsbeck-apidya_credits.mp3");
-  loadmp3(buf);
+  loadmp3 (buf);
    
   tm = ft[0];
   prevtime = tm;
@@ -625,7 +625,7 @@ void outro::run ()
   glEnable (GL_TEXTURE_2D);
   glDisable (GL_COLOR_MATERIAL);
   glDisable (GL_FOG);
-  playmp3(vol);
+  playmp3 (vol);
 
   while (killme==0)
   {
@@ -635,7 +635,7 @@ void outro::run ()
     draw ();
   }
 
-  stopmp3();
+  stopmp3 ();
   glEnable (GL_FOG);
   glEnable (GL_LIGHTING);
   glEnable (GL_DEPTH_TEST);

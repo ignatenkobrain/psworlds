@@ -21,24 +21,24 @@
 
 typedef struct texlist
 {
-	char* name;			// texture name
-	textureObj* texobj; // texture object
-	texlist* next;		// next in list
+  char* name;      // texture name
+  textureObj* texobj; // texture object
+  texlist* next;    // next in list
 } texlist;
 
 class texturelist  
 {
 private:
-	texlist* first;		// first in list
+  texlist* first;    // first in list
 public:
-	// create empty list
-	texturelist();
-	// delete all entries and delete list
-	virtual ~texturelist();
-	// returns textureitem if name in list
-	textureObj* inlist(char* name);
-	// adds entry to list
-	void add(char* name, textureObj* newobj);
+  // create empty list
+  texturelist ();
+  // delete all entries and delete list
+  virtual ~texturelist ();
+  // returns textureitem if name in list
+  textureObj* inlist (char* name);
+  // adds entry to list
+  void add (char* name, textureObj* newobj);
 };
 
 #endif

@@ -165,7 +165,7 @@ void addflare (GLfloat fx, GLfloat fy, GLfloat fz, GLfloat strength)
   // first, calc distance
   flarelist* nu;
   Camera* cam = (Camera*)getcam ();
-  GLfloat dist = fastdist3(cam->getx ()-fx, cam->gety ()-fy, cam->getz ()-fz);
+  GLfloat dist = fastdist3 (cam->getx ()-fx, cam->gety ()-fy, cam->getz ()-fz);
 
   if ((dist<1000.0) && (mmat[14]<0)) // add if distance is near and object in front of cam
   {

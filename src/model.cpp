@@ -552,7 +552,7 @@ void model::move_normal ()
   ndx*=fact;
   ndy*=fact;
   ndz*=fact;
-  if (fastdist3(ndx,ndy,ndz)<0.05)
+  if (fastdist3 (ndx,ndy,ndz)<0.05)
   {
     ndx=0;
     ndy=0;
@@ -599,7 +599,7 @@ void model::move_collide ()
   ndy*=fact;
   ndz*=fact;
 
-  if (fastdist3(ndx,ndy,ndz)<0.05)
+  if (fastdist3 (ndx,ndy,ndz)<0.05)
   {
     movement_state=MV_NORMAL;
     ndx=0;

@@ -669,7 +669,7 @@ void Cockpit::gauges ()
 
       // distance
       print (40,lb+=ld, "DISTANCE", 0, fcol[0],fcol[1],fcol[2],fcol[3]);
-      sprintf (buf, "%4.0f M", fastdist3((tgt->getx ()-pl->getx ()), (tgt->gety ()-pl->gety ()), (tgt->getz ()-pl->getz ()))*0.27); print (130,lb,buf,0,fcol[0],fcol[1],fcol[2],fcol[3]);
+      sprintf (buf, "%4.0f M", fastdist3 ((tgt->getx ()-pl->getx ()), (tgt->gety ()-pl->gety ()), (tgt->getz ()-pl->getz ()))*0.27); print (130,lb,buf,0,fcol[0],fcol[1],fcol[2],fcol[3]);
 
       // most interestingly, the energy
       print (40,lb+=ld, "HULL",0,fcol[0],fcol[1],fcol[2],fcol[3]);
