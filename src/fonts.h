@@ -62,7 +62,7 @@ public:
 // prototypes
 
 void loadfontset ();
-void print (GLfloat px, GLfloat py, char *txt, GLuint fontnum, GLfloat cr, GLfloat cg, GLfloat cb, GLfloat ca);
+void print (GLfloat px, GLfloat py, const char *format, GLuint fontnum, GLfloat cr, GLfloat cg, GLfloat cb, GLfloat ca, ...);
 void drawstrings ();
 
 

@@ -15,3 +15,4 @@ src/Makefile.in
 *.o
 src/.deps/
 src/psworlds
+src/version.h

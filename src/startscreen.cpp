@@ -16,7 +16,7 @@
 #include "fonts.h"
 #include "utility.h"
 #include "other.h"
-
+#include "version.h"
 
 #define startscreen_FADESPEED 0.75
 #define MOD_FADESPEED startscreen_FADESPEED
@@ -170,7 +170,7 @@ void startscreen::bootpic ()
     glDisable (GL_TEXTURE_2D);
 
     // text
-    print (20, 400, "POSSIBLE WORLDS VERSION 1.1", 2, 0.5, 0.58, 0.8, cover);
+    print (20, 400, "POSSIBLE WORLDS VERSION %s", 2, 0.5, 0.58, 0.8, cover, PSWORLDS_VERSION);
     if (SYSTEM == WINDOWS)
       print (20, 420, "VISUAL C++ BUILD", 2, 0.5, 0.58, 0.8, cover);
     else

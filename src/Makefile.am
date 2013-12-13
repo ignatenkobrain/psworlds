@@ -86,4 +86,5 @@ psworlds_SOURCES = \
 	direct.h \
 	object.h \
 	briefing.h \
-	startscreen.h
+	startscreen.h \
+	version.h

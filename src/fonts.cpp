@@ -235,21 +235,28 @@ void delfonts ()
 
 // string function wrappers
 
-void print (GLfloat px, GLfloat py, char *txt, GLuint fontnum, GLfloat cr, GLfloat cg, GLfloat cb, GLfloat ca)
+void print (GLfloat px, GLfloat py,
+            const char *format,
+            GLuint fontnum,
+            GLfloat cr, GLfloat cg, GLfloat cb, GLfloat ca,
+            ...)
 {
   stringlist *nu;
-  py=abs (600-py);
+  py = abs (600 - py);
+  char buf[256];
 
-  nu = new stringlist (px, py, txt, fontnum, cr, cg, cb, ca);
+  va_list arg;
+  va_start (arg, format);
+    vsprintf (buf, format, arg);
+  va_end (arg);
+
+  nu = new stringlist (px, py, buf, fontnum, cr, cg, cb, ca);
   
   // if this is the first string, set the listfirst pointer
-  if (lalista == NULL)
-  {
+  if (lalista == NULL) {
     liststart = nu;
     lalista = liststart;
-  }
-  else
-  {
+  } else {
     // else just append this one
     lalista->add (nu);
     lalista = lalista->next;
