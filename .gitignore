@@ -1,0 +1,17 @@
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache/
+config.log
+config.status
+config.guess
+config.sub
+configure
+depcomp
+install-sh
+missing
+src/Makefile
+src/Makefile.in
+*.o
+src/.deps/
+src/psworlds
