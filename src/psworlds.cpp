@@ -141,38 +141,42 @@ void readconfig ()
   // read contents of the config file and set stuff accordingly
   FILE *cf;
   char line[255];
-  int val=0;
-  int value=0;
+  int val = 0;
+  int value = 0;
 
-    _FBUF
+  _FBUF
 
-    write_log ("Reading config\n");
+  write_log ("Reading config\n");
 
   // open fire
-  cf = fopen ("possible_config.txt","r");
-  if (cf==NULL)
-  {  
-        write_log ("Could not locate Config file!\n");
-    fprintf (stderr,"Could not locate Config file 'possible_config.txt'!\n");
+  cf = fopen ("possible_config.txt", "r");
+  if (cf == NULL) {
+    write_log ("Could not locate Config file!\n");
+    fprintf (stderr, "Could not locate Config file 'possible_config.txt'!\n");
     exit (-1);
   }
 
   // read the damn thing
-  while (fgets (line, sizeof (line), cf) != NULL)
-  {
-    if (!((strlen (line)<1) || (line[0]=='#')))
-    {
+  while (fgets (line, sizeof (line), cf) != NULL) {
+    if (!((strlen (line)<1) || (line[0]=='#'))) {
       // if no empty line and no comment
       sscanf (line, "%i", &value);
 
-      switch (val)
-      {
-      case 0: screenx = value; sprintf (buf, "Setting Screen width to %d\n",value); write_log (buf); break;
-      case 1: screeny = value; sprintf (buf, "Setting Screen height to %d\n",value); write_log (buf); break;
-      case 2: screenbpp = value; sprintf (buf, "Setting Color depth to %d bits\n",value); write_log (buf);break;
-      case 3: if (value!=0){ fullscreen = SDL_FULLSCREEN; write_log ("Switching to fullscreen\n");} else {fullscreen=0; write_log ("Running windowed\n");} break;
-      case 4: num_missions = value; break;
-      case 5: yzhack=value; break;
+      switch (val) {
+        case 0: screenx = value; sprintf (buf, "Setting Screen width to %d\n", value); write_log (buf); break;
+        case 1: screeny = value; sprintf (buf, "Setting Screen height to %d\n", value); write_log (buf); break;
+        case 2: screenbpp = value; sprintf (buf, "Setting Color depth to %d bits\n", value); write_log (buf); break;
+        case 3:
+          if (value! = 0) {
+            fullscreen = SDL_FULLSCREEN;
+            write_log ("Switching to fullscreen\n");
+          } else {
+            fullscreen = 0;
+            write_log ("Running windowed\n");
+          }
+          break;
+        case 4: num_missions = value; break;
+        case 5: yzhack = value; break;
       }
       val++;
     }
