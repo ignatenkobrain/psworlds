@@ -12,7 +12,7 @@
 #ifndef __PSWORLDS_H_
 #define __PSWORLDS_H_
 
-#include <GL/glut.h>
+#include <GL/glu.h>
 #include <GL/gl.h>
 #include "SDL/SDL.h"
 #include <math.h>

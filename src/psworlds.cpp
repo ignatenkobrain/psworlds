@@ -822,7 +822,6 @@ int main (int argc, char **argv)
   
   // initialize glut, SDL and openGL  
   
-  glutInit (&argc, argv);
   SDL_Init (SDL_INIT_VIDEO | SDL_INIT_TIMER);
   SDL_SetVideoMode (screenx, screeny, screenbpp, SDL_OPENGL | fullscreen);
   SDL_ShowCursor (SDL_DISABLE);

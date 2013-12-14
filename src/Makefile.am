@@ -4,15 +4,13 @@ psworlds_CPPFLAGS = \
 	$(SDL_MIXER_CFLAGS) \
 	$(LIBCONFIG_CFLAGS) \
 	$(GL_CFLAGS) \
-	$(GLU_CFLAGS) \
-	$(GLUT_CFLAGS)
+	$(GLU_CFLAGS)
 psworlds_LDFLAGS = \
 	$(SDL_LIBS) \
 	$(SDL_MIXER_LIBS) \
 	$(LIBCONFIG_LIBS) \
 	$(GL_LIBS) \
-	$(GLU_LIBS) \
-	$(GLUT_LIBS)
+	$(GLU_LIBS)
 psworlds_SOURCES = \
 	alienlight.cpp \
 	world.cpp \
