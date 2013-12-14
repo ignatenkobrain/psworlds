@@ -1,13 +1,13 @@
 bin_PROGRAMS = psworlds
 psworlds_CPPFLAGS = \
-	$(SDL_CFLAGS) \
-	$(SDL_MIXER_CFLAGS) \
+	$(SDL2_CFLAGS) \
+	$(SDL2_MIXER_CFLAGS) \
 	$(LIBCONFIG_CFLAGS) \
 	$(GL_CFLAGS) \
 	$(GLU_CFLAGS)
 psworlds_LDFLAGS = \
-	$(SDL_LIBS) \
-	$(SDL_MIXER_LIBS) \
+	$(SDL2_LIBS) \
+	$(SDL2_MIXER_LIBS) \
 	$(LIBCONFIG_LIBS) \
 	$(GL_LIBS) \
 	$(GLU_LIBS)
