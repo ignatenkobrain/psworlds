@@ -60,7 +60,7 @@ int playmusic (int volume)
   write_log ("Starting mod\n");
 
   setmusicvolume (volume);
-  Mix_PlayMusic (module, 0);
+  Mix_PlayMusic (module, -1);
 
   return 0;
 }
