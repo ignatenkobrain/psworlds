@@ -37,7 +37,6 @@ private:
   int killme;      // quitting flag
   int quit;      // second quitting flag
   GLfloat vol;    // module volume
-  int musi;      // kind of music (mod or mp3)
   GLfloat beginvol;  // initial music volume
   GLfloat musicfadespeed;
 

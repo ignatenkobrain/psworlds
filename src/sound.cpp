@@ -16,12 +16,10 @@
 
 Mix_Chunk* samples[NUMSAMPLES];
 Mix_Music* module = NULL;
-Mix_Music* mp3 = NULL;
 
 int enginechannel = -1;
 int engineused = 0;
 int floodchannel = -1;
-int mp3channel = -1;
 
 
 int initAudio (void)
@@ -31,24 +29,12 @@ int initAudio (void)
     write_log ("Sound initalization failed!\n");
     return -1;
   }
-  initnormalvoices ();
 
   write_log ("done!\n");
   return 0;
 }
 
-
-void initnormalvoices ()
-{
-  // DEPRECATED
-}
-
-void initintrovoices ()
-{
-  // DEPRECATED
-}
-
-int loadmod (char *fname)
+int loadmusic (char *fname)
 {
   // load a module (S3M, MOD, etc.) file
   _FBUF
@@ -65,50 +51,29 @@ int loadmod (char *fname)
   return 0;
 }
 
-
-int loadmp3 (char *fname)
-{
-  // WE DON'T SUPPORT MP3
-  return -1;
-}
-
-
-void playmp3 (int vol)
-{
-  // WE DON'T SUPPORT MP3
-}
-
-
-void stopmp3 ()
-{
-  // WE DON'T SUPPORT MP3
-}
-
-
-void setmp3vol (int vol)
-{
-  // WE DON'T SUPPORT MP3
-}
-
-
-int playmod (void)
+int playmusic (int volume)
 {
   // start playing the module
   if (Mix_PlayingMusic ())
     return 0;
 
   write_log ("Starting mod\n");
-  
-  setmodvol (255);
-  Mix_PlayMusic (module, 0);
+
+  setmusicvolume (volume);
+  Mix_PlayMusic (module, -1);
 
   return 0;
 }
 
-
-void setmodvol (int vl)
+int playmusic ()
 {
-  Mix_VolumeMusic (vl);
+    playmusic (255);
+}
+
+
+void setmusicvolume (int volume)
+{
+  Mix_VolumeMusic (volume);
 }
 
 
@@ -123,16 +88,16 @@ void fademusic (float fsp)
     timing ();
     ticks = gettime ();
     vl -= ticks * faderate;
-    setmodvol (vl);
+    setmusicvolume (vl);
     // HACK! keep the damn CPU busy
     for (int i = 0; i < 10000; i++)
       dur = rand ();
   }
-  setmodvol (0);
+  setmusicvolume (0);
 }
 
 
-void stopmod ()
+void stopmusic ()
 {
   // stop playing
   write_log ("Stopping mod\n");
@@ -144,7 +109,7 @@ void stopAudio (int mode)
 {
   // stop all sound playing
   if (mode == 0)
-    stopmod ();
+    stopmusic ();
 
   Mix_HaltChannel (-1);
   floodchannel =- 1;
@@ -165,15 +130,14 @@ void killAudio (void)
 }
 
 
-void destroyvoices ()
-{
-  // DEPRECATED
-}
-
-
 void playsam (int samnum, int freq, int volume, int priority)
 {
-  int chann = Mix_PlayChannel (-1, samples[samnum], 0);
+  int chann;
+  if (samnum == 19) // if flood
+    chann = Mix_PlayChannel (-1, samples[samnum], -1);
+  else
+    chann = Mix_PlayChannel (-1, samples[samnum], 0);
+
   if (chann >= 0) {
     Mix_Volume (chann, volume);
     if (samnum == 19) // if flood
@@ -185,7 +149,7 @@ void playsam (int samnum, int freq, int volume, int priority)
 void playengine (int samnum, int freq, int volume)
 {
   // play the engine (looping sound)
-  
+
   if (enginechannel < 0)
     enginechannel = Mix_PlayChannel (-1, samples[samnum], -1);
   engineused = 1;
@@ -221,8 +185,6 @@ void loadsampleset (void)
 
   sprintf (buf, "sfx/engine1.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[0], 0);
   loadsam (buf, 0);
-//  FSOUND_Sample_SetLoopMode (samples[0], FSOUND_LOOP_NORMAL);
-//  FSOUND_Sample_SetLoopPoints (samples[0], 0, FSOUND_Sample_GetLength (samples[0]));
   sprintf (buf, "sfx/shipcrash16k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[1], 0);
   loadsam (buf, 1);
   sprintf (buf, "sfx/floorcrash116k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[2], 0);
@@ -259,10 +221,8 @@ void loadsampleset (void)
   loadsam (buf, 17);
   sprintf (buf, "sfx/crack216k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[18], 0);
   loadsam (buf, 18);
-  sprintf (buf, "sfx/crackandwater16k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[19], 0);
+  sprintf (buf, "sfx/waterleak16k.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[19], 0);
   loadsam (buf, 19);
-//  FSOUND_Sample_SetLoopMode (samples[19], FSOUND_LOOP_NORMAL);
-//  FSOUND_Sample_SetLoopPoints (samples[19], 10562, 21981);
   sprintf (buf, "sfx/shred.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[20], 0);
   loadsam (buf, 20);
   sprintf (buf, "sfx/swoosh1.wav"); xpath (buf); //ALoadWaveFile (buf, &sample[21], 0);

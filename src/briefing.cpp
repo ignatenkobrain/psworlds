@@ -76,7 +76,7 @@ briefing::briefing (int mnr)
   }
   fclose (fp);
 
-  sprintf (buf,"sfx/briefingmod.mod"); loadmod (buf); 
+  sprintf (buf,"sfx/briefingmod.mod"); loadmusic (buf); 
 
 }
 
@@ -94,8 +94,7 @@ briefing::~briefing ()
   }
   delete bg;
 
-  initnormalvoices ();
-  sprintf (buf,"sfx/utah-saints.mod"); loadmod (buf); setmodvol (TITLEVOL);
+  sprintf (buf,"sfx/utah-saints.mod"); loadmusic (buf); setmusicvolume (TITLEVOL);
 }
 
 
@@ -141,7 +140,7 @@ void briefing::control ()
     keys[SDLK_ESCAPE] = 0;
   }
 
-  setmodvol (vol);
+  setmusicvolume (vol);
 }
 
 void briefing::draw ()
@@ -244,8 +243,6 @@ void briefing::run ()
 {
   // the sequence main loop
   GLfloat fogcol[] = { 0.0, 0.0, 0.0, 1.0 };
-  destroyvoices ();
-  initintrovoices ();
 
   timing ();
   timing ();
@@ -263,8 +260,8 @@ void briefing::run ()
   glFogf (GL_FOG_START, 50.0);
   glFogf (GL_FOG_END, 200.0);
   
-  setmodvol (BRIEFVOL);
-  playmod ();
+  setmusicvolume (BRIEFVOL);
+  playmusic ();
 
   while (killme==0)
   {
@@ -274,7 +271,7 @@ void briefing::run ()
     draw ();
   }
 
-  stopmod ();
+  stopmusic ();
   glFogf (GL_FOG_DENSITY, 0.1);
   glHint (GL_FOG_HINT, GL_NICEST);
   glFogf (GL_FOG_START, 250.0);
@@ -284,7 +281,7 @@ void briefing::run ()
   glEnable (GL_CULL_FACE);
   glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   glDisable (GL_TEXTURE_2D);
-  setmodvol (255);
+  setmusicvolume (255);
   
 }
 

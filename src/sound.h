@@ -15,9 +15,10 @@
 
 
 int initAudio (void);
-int loadmod (char *fname);
-int playmod (void);
-void stopmod ();
+int loadmusic (char *fname);
+int playmusic (int volume);
+int playmusic (void);
+void stopmusic ();
 void stopAudio (int mode);
 void killAudio (void);
 void playengine (int samnum, int freq, int volume);
@@ -25,15 +26,8 @@ void playsam (int samnum, int freq, int volume, int priority);
 void updateAudio (void);
 void loadsampleset (void);
 void stoplooping ();
-void destroyvoices ();
-void initnormalvoices ();
-void initintrovoices ();
-void setmodvol (int vl);
+void setmusicvolume (int volume);
 void fademusic (float fsp);
-int loadmp3 (char *fname);
-void playmp3 (int vol);
-void stopmp3 ();
-void setmp3vol (int vol);
 
 #endif
 
