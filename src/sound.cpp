@@ -31,24 +31,12 @@ int initAudio (void)
     write_log ("Sound initalization failed!\n");
     return -1;
   }
-  initnormalvoices ();
 
   write_log ("done!\n");
   return 0;
 }
 
-
-void initnormalvoices ()
-{
-  // DEPRECATED
-}
-
-void initintrovoices ()
-{
-  // DEPRECATED
-}
-
-int loadmod (char *fname)
+int loadmusic (char *fname)
 {
   // load a module (S3M, MOD, etc.) file
   _FBUF
@@ -65,50 +53,29 @@ int loadmod (char *fname)
   return 0;
 }
 
-
-int loadmp3 (char *fname)
-{
-  // WE DON'T SUPPORT MP3
-  return -1;
-}
-
-
-void playmp3 (int vol)
-{
-  // WE DON'T SUPPORT MP3
-}
-
-
-void stopmp3 ()
-{
-  // WE DON'T SUPPORT MP3
-}
-
-
-void setmp3vol (int vol)
-{
-  // WE DON'T SUPPORT MP3
-}
-
-
-int playmod (void)
+int playmusic (int volume)
 {
   // start playing the module
   if (Mix_PlayingMusic ())
     return 0;
 
   write_log ("Starting mod\n");
-  
-  setmodvol (255);
+
+  setmusicvolume (volume);
   Mix_PlayMusic (module, 0);
 
   return 0;
 }
 
-
-void setmodvol (int vl)
+int playmusic ()
 {
-  Mix_VolumeMusic (vl);
+    playmusic (255);
+}
+
+
+void setmusicvolume (int volume)
+{
+  Mix_VolumeMusic (volume);
 }
 
 
@@ -123,16 +90,16 @@ void fademusic (float fsp)
     timing ();
     ticks = gettime ();
     vl -= ticks * faderate;
-    setmodvol (vl);
+    setmusicvolume (vl);
     // HACK! keep the damn CPU busy
     for (int i = 0; i < 10000; i++)
       dur = rand ();
   }
-  setmodvol (0);
+  setmusicvolume (0);
 }
 
 
-void stopmod ()
+void stopmusic ()
 {
   // stop playing
   write_log ("Stopping mod\n");
@@ -144,7 +111,7 @@ void stopAudio (int mode)
 {
   // stop all sound playing
   if (mode == 0)
-    stopmod ();
+    stopmusic ();
 
   Mix_HaltChannel (-1);
   floodchannel =- 1;
@@ -165,12 +132,6 @@ void killAudio (void)
 }
 
 
-void destroyvoices ()
-{
-  // DEPRECATED
-}
-
-
 void playsam (int samnum, int freq, int volume, int priority)
 {
   int chann = Mix_PlayChannel (-1, samples[samnum], 0);
@@ -185,7 +146,7 @@ void playsam (int samnum, int freq, int volume, int priority)
 void playengine (int samnum, int freq, int volume)
 {
   // play the engine (looping sound)
-  
+
   if (enginechannel < 0)
     enginechannel = Mix_PlayChannel (-1, samples[samnum], -1);
   engineused = 1;

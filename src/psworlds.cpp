@@ -237,7 +237,7 @@ void loadmission ()
   if (!mis->get_demo ())
   {
     fademusic (1.3);
-    stopmod ();
+    stopmusic ();
     briefing* brf = new briefing (getMissionNum ());
     brf->run ();
     delete brf;
@@ -763,7 +763,7 @@ void gameloop ()
         credits->run ();
         delete credits;
       }
-      sprintf (buf, "sfx/utah-saints.mod"); loadmod (buf); setmodvol (TITLEVOL);
+      sprintf (buf, "sfx/utah-saints.mod"); loadmusic (buf); setmusicvolume (TITLEVOL);
       menus = new menu (MENU_GAME, NULL, "");
       prev_gs = GS_INGAME; gs = GS_MENU;
       timing ();
@@ -785,7 +785,7 @@ void gameloop ()
     updateAudio ();        // check audio systems  
   }
   fademusic (1.0);
-  stopmod ();
+  stopmusic ();
   write_log ("Quitting game!\n");
 }
 
@@ -872,7 +872,7 @@ int main (int argc, char **argv)
   delete intr;
   
   // load demo mod
-  sprintf (buf, "sfx/utah-saints.mod"); loadmod (buf); setmodvol (TITLEVOL);
+  sprintf (buf, "sfx/utah-saints.mod"); loadmusic (buf); setmusicvolume (TITLEVOL);
   menus = new menu (MENU_TITLE, NULL, "");
   prev_gs = GS_INGAME; gs = GS_MENU;
 

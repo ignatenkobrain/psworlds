@@ -32,16 +32,12 @@ startscreen::startscreen ()
 
 startscreen::~startscreen ()
 {
-  initnormalvoices ();
   write_log ("startscreen quitted\n");
 }
 
 
 void startscreen::initsound ()
 {
-  // destroy all previous channels
-  destroyvoices ();
-  initintrovoices ();
 }
 
 

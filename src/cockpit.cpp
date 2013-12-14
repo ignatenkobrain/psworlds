@@ -1014,8 +1014,8 @@ void Cockpit::setPongmode (int p)
     if (pongmode==1)
     {
       pongmode=0;
-      fademusic (1.0); stopmod ();
-      sprintf (buf,"sfx/utah-saints.mod"); loadmod (buf); setmodvol (TITLEVOL);
+      fademusic (1.0); stopmusic ();
+      sprintf (buf,"sfx/utah-saints.mod"); loadmusic (buf); setmusicvolume (TITLEVOL);
     }
   }
   if (p==1)
@@ -1023,8 +1023,8 @@ void Cockpit::setPongmode (int p)
     if (pongmode==0)
     {
       pongmode=1;
-      fademusic (1.0); stopmod ();
-      sprintf (buf,"sfx/wasserfast.mod"); loadmod (buf); playmod (); setmodvol (200);
+      fademusic (1.0); stopmusic ();
+      sprintf (buf,"sfx/wasserfast.mod"); loadmusic (buf); playmusic (); setmusicvolume (200);
       // init coords
       pg.bx = 50.0;
       pg.by = 50.0;

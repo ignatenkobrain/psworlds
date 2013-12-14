@@ -79,7 +79,7 @@ menu::menu (int type, menu *parent, char *caption)
   {
   case MENU_TITLE: // create the title screen
     // title caption
-    playmod ();
+    playmusic ();
     entries[numentries] = new entry (numentries, "POSSIBLE WORLDS", strlen ("POSSIBLE WORLDS")/2*-CHARLEN+400, 140, mc, 0, (void*)this);
     numentries++;
     entries[numentries] = new entry (numentries, "NEW GAME", strlen ("NEW GAME")/2*-CHARLEN+400, 220,mc,1,(void*)this);
@@ -95,7 +95,7 @@ menu::menu (int type, menu *parent, char *caption)
     break;
   case MENU_GAME: // create the game screen
     // title caption
-    playmod ();
+    playmusic ();
     l=180;
     entries[numentries] = new entry (numentries, "GAME MENU", strlen ("GAME MENU")/2*-CHARLEN+400, 140, mc, 0, (void*)this);
     numentries++;
@@ -119,7 +119,7 @@ menu::menu (int type, menu *parent, char *caption)
     break;
   case MENU_INGAME: // create the game screen
     // title caption
-    playmod ();
+    playmusic ();
     sprintf (buf,"missions/mission%d.txt",getMissionNum ());
     xpath (buf);
     fpeek = fopen (buf,"r");
@@ -142,7 +142,7 @@ menu::menu (int type, menu *parent, char *caption)
       }
     break;
   case MENU_YESNO: // create a simple "yes / no" menu
-    playmod ();
+    playmusic ();
     if (numentries!=0)
     {
       // create caption
@@ -310,7 +310,7 @@ void menu::handle ()
       {
         if (!((mission*)getmission ())->get_demo ())
         {
-          stopmod ();
+          stopmusic ();
         }
       }
     }
@@ -337,16 +337,16 @@ void menu::handle ()
           itr = new intro (INTRO);
           itr->run ();
           delete itr;
-          sprintf (buf,"sfx/utah-saints.mod"); loadmod (buf); setmodvol (TITLEVOL);
-          playmod ();
+          sprintf (buf,"sfx/utah-saints.mod"); loadmusic (buf); setmusicvolume (TITLEVOL);
+          playmusic ();
           break;
         case 4:  // view credits
           fademusic (1.5);
           otr = new outro ();
           otr->run ();
           delete otr;
-          sprintf (buf,"sfx/utah-saints.mod"); loadmod (buf); setmodvol (TITLEVOL);
-          playmod ();
+          sprintf (buf,"sfx/utah-saints.mod"); loadmusic (buf); setmusicvolume (TITLEVOL);
+          playmusic ();
           break;
         case 5: // quit game
           child = new menu (MENU_YESNO, this, "QUIT TO OS?");
@@ -363,7 +363,7 @@ void menu::handle ()
         {
         case 1:
           killme=1;
-          stopmod ();
+          stopmusic ();
           if (((Camera*)getcam ())->getCamstate ()==CAM_COCKPIT)
           {
             ((mission*)getmission ())->getCockpit ()->setPongmode (0);
@@ -375,7 +375,7 @@ void menu::handle ()
           if (((Camera*)getcam ())->getCamstate ()==CAM_COCKPIT)
           {
             ((mission*)getmission ())->getCockpit ()->setPongmode (0);
-            playmod ();
+            playmusic ();
           }
           break;
         case 3: // EASTEREGG
@@ -394,8 +394,8 @@ void menu::handle ()
           itr = new intro (OUTRO);
           itr->run ();
           delete itr;
-          sprintf (buf,"sfx/utah-saints.mod"); loadmod (buf); setmodvol (TITLEVOL);
-          playmod ();
+          sprintf (buf,"sfx/utah-saints.mod"); loadmusic (buf); setmusicvolume (TITLEVOL);
+          playmusic ();
           break;
         case 2: // start the game
           killme=1;

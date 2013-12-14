@@ -155,8 +155,7 @@ intro::intro (int mode)
     beginvol = INTROVOL;
     musicfadespeed = MOD_FADESPEED;
     sprintf (buf,"sfx/turrican2_(eik_remix).mod");
-    loadmod (buf); setmodvol (beginvol);
-    musi = MOD;
+    loadmusic (buf); setmusicvolume (beginvol);
     break;
   case OUTRO:
     sprintf (buf,"gfx/intro/openess.tga"); img[2]=new textureObj (buf,1);
@@ -251,8 +250,7 @@ intro::intro (int mode)
     beginvol = MP3VOL;
     musicfadespeed = MOD_FADESPEED;
     sprintf (buf,"sfx/chris_huelsbeck-turrican_credits.mp3");
-    loadmp3 (buf);
-    musi = MP3;
+    loadmusic (buf);
     break;
   }
 
@@ -284,18 +282,12 @@ intro::~intro ()
       img[i]=NULL;
     }
   }
-  initnormalvoices ();
   write_log ("Intro quitted\n");
 }
 
 
 void intro::initsound ()
 {
-  // reserve channels for music mod
-  
-  // destroy all previous channels
-  destroyvoices ();
-  initintrovoices ();
 
 }
 
@@ -365,8 +357,7 @@ void intro::control ()
     al1-=ticks*INTRO_FADESPEED;
     al2-=ticks*INTRO_FADESPEED;
     vol-=beginvol*ticks*musicfadespeed;
-    if (musi==MOD)setmodvol (vol);
-    else setmp3vol (vol);
+    setmusicvolume (vol);
   }
 
   prevtime=timeleft;
@@ -433,15 +424,7 @@ void intro::run ()
   glBlendFunc (GL_SRC_ALPHA,GL_ONE);
   glEnable (GL_TEXTURE_2D);
   glDisable (GL_COLOR_MATERIAL);
-  if (musi==MOD)
-  {
-
-    playmod ();
-  }
-  else
-  {
-    playmp3 (beginvol);
-  }
+  playmusic ();
   
   while (killme==0)
   {
@@ -451,14 +434,8 @@ void intro::run ()
     display ();
   }
 
-  if (musi==MOD)
-  {
-    stopmod ();
-  }
-  else
-  {
-    stopmp3 ();
-  }
+  stopmusic ();
+
   glEnable (GL_LIGHTING);
   glEnable (GL_DEPTH_TEST);
   glEnable (GL_CULL_FACE);
