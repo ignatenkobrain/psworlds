@@ -24,7 +24,7 @@
 #include "startscreen.h"
 #include "outro.h"
 #include "briefing.h"
-
+#include <libconfig.h++>
 
 char    keys[1024];        // keyboard buffer
 double    Time;          // microticks passed since last frame
@@ -156,38 +156,32 @@ void readconfig ()
 
   write_log ("Reading config\n");
 
-  // open fire
-  cf = fopen ("possible_config.txt", "r");
-  if (cf == NULL) {
-    write_log ("Could not locate Config file 'possible_config.txt'..\n");
-    return;
+  static const char *conffile = "psworlds.conf";
+  using namespace libconfig;
+  Config cfg;
+  Setting &root = cfg.getRoot ();
+  root.add ("width", Setting::TypeInt) = (int) screenx;
+  root.add ("height", Setting::TypeInt) = (int) screeny;
+  root.add ("depth", Setting::TypeInt) = (int) screenbpp;
+  root.add ("fullscreen", Setting::TypeInt) = (int) fullscreen;
+  root.add ("missions", Setting::TypeInt) = (int) num_missions;
+  root.add ("yzhack", Setting::TypeInt) = (int) yzhack;
+  try {
+    cfg.readFile (conffile);
+    cfg.lookupValue ("width", screenx);
+    cfg.lookupValue ("height", screeny);
+    cfg.lookupValue ("depth", (int &) screenbpp);
+    cfg.lookupValue ("fullscreen", fullscreen);
+    cfg.lookupValue ("missions", num_missions);
+    cfg.lookupValue ("yzhack", yzhack);
+  } catch (FileIOException &fioex) {
+    cfg.writeFile (conffile);
+  } catch (ParseException &pex) {
+    fprintf (stderr, "Incorrect configuration! Remove %s please.", conffile);
+    exit (-1);
   }
 
-  // read the damn thing
-  while (fgets (line, sizeof (line), cf) != NULL) {
-    if (!((strlen (line) < 1) || (line[0] == '#'))) {
-      // if no empty line and no comment
-      sscanf (line, "%i", &value);
-
-      switch (val) {
-        case 0: screenx = value; sprintf (buf, "Setting Screen width to %d\n", value); write_log (buf); break;
-        case 1: screeny = value; sprintf (buf, "Setting Screen height to %d\n", value); write_log (buf); break;
-        case 2: screenbpp = value; sprintf (buf, "Setting Color depth to %d bits\n", value); write_log (buf); break;
-        case 3:
-          if (value != 0) {
-            fullscreen = SDL_FULLSCREEN;
-            write_log ("Switching to fullscreen\n");
-          } else {
-            fullscreen = 0;
-            write_log ("Running windowed\n");
-          }
-          break;
-        case 4: num_missions = value; break;
-        case 5: yzhack = value; break;
-      }
-      val++;
-    }
-  }
+  if (fullscreen == 1) fullscreen = SDL_FULLSCREEN;
 
   write_log ("Config file processed!\n");
   return;
