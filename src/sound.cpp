@@ -16,12 +16,10 @@
 
 Mix_Chunk* samples[NUMSAMPLES];
 Mix_Music* module = NULL;
-Mix_Music* mp3 = NULL;
 
 int enginechannel = -1;
 int engineused = 0;
 int floodchannel = -1;
-int mp3channel = -1;
 
 
 int initAudio (void)
