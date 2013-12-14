@@ -156,7 +156,10 @@ void readconfig ()
 
   write_log ("Reading config\n");
 
-  static const char *conffile = "psworlds.conf";
+  static char *conffile = getenv ("HOME");
+  strcat (conffile, "/.psworlds.conf");
+  sprintf (buf, "conffile: %s", conffile);
+  write_log (buf);
   using namespace libconfig;
   Config cfg;
   Setting &root = cfg.getRoot ();
@@ -813,7 +816,6 @@ int main (int argc, char **argv)
 {
   // the main function. initializes openGL and Audio Device
   _FBUF
-
 
   init ();
   readconfig ();
