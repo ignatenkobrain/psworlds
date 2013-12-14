@@ -289,7 +289,7 @@ outro::outro ()
   ft[16] = 4.5; ft[17] = 8.0; ft[18] = 4.5; ft[19] = 8.0; ft[20] = 8.0;
   ft[21] = 10.0; ft[22] = 10.0; ft[23] = 8.0; ft[24] = 8.0; ft[25] = 5.0; ft[26] = 5000.0;
   numsteps=27;
-  sprintf (buf,"sfx/chris_huelsbeck-apidya_credits.mp3");
+  sprintf (buf,"sfx/chris_huelsbeck-apidya_credits.ogg");
   loadmusic (buf);
    
   tm = ft[0];

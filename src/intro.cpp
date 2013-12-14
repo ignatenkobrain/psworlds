@@ -249,7 +249,7 @@ intro::intro (int mode)
 
     beginvol = MP3VOL;
     musicfadespeed = MOD_FADESPEED;
-    sprintf (buf,"sfx/chris_huelsbeck-turrican_credits.mp3");
+    sprintf (buf,"sfx/chris_huelsbeck-turrican_credits.ogg");
     loadmusic (buf);
     break;
   }
