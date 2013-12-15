@@ -119,10 +119,10 @@ void remove_underscore (char* s)
   }
 }
 
-void write_log (char* s)
+void write_log (const char *s)
 {
-    FILE* file = fopen (LOGFILE,"a");
-    fprintf (file,"%s",s);
+    FILE *file = fopen (LOGFILE, "a");
+    fprintf (file, "%s", s);
     fclose (file);
 }
 
@@ -149,9 +149,9 @@ void xpath (char *fname)
 
 
 
-void makestring (char* &target, char* txt)
+void makestring (char *&target, const char *txt)
 {
   // alloc space for a string and copy content
-  target = (char*)malloc (strlen (txt)+1*sizeof (char));
+  target = (char *) malloc (strlen (txt) + 1 * sizeof (char));
   strcpy (target, txt);
 }

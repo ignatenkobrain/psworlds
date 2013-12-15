@@ -33,12 +33,12 @@ GLfloat heading (GLfloat xd, GLfloat zd);
 
 void xpath (char *fname);
 void remove_underscore (char* s);
-void write_log (char* s);
+void write_log (const char *s);
 void init_log ();
 
 // other
 void errortest ();
-void makestring (char* &target, char* txt);
+void makestring (char *&target, const char *txt);
 
 
 #endif

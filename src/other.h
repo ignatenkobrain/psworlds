@@ -23,8 +23,8 @@ private:
   objectlist* path;  // list of waypoints to be followed
   object* waypoint;  // active waypoint to be reached
 public:
-  other (char* filename, float X, float Y, float Z, float rotX, float rotY, float rotZ,
-      float Rotspd, float Maxspd, int Mass, int Energy, GLfloat *norms,int *sw);
+  other (char *filename, float X, float Y, float Z, float rotX, float rotY, float rotZ,
+         float Rotspd, float Maxspd, int Mass, int Energy, GLfloat *norms, int *sw);
   virtual ~other ();
   virtual int Typ ();
   virtual void draw ();

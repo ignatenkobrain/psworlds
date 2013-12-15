@@ -10,9 +10,9 @@
 
 #include "other.h"
 
-other::other (char* filename, float X, float Y, float Z, float rotX, float rotY, float rotZ,
-       float Rotspd, float Maxspd, int Mass, int Energy, GLfloat *norms,int *sw)
-        :model (filename,X,Y,Z,rotX,rotY,rotZ,Rotspd,Maxspd,Mass,Energy,0,norms,sw)
+other::other (char *filename, float X, float Y, float Z, float rotX, float rotY, float rotZ,
+              float Rotspd, float Maxspd, int Mass, int Energy, GLfloat *norms, int *sw)
+              :model (filename,X,Y,Z,rotX,rotY,rotZ,Rotspd,Maxspd,Mass,Energy,0,norms,sw)
 {
 
 }
