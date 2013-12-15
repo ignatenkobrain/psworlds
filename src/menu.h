@@ -51,7 +51,7 @@ private:
 public:
   int selectable;    // determines if this entry can be hilighted
 
-  entry (int nr, char* text, int x, int y, GLfloat* cols, int selectable, void* men);
+  entry (int nr, const char *text, int x, int y, GLfloat* cols, int selectable, void* men);
   virtual ~entry ();
   GLfloat gety ();
 
@@ -80,7 +80,7 @@ public:
   int new_gs;      // the renewed game state
   int waitstate;    // set wait state if a child menu is active
 
-  menu (int type, menu* parent, char* caption);
+  menu (int type, menu *parent, const char *caption);
   virtual ~menu ();
   
   void handle ();    // control the menu

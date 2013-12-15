@@ -16,16 +16,16 @@
 #include "outro.h"
 #include "intro.h"
 
-entry::entry (int nr, char* text, int x, int y, GLfloat *cols, int selectable, void* men)
+entry::entry (int nr, const char *text, int x, int y, GLfloat *cols, int selectable, void* men)
 {
   // create a menu entry
   num = nr;
   col[0] = cols[0]; col[1] = cols[1]; col[2] = cols[2]; col[3] = cols[3]; 
   this->x = x; this->y = y;
   this->selectable = selectable;
-  host = (menu*)men;
+  host = (menu *) men;
 
-  txt = (char*) malloc (strlen (text)+1);
+  txt = (char *) malloc (strlen (text) + 1);
   strcpy (this->txt, text);
 }
 
@@ -54,7 +54,7 @@ GLfloat entry::gety ()
 }
 
 
-menu::menu (int type, menu *parent, char *caption)
+menu::menu (int type, menu *parent, const char *caption)
 {
   // constructor
   int i=0;
