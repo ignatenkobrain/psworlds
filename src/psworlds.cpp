@@ -49,7 +49,7 @@ texturelist* tl;          // all textures
 int      wire=0;          // wireframe mode?
 int      caustics=0;        // do we have a second texture unit?
 int      yzhack=0;        // do we want the keyboard hack?
-
+SDL_Window *window = NULL;
 
 void ambient ()
 {
@@ -184,7 +184,7 @@ void readconfig ()
     exit (-1);
   }
 
-  if (fullscreen == 1) fullscreen = SDL_FULLSCREEN;
+  if (fullscreen == 1) fullscreen = SDL_WINDOW_FULLSCREEN;
 
   write_log ("Config file processed!\n");
   return;
@@ -225,7 +225,7 @@ void loadmission ()
   
     drawstrings ();
     glFlush ();
-    SDL_GL_SwapBuffers ();
+    SDL_GL_SwapWindow (getWindow ());
   }
   // load file
   sprintf (buf,"missions/mission%d.txt",getMissionNum ());
@@ -566,7 +566,7 @@ void render ()
 
   // the usual suspects
   glFlush ();
-  SDL_GL_SwapBuffers ();
+  SDL_GL_SwapWindow (getWindow ());
 }
 
 
@@ -811,7 +811,6 @@ void setMissionAdvance (int ma)
   if (mission_advance > num_missions) mission_advance = num_missions;
 }
 
-
 int main (int argc, char **argv) 
 {
   // the main function. initializes openGL and Audio Device
@@ -821,9 +820,13 @@ int main (int argc, char **argv)
   readconfig ();
   
   // initialize glut, SDL and openGL  
-  
   SDL_Init (SDL_INIT_VIDEO | SDL_INIT_TIMER);
-  SDL_SetVideoMode (screenx, screeny, screenbpp, SDL_OPENGL | fullscreen);
+  window = SDL_CreateWindow("Possible Worlds",
+			                      SDL_WINDOWPOS_UNDEFINED,
+			                      SDL_WINDOWPOS_UNDEFINED,
+			                      screenx, screeny,
+			                      fullscreen | SDL_WINDOW_OPENGL);
+  SDL_GLContext glcontext = SDL_GL_CreateContext (window);
   SDL_ShowCursor (SDL_DISABLE);
   
   initGL ();
@@ -841,7 +844,6 @@ int main (int argc, char **argv)
   // load lens flares
   loadflaregfx ();
 
-  
   // the camera object
   cam = new Camera ();
 
@@ -858,31 +860,37 @@ int main (int argc, char **argv)
 
   timing (); // start timer
   fulltime = Time;
-  
+
   // play splash screen
   write_log ("Loading intro..\n");
   startscreen* startscr = new startscreen ();
   startscr->run ();
   delete startscr;
-  
+
   // play intro
   intro* intr = new intro (INTRO);
   intr->run ();
   delete intr;
-  
+
   // load demo mod
   sprintf (buf, "sfx/utah-saints.mod"); loadmusic (buf); setmusicvolume (TITLEVOL);
   menus = new menu (MENU_TITLE, NULL, "");
   prev_gs = GS_INGAME; gs = GS_MENU;
 
   mission_advance=-1;
-  
+
   // enter game loop
   timing ();
   timing ();
-  
+
   gameloop ();  
-  
+
+  SDL_GL_DeleteContext (glcontext);
   cleanup ();
   return 0;
+}
+
+SDL_Window *getWindow ()
+{
+  return window;
 }

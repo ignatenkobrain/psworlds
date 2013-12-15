@@ -69,5 +69,6 @@ void    setMissionAdvance (int ma);
 void    setCheated (int c);
 int      getCheated ();
 int      getWire ();
+SDL_Window *getWindow();
 
 #endif

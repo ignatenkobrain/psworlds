@@ -68,7 +68,7 @@ void startscreen::bootpic ()
     print (30,560,"A STURM / UMLAUF PRODUCTION",2,0.5,0.58,0.8,1.0);
     drawstrings ();
     glFlush ();
-    SDL_GL_SwapBuffers ();
+		SDL_GL_SwapWindow (getWindow ());
     wt+=gettime ();
   }
 
@@ -180,7 +180,7 @@ void startscreen::bootpic ()
     // stuff
     drawstrings ();
     glFlush ();
-    SDL_GL_SwapBuffers ();
+    SDL_GL_SwapWindow (getWindow ());
     prevwt=wt;
     wt+=gettime ();
   }

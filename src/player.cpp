@@ -163,36 +163,36 @@ void player::control ()
 
     // normal keys
     // switch headlite on/off
-    if (keys[SDLK_KP1] && lite!=NULL)
+    if (keys[SDLK_KP_1] && lite!=NULL)
     {
       lite->toggle ();
-      keys[SDLK_KP1]=0;
+      keys[SDLK_KP_1]=0;
     }
 
     if (keys[SDLK_LEFT])
     {
-      if ((keys[SDLK_KP0]) && (lite!=NULL))
+      if ((keys[SDLK_KP_0]) && (lite!=NULL))
         lite->left ();
       else
       left ();
     }
     if (keys[SDLK_RIGHT])
     { 
-      if ((keys[SDLK_KP0]) && (lite!=NULL))
+      if ((keys[SDLK_KP_0]) && (lite!=NULL))
         lite->right ();
       else
       right ();
     }
     if (keys[SDLK_UP])
     {
-      if ((keys[SDLK_KP0]) && (lite!=NULL))
+      if ((keys[SDLK_KP_0]) && (lite!=NULL))
         lite->up ();
       else
       up ();
     }
     if (keys[SDLK_DOWN])
     {
-      if ((keys[SDLK_KP0]) && (lite!=NULL))
+      if ((keys[SDLK_KP_0]) && (lite!=NULL))
         lite->down ();
       else
       down ();
@@ -246,44 +246,44 @@ void player::control ()
       if (waypt==NULL)
         waypt = pathlist->get_first ();
     }
-    if (keys[SDLK_KP0])
+    if (keys[SDLK_KP_0])
     {
-      if (keys[SDLK_KP4])
+      if (keys[SDLK_KP_4])
       {
         if (lite!=NULL)
         {
           lite->change_r (-secs);
         }
       }
-      if (keys[SDLK_KP7])
+      if (keys[SDLK_KP_7])
       {
         if (lite!=NULL)
         {
           lite->change_r (secs);
         }
       }
-      if (keys[SDLK_KP5])
+      if (keys[SDLK_KP_5])
       {
         if (lite!=NULL)
         {
           lite->change_g (-secs);
         }
       }
-      if (keys[SDLK_KP8])
+      if (keys[SDLK_KP_8])
       {
         if (lite!=NULL)
         {
           lite->change_g (secs);
         }
       }
-      if (keys[SDLK_KP6])
+      if (keys[SDLK_KP_6])
       {
         if (lite!=NULL)
         {
           lite->change_b (-secs);
         }
       }
-      if (keys[SDLK_KP9])
+      if (keys[SDLK_KP_9])
       {
         if (lite!=NULL)
         {

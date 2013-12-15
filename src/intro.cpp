@@ -410,7 +410,7 @@ void intro::display ()
 
   // the usual suspects
   glFlush ();
-  SDL_GL_SwapBuffers ();
+  SDL_GL_SwapWindow (getWindow ());
 }
 
 
