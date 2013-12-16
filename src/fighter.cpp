@@ -192,7 +192,7 @@ void fighter::shoot ()
         // play some sound to show that no weapon available
         Camera* cam = (Camera*) getcam ();
         playsam (16,16000,distantvolume (cam->getx (), cam->gety (), cam->getz (), x, y, z)/3,200);
-        keys[SDLK_SPACE]=0;
+        keys[SDL_GetScancodeFromKey(SDLK_SPACE)]=0;
       }
     }
   }

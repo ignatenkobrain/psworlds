@@ -103,18 +103,18 @@ void kbd ()
   {
     if (event.type == SDL_KEYDOWN)
     {
-      keys[event.key.keysym.sym] = 1;
+      keys[event.key.keysym.scancode] = 1;
     }
     else if (event.type == SDL_KEYUP)
     {
-      keys[event.key.keysym.sym] = 0;
+      keys[event.key.keysym.scancode] = 0;
     }
   }
   // american keyboard hack
   if (yzhack==1)
   {
-    if (keys[SDLK_y]==1) keys[SDLK_z]=1;
-    if (keys[SDLK_y]==0) keys[SDLK_z]=0;
+    if (keys[SDL_GetScancodeFromKey(SDLK_y)]==1) keys[SDL_GetScancodeFromKey(SDLK_z)]=1;
+    if (keys[SDL_GetScancodeFromKey(SDLK_y)]==0) keys[SDL_GetScancodeFromKey(SDLK_z)]=0;
   }
 }
 
@@ -438,7 +438,7 @@ void othercontrols ()
   // handle special comands
   
 
-  if (keys[SDLK_ESCAPE] && gs==GS_INGAME) // open ingame-menu
+  if (keys[SDL_GetScancodeFromKey(SDLK_ESCAPE)] && gs==GS_INGAME) // open ingame-menu
   {
     if (mission_advance == -1)
     {
@@ -456,44 +456,44 @@ void othercontrols ()
       }
     }
     prev_gs = gs; gs = GS_MENU;
-    keys[SDLK_ESCAPE] = 0;
+    keys[SDL_GetScancodeFromKey(SDLK_ESCAPE)] = 0;
     if (mis->getpausemode ()==1) stopAudio (1);
   }
 
-  if (keys[SDLK_RETURN] && gs==GS_MISSIONEND)
+  if (keys[SDL_GetScancodeFromKey(SDLK_RETURN)] && gs==GS_MISSIONEND)
   {
-    keys[SDLK_RETURN] = 0;
+    keys[SDL_GetScancodeFromKey(SDLK_RETURN)] = 0;
     stopAudio (1);
     gs = GS_MISSIONEND1;
   }
 
   // wireframe on/off
-  if (keys[SDLK_F1])
+  if (keys[SDL_GetScancodeFromKey(SDLK_F1)])
   {
     if (wire==1) {glPolygonMode (GL_FRONT_AND_BACK, GL_FILL); wire=0;}
     else {glPolygonMode (GL_FRONT_AND_BACK, GL_LINE); wire=1; }
-    keys[SDLK_F1]=0;
+    keys[SDL_GetScancodeFromKey(SDLK_F1)]=0;
   }
 
   // fog/no fog naah that's of no use
-  if (keys[SDLK_F2])
+  if (keys[SDL_GetScancodeFromKey(SDLK_F2)])
   {
     //if (glIsEnabled (GL_FOG)) glDisable (GL_FOG); else glEnable (GL_FOG);
-    //keys[SDLK_F2]=0;
+    //keys[SDL_GetScancodeFromKey(SDLK_F2)]=0;
   }
 
   // array drawing / manual drawing. array drawing crashes on geforce, so it's deactivated
-  if (keys[SDLK_F3])
+  if (keys[SDL_GetScancodeFromKey(SDLK_F3)])
   {
     //if (mis->getworld ()->getdrawmode ()==0) mis->getworld ()->setdrawmode (1); else mis->getworld ()->setdrawmode (0);
-    //keys[SDLK_F3]=0;
+    //keys[SDL_GetScancodeFromKey(SDLK_F3)]=0;
   }
 
   // fps on / off
-  if (keys[SDLK_F4])
+  if (keys[SDL_GetScancodeFromKey(SDLK_F4)])
   {
     fps = !fps;
-    keys[SDLK_F4]=0;
+    keys[SDL_GetScancodeFromKey(SDLK_F4)]=0;
   }
 
 }

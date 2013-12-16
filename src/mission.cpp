@@ -685,37 +685,37 @@ void mission::camcontrol ()
   char* keys=getkeys ();
   if (getGamestate () == GS_INGAME||getGamestate () == GS_MISSIONEND)
   {
-    if (keys[SDLK_1])
+    if (keys[SDL_GetScancodeFromKey(SDLK_1)])
     {
       cam->setCamstate (CAM_STILL);
     }
-    if (keys[SDLK_2])
+    if (keys[SDL_GetScancodeFromKey(SDLK_2)])
     {
       cam->setCamstate (CAM_FLYBY);
     }
-    if (keys[SDLK_3])
+    if (keys[SDL_GetScancodeFromKey(SDLK_3)])
     {
       cam->setCamstate (CAM_COCKPIT);
     }
-    if (keys[SDLK_4])
+    if (keys[SDL_GetScancodeFromKey(SDLK_4)])
     {
       cam->setCamstate (CAM_BEHIND);
     }
-    if (keys[SDLK_5])
+    if (keys[SDL_GetScancodeFromKey(SDLK_5)])
     {
       cam->setCamstate (CAM_FREEVIEW);
     }
-    if (keys[SDLK_6])
+    if (keys[SDL_GetScancodeFromKey(SDLK_6)])
     {
       cam->setCamstate (CAM_TOP);
     }
-    if (keys[SDLK_7])
+    if (keys[SDL_GetScancodeFromKey(SDLK_7)])
     {
       cam->setCamstate (CAM_BOT);
     }
-    if (keys[SDLK_8])
+    if (keys[SDL_GetScancodeFromKey(SDLK_8)])
     {
-      keys[SDLK_8]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_8)]=0;
       cam->toggle ();
     }
   }

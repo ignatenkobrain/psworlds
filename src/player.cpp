@@ -120,25 +120,25 @@ void player::control ()
     keys = getkeys ();
 
     // cheats
-    if (keys[SDLK_g]&&keys[SDLK_o]&&keys[SDLK_d])
+    if (keys[SDL_GetScancodeFromKey(SDLK_g)]&&keys[SDL_GetScancodeFromKey(SDLK_o)]&&keys[SDL_GetScancodeFromKey(SDLK_d)])
     {
       // GOD MODE - YEAH
       destroyable = !destroyable;
-      keys[SDLK_g]=0;
-      keys[SDLK_o]=0;
-      keys[SDLK_d]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_g)]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_o)]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_d)]=0;
       setCheated (1);
     }
-    if (keys[SDLK_f]&&keys[SDLK_i]&&keys[SDLK_n])
+    if (keys[SDL_GetScancodeFromKey(SDLK_f)]&&keys[SDL_GetScancodeFromKey(SDLK_i)]&&keys[SDL_GetScancodeFromKey(SDLK_n)])
     {
       // Win a mission the fast way
       ((mission*)getmission ())->set_success ();
-      keys[SDLK_f]=0;
-      keys[SDLK_i]=0;
-      keys[SDLK_n]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_f)]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_i)]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_n)]=0;
       setCheated (1);
     }
-    if (keys[SDLK_n]&&keys[SDLK_r]&&keys[SDLK_g])
+    if (keys[SDL_GetScancodeFromKey(SDLK_n)]&&keys[SDL_GetScancodeFromKey(SDLK_r)]&&keys[SDL_GetScancodeFromKey(SDLK_g)])
     {
       // Full Energy
       energy = fullnrg;
@@ -146,144 +146,144 @@ void player::control ()
       bcrack[0] = 0;
       bcrack[1] = 0;
       bcrack[2] = 0;
-      keys[SDLK_n]=0;
-      keys[SDLK_r]=0;
-      keys[SDLK_g]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_n)]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_r)]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_g)]=0;
       setCheated (1);
     }
-    if (keys[SDLK_t]&&keys[SDLK_r]&&keys[SDLK_g])
+    if (keys[SDL_GetScancodeFromKey(SDLK_t)]&&keys[SDL_GetScancodeFromKey(SDLK_r)]&&keys[SDL_GetScancodeFromKey(SDLK_g)])
     {
       // Enable targeting without range limit
       targetmode=!targetmode;
-      keys[SDLK_t]=0;
-      keys[SDLK_r]=0;
-      keys[SDLK_g]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_t)]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_r)]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_g)]=0;
       setCheated (1);
     }
 
     // normal keys
     // switch headlite on/off
-    if (keys[SDLK_KP_1] && lite!=NULL)
+    if (keys[SDL_GetScancodeFromKey(SDLK_KP_1)] && lite!=NULL)
     {
       lite->toggle ();
-      keys[SDLK_KP_1]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_KP_1)]=0;
     }
 
-    if (keys[SDLK_LEFT])
+    if (keys[SDL_GetScancodeFromKey(SDLK_LEFT)])
     {
-      if ((keys[SDLK_KP_0]) && (lite!=NULL))
+      if ((keys[SDL_GetScancodeFromKey(SDLK_KP_0)]) && (lite!=NULL))
         lite->left ();
       else
       left ();
     }
-    if (keys[SDLK_RIGHT])
+    if (keys[SDL_GetScancodeFromKey(SDLK_RIGHT)])
     { 
-      if ((keys[SDLK_KP_0]) && (lite!=NULL))
+      if ((keys[SDL_GetScancodeFromKey(SDLK_KP_0)]) && (lite!=NULL))
         lite->right ();
       else
       right ();
     }
-    if (keys[SDLK_UP])
+    if (keys[SDL_GetScancodeFromKey(SDLK_UP)])
     {
-      if ((keys[SDLK_KP_0]) && (lite!=NULL))
+      if ((keys[SDL_GetScancodeFromKey(SDLK_KP_0)]) && (lite!=NULL))
         lite->up ();
       else
       up ();
     }
-    if (keys[SDLK_DOWN])
+    if (keys[SDL_GetScancodeFromKey(SDLK_DOWN)])
     {
-      if ((keys[SDLK_KP_0]) && (lite!=NULL))
+      if ((keys[SDL_GetScancodeFromKey(SDLK_KP_0)]) && (lite!=NULL))
         lite->down ();
       else
       down ();
     }
-    if (keys[SDLK_s])
+    if (keys[SDL_GetScancodeFromKey(SDLK_s)])
     {
       rollleft ();
     }
-    if (keys[SDLK_d])
+    if (keys[SDL_GetScancodeFromKey(SDLK_d)])
     {
       rollright ();
     }
-    if (keys[SDLK_a])
+    if (keys[SDL_GetScancodeFromKey(SDLK_a)])
     {
       inc_speed ();
     }
-    if (keys[SDLK_z])
+    if (keys[SDL_GetScancodeFromKey(SDLK_z)])
     {
       dec_speed ();
     }
-    if (keys[SDLK_x])
+    if (keys[SDL_GetScancodeFromKey(SDLK_x)])
     {
       findnext_target ();
       (((mission*)getmission ())->getCockpit ())->setDisplay (0,CP_TARGET);
-      keys[SDLK_x]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_x)]=0;
     }
-    if (keys[SDLK_c])
+    if (keys[SDL_GetScancodeFromKey(SDLK_c)])
     {
       clear_target ();
-      keys[SDLK_c]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_c)]=0;
     }
-    if (keys[SDLK_SPACE])
+    if (keys[SDL_GetScancodeFromKey(SDLK_SPACE)])
     {
       shoot ();
     }
-    if (keys[SDLK_TAB])
+    if (keys[SDL_GetScancodeFromKey(SDLK_TAB)])
     {
       // also play the weapon switch sample here
       Camera* cam = (Camera*) getcam ();
       playsam (15,16000,distantvolume (cam->getx (), cam->gety (), cam->getz (), x, y, z),210);
     
       switch_weapon ();
-      keys[SDLK_TAB]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_TAB)]=0;
     }
-    if (keys[SDLK_BACKSPACE])
+    if (keys[SDL_GetScancodeFromKey(SDLK_BACKSPACE)])
     {  
       // browse waypoints
-      keys[SDLK_BACKSPACE]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_BACKSPACE)]=0;
       playsam (8,14500,135,205);
       if (waypt!=NULL) waypt = waypt->next;
       if (waypt==NULL)
         waypt = pathlist->get_first ();
     }
-    if (keys[SDLK_KP_0])
+    if (keys[SDL_GetScancodeFromKey(SDLK_KP_0)])
     {
-      if (keys[SDLK_KP_4])
+      if (keys[SDL_GetScancodeFromKey(SDLK_KP_4)])
       {
         if (lite!=NULL)
         {
           lite->change_r (-secs);
         }
       }
-      if (keys[SDLK_KP_7])
+      if (keys[SDL_GetScancodeFromKey(SDLK_KP_7)])
       {
         if (lite!=NULL)
         {
           lite->change_r (secs);
         }
       }
-      if (keys[SDLK_KP_5])
+      if (keys[SDL_GetScancodeFromKey(SDLK_KP_5)])
       {
         if (lite!=NULL)
         {
           lite->change_g (-secs);
         }
       }
-      if (keys[SDLK_KP_8])
+      if (keys[SDL_GetScancodeFromKey(SDLK_KP_8)])
       {
         if (lite!=NULL)
         {
           lite->change_g (secs);
         }
       }
-      if (keys[SDLK_KP_6])
+      if (keys[SDL_GetScancodeFromKey(SDLK_KP_6)])
       {
         if (lite!=NULL)
         {
           lite->change_b (-secs);
         }
       }
-      if (keys[SDLK_KP_9])
+      if (keys[SDL_GetScancodeFromKey(SDLK_KP_9)])
       {
         if (lite!=NULL)
         {

@@ -120,19 +120,19 @@ void Camera::getObjectPos (object *mdl)
 
         if (!((mission*)getmission ())->get_demo ())
         {
-          if (keys[SDLK_9]) // zoom in
+          if (keys[SDL_GetScancodeFromKey(SDLK_9)]) // zoom in
           {
             setFreePos (free_dist-dststep, 0, free_yrot);
           }
-          if (keys[SDLK_0]) // zoom out
+          if (keys[SDL_GetScancodeFromKey(SDLK_0)]) // zoom out
           {
             setFreePos (free_dist+dststep, 0, free_yrot);
           }
-          if (keys[SDLK_p]) // rotate left
+          if (keys[SDL_GetScancodeFromKey(SDLK_p)]) // rotate left
           {
             setFreePos (free_dist, 0, free_yrot-rotstep);
           }
-          if (keys[SDLK_o]) // rotate right
+          if (keys[SDL_GetScancodeFromKey(SDLK_o)]) // rotate right
           {
             setFreePos (free_dist, 0, free_yrot+rotstep);
           }
