@@ -410,40 +410,40 @@ void Cockpit::displaykeys ()
   char* keys = getkeys ();
 
   // make displays transparent
-  if (keys[SDLK_9])
+  if (keys[SDL_GetScancodeFromKey(SDLK_9)])
   {
     alpha-=change; if (alpha<0.17) alpha=0.17;
   }
-  if (keys[SDLK_0])
+  if (keys[SDL_GetScancodeFromKey(SDLK_0)])
   {
     alpha+=change; if (alpha>0.8) alpha=0.8;
   }
 
   // switch display states
-  if (keys[SDLK_q])
+  if (keys[SDL_GetScancodeFromKey(SDLK_q)])
   {
-    keys[SDLK_q]=0; if (display[0]==CP_MAP) display[0]=CP_TARGET; else display[0]=CP_MAP;
+    keys[SDL_GetScancodeFromKey(SDLK_q)]=0; if (display[0]==CP_MAP) display[0]=CP_TARGET; else display[0]=CP_MAP;
     playsam (8,15000,135,200);
   }
-  if (keys[SDLK_w])
+  if (keys[SDL_GetScancodeFromKey(SDLK_w)])
   {
-    keys[SDLK_w]=0; if (display[1]==CP_INFO) display[1]=CP_OBJECTIVES; else display[1]=CP_INFO;
+    keys[SDL_GetScancodeFromKey(SDLK_w)]=0; if (display[1]==CP_INFO) display[1]=CP_OBJECTIVES; else display[1]=CP_INFO;
     playsam (8,15000,135,200);
   }
-  if (keys[SDLK_e])
+  if (keys[SDL_GetScancodeFromKey(SDLK_e)])
   {
-    keys[SDLK_e]=0; if (display[2]==CP_RADAR) display[2]=CP_EQUIP; else display[2]=CP_RADAR;
+    keys[SDL_GetScancodeFromKey(SDLK_e)]=0; if (display[2]==CP_RADAR) display[2]=CP_EQUIP; else display[2]=CP_RADAR;
     playsam (8,15000,135,200);
   }
   
   // zoom radar
-  if (keys[SDLK_k])
+  if (keys[SDL_GetScancodeFromKey(SDLK_k)])
   {
     radarxzoom+=ticks*RADARZOOMER;
     if (radarxzoom>RADARMINZOOM) radarxzoom = RADARMINZOOM; 
     radaryzoom = radarxzoom*0.8667;
   }
-  if (keys[SDLK_l])
+  if (keys[SDL_GetScancodeFromKey(SDLK_l)])
   {
     radarxzoom-=ticks*RADARZOOMER;
     if (radarxzoom<RADARMAXZOOM) radarxzoom = RADARMAXZOOM; 
@@ -451,12 +451,12 @@ void Cockpit::displaykeys ()
   }
 
   // zoom map
-  if (keys[SDLK_o])
+  if (keys[SDL_GetScancodeFromKey(SDLK_o)])
   {
     mapzoom-=ticks*MAPZOOMER;
     if (mapzoom<MAPMINZOOM) mapzoom = MAPMINZOOM;
   }
-  if (keys[SDLK_p])
+  if (keys[SDL_GetScancodeFromKey(SDLK_p)])
   {
     mapzoom+=ticks*MAPZOOMER;
     if (mapzoom>MAPMAXZOOM) mapzoom = MAPMAXZOOM;
@@ -1056,11 +1056,11 @@ void Cockpit::playpong ()
   GLfloat padspeed = 75.0;
 
   // control
-  if (keys[SDLK_UP])
+  if (keys[SDL_GetScancodeFromKey(SDLK_UP)])
   {
     pg.y[0]+=padspeed*ticks;
   }
-  if (keys[SDLK_DOWN])
+  if (keys[SDL_GetScancodeFromKey(SDLK_DOWN)])
   {
     pg.y[0]-=padspeed*ticks;
   }

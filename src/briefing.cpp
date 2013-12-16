@@ -132,12 +132,12 @@ void briefing::control ()
   if (txtalpha<-0.5) killme=1;
 
   // quit !
-  if (((keys[SDLK_ESCAPE] || keys[SDLK_RETURN])) && (txtalpha==1.0))
+  if (((keys[SDL_GetScancodeFromKey(SDLK_ESCAPE)] || keys[SDL_GetScancodeFromKey(SDLK_RETURN)])) && (txtalpha==1.0))
   {
     txtalphac=-0.6; voladjust=txtalphac*vol;
     xsc = 1.5; zsc=1.5*4/3;
-    keys[SDLK_RETURN] = 0;
-    keys[SDLK_ESCAPE] = 0;
+    keys[SDL_GetScancodeFromKey(SDLK_RETURN)] = 0;
+    keys[SDL_GetScancodeFromKey(SDLK_ESCAPE)] = 0;
   }
 
   setmusicvolume (vol);

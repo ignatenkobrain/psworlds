@@ -261,13 +261,13 @@ void menu::handle ()
     int i, found=0,adj;
 
     adj=1;
-    if (keys[SDLK_UP])
+    if (keys[SDL_GetScancodeFromKey(SDLK_UP)])
     {
       // search for next selectable upper item
-      keys[SDLK_UP]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_UP)]=0;
       if (((Camera*)getcam ())->getCamstate ()==CAM_COCKPIT)
         if (((mission*)getmission ())->getCockpit ()->getPongmode ()==1)
-        {keys[SDLK_UP]=1; adj =0;}
+        {keys[SDL_GetScancodeFromKey(SDLK_UP)]=1; adj =0;}
 
       i = selected;
       while (found==0)
@@ -278,13 +278,13 @@ void menu::handle ()
       }
     }
     adj=1;
-    if (keys[SDLK_DOWN])
+    if (keys[SDL_GetScancodeFromKey(SDLK_DOWN)])
     {
       // search for next selectable lower item
-      keys[SDLK_DOWN]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_DOWN)]=0;
       if (((Camera*)getcam ())->getCamstate ()==CAM_COCKPIT)
         if (((mission*)getmission ())->getCockpit ()->getPongmode ()==1)
-        {keys[SDLK_DOWN]=1; adj=0;}
+        {keys[SDL_GetScancodeFromKey(SDLK_DOWN)]=1; adj=0;}
 
       i = selected;
       while (found==0)
@@ -294,10 +294,10 @@ void menu::handle ()
         if (entries[i]->selectable) {selected = i; found=1;}
       }
     }
-    if (keys[SDLK_ESCAPE])
+    if (keys[SDL_GetScancodeFromKey(SDLK_ESCAPE)])
     {
       // close menu
-      keys[SDLK_ESCAPE]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_ESCAPE)]=0;
       killme=1;
       // care for EASTEREGG
       if (((Camera*)getcam ())->getCamstate ()==CAM_COCKPIT)
@@ -314,10 +314,10 @@ void menu::handle ()
         }
       }
     }
-    if (keys[SDLK_RETURN])
+    if (keys[SDL_GetScancodeFromKey(SDLK_RETURN)])
     {
       // selection complete!
-      keys[SDLK_RETURN]=0;
+      keys[SDL_GetScancodeFromKey(SDLK_RETURN)]=0;
       switch (this->type)
       {
       case MENU_TITLE:

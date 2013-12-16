@@ -358,15 +358,15 @@ void outro::control ()
   glLightfv (GL_LIGHT0, GL_POSITION,litepos);
 
 
-  if (keys[SDLK_ESCAPE] && quit==0) // quit credits
+  if (keys[SDL_GetScancodeFromKey(SDLK_ESCAPE)] && quit==0) // quit credits
   {
-    keys[SDLK_ESCAPE]=0;
+    keys[SDL_GetScancodeFromKey(SDLK_ESCAPE)]=0;
     quit=1;
     tm=1.0/CREDITS_FADESPEED; prevtime=1.0/CREDITS_FADESPEED;
   }
-  if (keys[SDLK_RETURN] && this->tm>0.0) // next slide
+  if (keys[SDL_GetScancodeFromKey(SDLK_RETURN)] && this->tm>0.0) // next slide
   {
-    keys[SDLK_RETURN]=0;
+    keys[SDL_GetScancodeFromKey(SDLK_RETURN)]=0;
     //this->tm=-0.1;
     //prevtime=0.1;
   }

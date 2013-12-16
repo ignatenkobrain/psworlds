@@ -302,15 +302,15 @@ void intro::control ()
   this->timeleft-=ticks;
   
 
-  if (keys[SDLK_ESCAPE] && quit==0) // quit intro
+  if (keys[SDL_GetScancodeFromKey(SDLK_ESCAPE)] && quit==0) // quit intro
   {
-    keys[SDLK_ESCAPE]=0;
+    keys[SDL_GetScancodeFromKey(SDLK_ESCAPE)]=0;
     quit=1;
     timeleft=1.0/INTRO_FADESPEED; prevtime=1.0/INTRO_FADESPEED;
   }
-  if (keys[SDLK_RETURN] && this->timeleft>0.0) // next slide
+  if (keys[SDL_GetScancodeFromKey(SDLK_RETURN)] && this->timeleft>0.0) // next slide
   {
-    keys[SDLK_RETURN]=0;
+    keys[SDL_GetScancodeFromKey(SDLK_RETURN)]=0;
     this->timeleft=-0.1;
     prevtime=0.1;
   }
