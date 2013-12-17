@@ -425,11 +425,13 @@ void intro::run ()
   glEnable (GL_TEXTURE_2D);
   glDisable (GL_COLOR_MATERIAL);
   playmusic ();
-  
-  while (killme==0)
-  {
+  SDL_Event event;
+
+  while (killme == 0) {
+    while (SDL_PollEvent (&event))
+    if (event.type == SDL_QUIT)
+      exit (0);
     timing ();
-    
     control ();
     display ();
   }

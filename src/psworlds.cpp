@@ -76,8 +76,6 @@ void ambient ()
   }
 }
 
-
-
 void killmenu ()
 {
   if (menus!=NULL)
@@ -135,7 +133,6 @@ void timing ()
   
 }
 
-
 void readconfig ()
 {
   // read contents of the config file and set stuff accordingly
@@ -189,7 +186,6 @@ void readconfig ()
   write_log ("Config file processed!\n");
   return;
 }
-
 
 void loadmission ()
 {
@@ -247,9 +243,6 @@ void loadmission ()
   timing ();
 }
 
-
-
-
 void setMission (int ms)
 {
   mission_nr = ms;
@@ -270,7 +263,6 @@ int getCheated ()
 {
   return cheated;
 }
-
 
 int getGamestate ()
 {
@@ -569,9 +561,6 @@ void render ()
   SDL_GL_SwapWindow (getWindow ());
 }
 
-
-
-
 void gameloop () 
 {
   // the main loop
@@ -582,8 +571,11 @@ void gameloop ()
   int showoutro = 0;
   _FBUF
 
-  while (getGamestate () != GS_QUIT) 
-  {
+  SDL_Event event;
+  while (getGamestate () != GS_QUIT) {
+    while (SDL_PollEvent (&event))
+      if (event.type == SDL_QUIT)
+        exit (0);
     timing ();          // do the timing
     kbd ();            // handle keyboard input
     othercontrols ();      // handle commands like "flat / smooth shading", etc..

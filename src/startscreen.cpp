@@ -35,11 +35,9 @@ startscreen::~startscreen ()
   write_log ("startscreen quitted\n");
 }
 
-
 void startscreen::initsound ()
 {
 }
-
 
 void startscreen::bootpic ()
 {
@@ -49,6 +47,7 @@ void startscreen::bootpic ()
   GLfloat no[] = {1.0, 1.0, 1.0};
   int swp[3] = {0, 1, 2};
   _FBUF
+  SDL_Event event;
   sprintf (buf, "logo.obj");
   other *logo = new other (buf, 0, 0, 0.0, 0, 0, 0, 0, 0, 1000, 0.1, no, swp);
   other *logo2 = new other ("logo2.obj", 0, 0, 0.0, 0, 0, 0, 0, 0, 1000, 0.1, no, swp);
@@ -91,9 +90,10 @@ void startscreen::bootpic ()
 
   glLightfv (GL_LIGHT0, GL_POSITION,litepos);
 
-
-  while (wt<12.0)
-  {
+  while (wt<12.0) {
+    while (SDL_PollEvent (&event))
+      if (event.type == SDL_QUIT)
+        exit (0);
     timing ();
     glClearColor (0, 0, 0, 0);
     glClear (GL_COLOR_BUFFER_BIT);
